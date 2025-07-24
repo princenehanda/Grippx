@@ -1,55 +1,39 @@
 // Mobile Navigation Toggle
 document.addEventListener('DOMContentLoaded', function() {
     const hamburger = document.getElementById('hamburger');
-    const navCenter = document.querySelector('.nav-center');
-    const navRight = document.querySelector('.nav-right');
+    const mobileMenu = document.getElementById('mobileMenu');
     
     hamburger.addEventListener('click', function() {
         // Toggle active class
         this.classList.toggle('active');
-        
-        // Toggle mobile menu
-        if (this.classList.contains('active')) {
-            navCenter.classList.add('mobile-active');
-            navRight.classList.add('mobile-active');
-        } else {
-            navCenter.classList.remove('mobile-active');
-            navRight.classList.remove('mobile-active');
-        }
+        mobileMenu.classList.toggle('active');
     });
     
     // Close menu when clicking links
-    document.querySelectorAll('.nav-center a').forEach(link => {
+    mobileMenu.querySelectorAll('a').forEach(link => {
         link.addEventListener('click', () => {
             hamburger.classList.remove('active');
-            navCenter.classList.remove('mobile-active');
-            navRight.classList.remove('mobile-active');
+            mobileMenu.classList.remove('active');
         });
     });
-});
     
-    // Smooth scrolling for anchor links
+    // Smooth scrolling (keep your existing implementation)
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            
             if (this.getAttribute('href') === '#') return;
             
+            e.preventDefault();
             const target = document.querySelector(this.getAttribute('href'));
+            
             if (target) {
                 window.scrollTo({
                     top: target.offsetTop - 80,
                     behavior: 'smooth'
                 });
-                
-                // Close mobile menu if open
-                if (navLinks.classList.contains('active')) {
-                    hamburger.classList.remove('active');
-                    navLinks.classList.remove('active');
-                }
             }
         });
     });
+});
     
     // Add animation to elements when they come into view
     const animateOnScroll = function() {
