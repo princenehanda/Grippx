@@ -192,6 +192,26 @@ a:hover {
     color: var(--primary);
 }
 
+/* Mobile responsiveness */
+@media (max-width: 992px) {
+    .nav-center {
+        position: static;
+        transform: none;
+        left: auto;
+        display: none; /* Hidden in mobile */
+    }
+    
+    .nav-right {
+        display: none; /* Hidden in mobile */
+    }
+    
+    .hamburger {
+        display: block;
+    }
+    
+    /* Mobile menu styles (keep your existing mobile menu code) */
+}
+
 .hamburger {
     display: none;
     background: none;
