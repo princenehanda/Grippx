@@ -1,20 +1,32 @@
 // Mobile Navigation Toggle
 document.addEventListener('DOMContentLoaded', function() {
     const hamburger = document.getElementById('hamburger');
-    const navLinks = document.getElementById('navLinks');
+    const navCenter = document.querySelector('.nav-center');
+    const navRight = document.querySelector('.nav-right');
     
     hamburger.addEventListener('click', function() {
+        // Toggle active class
         this.classList.toggle('active');
-        navLinks.classList.toggle('active');
+        
+        // Toggle mobile menu
+        if (this.classList.contains('active')) {
+            navCenter.classList.add('mobile-active');
+            navRight.classList.add('mobile-active');
+        } else {
+            navCenter.classList.remove('mobile-active');
+            navRight.classList.remove('mobile-active');
+        }
     });
     
-    // Close menu when clicking a link (optional)
-    navLinks.querySelectorAll('a').forEach(link => {
+    // Close menu when clicking links
+    document.querySelectorAll('.nav-center a').forEach(link => {
         link.addEventListener('click', () => {
             hamburger.classList.remove('active');
-            navLinks.classList.remove('active');
+            navCenter.classList.remove('mobile-active');
+            navRight.classList.remove('mobile-active');
         });
     });
+});
     
     // Smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
