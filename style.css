@@ -142,92 +142,34 @@ a:hover {
     color: var(--white);
 }
 
-/* Navigation Styles */
-.navbar .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo {
-    display: flex;
-    align-items: center;
-    margin-right: auto; /* Pushes everything else right */
-}
-
-.nav-center {
-    display: flex;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.nav-center a {
-    margin: 0 15px;
-    color: var(--black);
-    font-weight: 500;
-}
-
-.nav-right {
-    margin-left: auto; /* Pushes to far right */
-}
-
-.logo img {
-    height: 40px;
-    margin-right: 10px;
-}
-
-.nav-links {
-    display: flex;
-    align-items: center;
-}
-
-.nav-links a {
-    margin: 0 15px;
-    color: var(--black);
-    font-weight: 500;
-}
-
-.nav-links a:hover {
-    color: var(--primary);
-}
-
-/* Mobile responsiveness */
-@media (max-width: 992px) {
-    .nav-center {
-        position: static;
-        transform: none;
-        left: auto;
-        display: none; /* Hidden in mobile */
-    }
+document.addEventListener('DOMContentLoaded', function() {
+    const hamburger = document.getElementById('hamburger');
+    const navCenter = document.querySelector('.nav-center');
+    const navRight = document.querySelector('.nav-right');
     
-    .nav-right {
-        display: none; /* Hidden in mobile */
-    }
+    hamburger.addEventListener('click', function() {
+        // Toggle active class
+        this.classList.toggle('active');
+        
+        // Toggle mobile menu
+        if (this.classList.contains('active')) {
+            navCenter.classList.add('mobile-active');
+            navRight.classList.add('mobile-active');
+        } else {
+            navCenter.classList.remove('mobile-active');
+            navRight.classList.remove('mobile-active');
+        }
+    });
     
-    .hamburger {
-        display: block;
-    }
-    
-    /* Mobile menu styles (keep your existing mobile menu code) */
-}
-
-.hamburger {
-    display: none;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 10px;
-}
-
-.hamburger span {
-    display: block;
-    width: 25px;
-    height: 3px;
-    background-color: var(--black);
-    margin: 4px 0;
-    transition: all 0.3s ease;
-}
+    // Close menu when clicking links
+    document.querySelectorAll('.nav-center a').forEach(link => {
+        link.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            navCenter.classList.remove('mobile-active');
+            navRight.classList.remove('mobile-active');
+        });
+    });
+});
 
 /* Hero Section */
 .hero {
