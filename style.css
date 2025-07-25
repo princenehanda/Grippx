@@ -495,3 +495,8 @@ footer {
     flex: 1 1 50%;
   }
 }
+/* === Logo Size === */
+.logo {
+  height: 100px; /* You can adjust this to 80px, 120px etc. */
+  width: auto;   /* Keeps the aspect ratio correct */
+}
