@@ -477,3 +477,21 @@ footer {
         margin-left: 0;
     }
 }
+/* Add at the bottom of your style.css */
+.about-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.about-text,
+.about-image {
+  flex: 1 1 100%;
+}
+
+@media (min-width: 768px) {
+  .about-text,
+  .about-image {
+    flex: 1 1 50%;
+  }
+}
