@@ -1,262 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google SEO Meta Tags -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="GRIPPX - The Brand Builders. We help businesses grow through custom apparel, corporate giveaways, and strategic marketing solutions in South Africa.">
-    <meta name="keywords" content="brand building, custom apparel, corporate giveaways, market research, product launch, brand awareness, large format printing, product sampling">
-    <meta name="author" content="GRIPPX">
-    <meta name="robots" content="index, follow">
-    <meta name="google-site-verification" content="eRAmGsQNLq6lddXB9WtXswjti3JnwlLTu2bZdJThxfA" />
-    
-    <!-- Open Graph / Social Media Meta Tags -->
-    <meta property="og:title" content="GRIPPX - The Brand Builders">
-    <meta property="og:description" content="We help businesses grow through marketing solutions and branded merchandise in South Africa">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://yourgithubusername.github.io/grippx-website">
-    <meta property="og:image" content="https://yourgithubusername.github.io/grippx-website/assets/logo.png">
-    
-    <!-- Favicon -->
-    <link rel="icon" href="assets/logo.png" type="image/png">
-    
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    
-    <title>GRIPPX | The Brand Builders | Marketing Solutions & Branded Merchandise</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF‑8">
+  <meta name="viewport" content="width=device‑width, initial‑scale=1.0">
+  <title>GRIPPX – The Brand Builders</title>
+  <meta name="description" content="GRIPPX is a brand building company dedicated to helping businesses grow through marketing solutions and branded merchandise.">
+  <meta property="og:title" content="GRIPPX – The Brand Builders">
+  <meta property="og:description" content="We help businesses grow through marketing solutions and branded merchandise.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://yourusername.github.io/grippx">
+  <meta property="og:image" content="https://yourusername.github.io/grippx/assets/logo.png">
+  <link rel="icon" href="assets/logo.png">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="container">
-            <a href="#" class="logo">
-                <img src="assets/logo.png" alt="GRIPPX Logo">
-                <span>GRIPPX</span>
-            </a>
-            
-            <div class="nav-center">
-                <a href="#services">Services</a>
-                <a href="#products">Products</a>
-                <a href="#about">About</a>
-                <a href="#contact">Contact</a>
-            </div>
-            
-            <div class="nav-right">
-                <a href="https://wa.me/27732746135" class="cta-button">Get Started</a>
-            </div>
-            
-            <button class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </div>
-        
-        <!-- Mobile Menu -->
-        <div class="mobile-menu" id="mobileMenu">
-            <a href="#services">Services</a>
-            <a href="#products">Products</a>
-            <a href="#about">About</a>
-            <a href="#contact">Contact</a>
-            <a href="https://wa.me/27732746135" class="cta-button">Get Started</a>
-            <div class="social-mobile">
-                <a href="#"><i class="fab fa-facebook"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-            </div>
-        </div>
-    </nav>
+  <nav class="navbar">
+    <div class="container">
+      <div class="logo"><img src="assets/logo.png" alt="GRIPPX Logo"><span>GRIPPX</span></div>
+      <button class="hamburger">☰</button>
+      <ul class="nav-links">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <a href="https://wa.me/27732746135" class="cta-button">Get Started</a>
+    </div>
+  </nav>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1>The Brand Builders</h1>
-                <p>We help businesses grow through innovative marketing solutions and high-quality branded merchandise.</p>
-                <div class="hero-buttons">
-                    <a href="#services" class="primary-button">Our Services</a>
-                    <a href="https://wa.me/27732746135" class="secondary-button">
-                        <i class="fab fa-whatsapp"></i> Chat on WhatsApp
-                    </a>
-                </div>
-            </div>
-            <div class="hero-image">
-                <img src="assets/hero-bg.jpg" alt="Brand Building Solutions">
-            </div>
-        </div>
+  <main>
+    <section id="hero" class="hero">
+      <div class="container">
+        <h1>The Brand Builders</h1>
+        <p>Dedicated to helping businesses grow through marketing solutions and branded merchandise.</p>
+        <a href="#services" class="primary-button">Our Services</a>
+      </div>
     </section>
 
     <!-- Services Section -->
     <section id="services" class="services">
-        <div class="container">
-            <h2>Our Brand Building Services</h2>
-            <p class="section-subtitle">Comprehensive solutions to elevate your brand presence</p>
-            
-            <div class="services-grid">
-                <!-- Branded Physical Assets -->
-                <div class="service-card" onclick="showServiceDetails('physical-assets')">
-                    <div class="service-icon">
-                        <i class="fas fa-tshirt"></i>
-                    </div>
-                    <h3>Branded Physical Assets</h3>
-                    <p>Tangible brand touchpoints that keep your brand visible</p>
-                    <ul class="hidden-details" id="physical-assets">
-                        <li>Custom printed apparel and workwear</li>
-                        <li>Branded corporate giveaways</li>
-                        <li>Large format printing</li>
-                    </ul>
-                </div>
-                
-                <!-- Marketing Activation -->
-                <div class="service-card" onclick="showServiceDetails('activation')">
-                    <div class="service-icon">
-                        <i class="fas fa-bullhorn"></i>
-                    </div>
-                    <h3>Marketing Activation</h3>
-                    <p>Experiential campaigns that drive engagement</p>
-                    <ul class="hidden-details" id="activation">
-                        <li>Product launches</li>
-                        <li>In-store activations</li>
-                        <li>Product sampling</li>
-                    </ul>
-                </div>
-                
-                <!-- Strategic Services -->
-                <div class="service-card" onclick="showServiceDetails('strategic')">
-                    <div class="service-icon">
-                        <i class="fas fa-chess"></i>
-                    </div>
-                    <h3>Strategic Services</h3>
-                    <p>Data-driven brand building foundations</p>
-                    <ul class="hidden-details" id="strategic">
-                        <li>Market research</li>
-                        <li>Brand awareness campaigns</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+      <h2>Our Service Portfolio</h2>
+      <div class="services-grid">
+        <a href="branded-physical-assets.html" class="service-card">
+          <h3>Branded Physical Assets</h3>
+          <p>Tangible brand touchpoints</p>
+        </a>
+        <a href="marketing-activation-services.html" class="service-card">
+          <h3>Marketing Activation Services</h3>
+          <p>Experiential & tactical campaigns</p>
+        </a>
+        <a href="strategic-services.html" class="service-card">
+          <h3>Strategic Services</h3>
+          <p>Foundational brand work</p>
+        </a>
+      </div>
     </section>
 
-    <!-- Popular Products Section -->
+    <!-- Products Section -->
     <section id="products" class="products">
-        <div class="container">
-            <h2>Popular Products</h2>
-            <p class="section-subtitle">High-quality branded merchandise that gets results</p>
-            
-            <div class="products-grid">
-                <div class="product-card">
-                    <img src="assets/products/tshirts.jpg" alt="Branded T-Shirts">
-                    <h3>Branded T-Shirts</h3>
-                    <p>Custom printed t-shirts for teams and promotions</p>
-                    <a href="https://wa.me/27732746135?text=I'm interested in Branded T-Shirts" class="product-button">Inquire Now</a>
-                </div>
-                
-                <div class="product-card">
-                    <img src="assets/products/mugs.jpg" alt="Printed Mugs">
-                    <h3>Printed Mugs</h3>
-                    <p>Durable ceramic mugs with your logo</p>
-                    <a href="https://wa.me/27732746135?text=I'm interested in Printed Mugs" class="product-button">Inquire Now</a>
-                </div>
-                
-                <div class="product-card">
-                    <img src="assets/products/caps.jpg" alt="Embroidered Caps">
-                    <h3>Embroidered Caps</h3>
-                    <p>Premium quality caps with detailed embroidery</p>
-                    <a href="https://wa.me/27732746135?text=I'm interested in Embroidered Caps" class="product-button">Inquire Now</a>
-                </div>
-                
-                <div class="product-card">
-                    <img src="assets/products/banners.jpg" alt="Banners">
-                    <h3>Banners</h3>
-                    <p>Large format printing for events</p>
-                    <a href="https://wa.me/27732746135?text=I'm interested in Banners" class="product-button">Inquire Now</a>
-                </div>
-                
-                <div class="product-card">
-                    <img src="assets/products/flyers.jpg" alt="Flyers">
-                    <h3>Flyers</h3>
-                    <p>Eye-catching printed flyers</p>
-                    <a href="https://wa.me/27732746135?text=I'm interested in Flyers" class="product-button">Inquire Now</a>
-                </div>
-            </div>
-        </div>
+      <h2>Popular Products</h2>
+      <div class="products-grid">
+        <a href="https://wa.me/27732746135?text=I'm%20interested%20in%20Branded%20T-shirts" class="product-card">Branded T‑Shirts</a>
+        <a href="https://wa.me/27732746135?text=I'm%20interested%20in%20Printed%20Mugs" class="product-card">Printed Mugs</a>
+        <a href="https://wa.me/27732746135?text=I'm%20interested%20in%20Embroidered%20Caps" class="product-card">Embroidered Caps</a>
+        <a href="https://wa.me/27732746135?text=I'm%20interested%20in%20Banners" class="product-card">Banners</a>
+        <a href="https://wa.me/27732746135?text=I'm%20interested%20in%20Flyers" class="product-card">Flyers</a>
+      </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="cta">
-        <div class="container">
-            <h2>Ready to Build Your Brand?</h2>
-            <p>Get in touch with our team to discuss your brand building needs.</p>
-            <a href="https://wa.me/27732746135" class="cta-button-large">
-                <i class="fab fa-whatsapp"></i> Chat on WhatsApp
-            </a>
-            <div class="social-links">
-                <a href="#"><i class="fab fa-facebook"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-            </div>
-        </div>
+    <!-- Contact/CTA Section -->
+    <section id="contact" class="cta-section">
+      <h2>Ready to Build Your Brand?</h2>
+      <p>Chat with our team on WhatsApp to get started.</p>
+      <a href="https://wa.me/27732746135" class="cta-button-large"><i class="fab fa-whatsapp"></i> Chat on WhatsApp</a>
+      <div class="social-links">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
     </section>
+  </main>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-about">
-                    <h3>GRIPPX</h3>
-                    <p>The Brand Builders. We help businesses grow through innovative marketing solutions.</p>
-                </div>
-                
-                <div class="footer-links">
-                    <h3>Quick Links</h3>
-                    <ul>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#products">Products</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-contact">
-                    <h3>Contact Us</h3>
-                    <ul>
-                        <li><i class="fab fa-whatsapp"></i> <a href="https://wa.me/27732746135">+27 73 274 6135</a></li>
-                        <li><i class="fas fa-envelope"></i> info@grippx.com</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2023 GRIPPX. All Rights Reserved.</p>
-            </div>
-        </div>
-    </footer>
+  <footer>
+    <p>&copy; 2025 GRIPPX. All Rights Reserved.</p>
+  </footer>
 
-    <script src="script.js"></script>
-    
-    <!-- Schema.org markup for Google -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "GRIPPX",
-      "url": "https://yourgithubusername.github.io/grippx-website",
-      "logo": "https://yourgithubusername.github.io/grippx-website/assets/logo.png",
-      "description": "Brand building and marketing solutions provider in South Africa",
-      "address": {
-        "@type": "PostalAddress",
-        "addressCountry": "ZA"
-      },
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "telephone": "+27732746135",
-        "contactType": "sales",
-        "areaServed": "South Africa",
-        "availableLanguage": "en"
-      }
-    }
-    </script>
+  <script src="script.js"></script>
+  <script src="https://kit.fontawesome.com/yourkit.js" crossorigin="anonymous"></script>
 </body>
 </html>
