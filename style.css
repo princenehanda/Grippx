@@ -1,4 +1,4 @@
-/* Global Styles */
+/* style.css */
 :root {
     --primary: #2DAE4F;
     --primary-dark: #1B5E20;
@@ -22,12 +22,10 @@ body {
 }
 
 .container {
-    display: flex;
-    justify-content: space-between; /* logo left, links right */
-    align-items: center;
     width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
     padding: 0 20px;
-    position: relative; /* Needed for positioning of nav-links */
 }
 
 section {
@@ -155,43 +153,89 @@ a:hover {
     padding: 15px 0;
 }
 
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
 .logo {
     display: flex;
     align-items: center;
-    font-weight: 700;
-    font-size: 1.5rem;
-    color: var(--black);
+    z-index: 1001;
 }
 
 .logo img {
-    height: 120px;
+    height: 40px;
     margin-right: 10px;
+    transition: all 0.3s ease;
 }
 
-/* === Logo Size === */
-.logo {
-  flex: 0 0 auto;
-  height: 240px; /* You can adjust this to 80px, 120px etc. */
-  width: auto;   /* Keeps the aspect ratio correct */
+.logo span {
+    font-weight: 700;
+    font-size: 1.5rem;
 }
 
-.nav-links {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 30px;
-  list-style: none;
+/* Desktop Navigation */
+.nav-center {
+    display: flex;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
-.nav-links li a {
-  text-decoration: none;
-  font-weight: 500;
-  color: black;
+.nav-center a {
+    margin: 0 15px;
+    color: var(--black);
+    font-weight: 500;
 }
 
-.nav-links a:hover {
-    color: var(--primary);
+.nav-right {
+    margin-left: auto;
+}
+
+/* Mobile Menu */
+.mobile-menu {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background: white;
+    padding: 20px 0;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    display: none;
+    flex-direction: column;
+    z-index: 1000;
+}
+
+.mobile-menu.active {
+    display: flex;
+}
+
+.mobile-menu a {
+    padding: 12px 20px;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+    color: var(--black);
+}
+
+.mobile-menu .cta-button {
+    margin: 15px auto 0;
+    width: 80%;
+    display: block;
+}
+
+.social-mobile {
+    display: flex;
+    justify-content: center;
+    padding: 15px 0;
+}
+
+.social-mobile a {
+    margin: 0 10px;
+    font-size: 1.5rem;
+    border-bottom: none;
 }
 
 .hamburger {
@@ -199,16 +243,29 @@ a:hover {
     background: none;
     border: none;
     cursor: pointer;
-    padding: 10px;
+    z-index: 1001;
+    padding: 5px;
 }
 
 .hamburger span {
     display: block;
     width: 25px;
     height: 3px;
-    background-color: var(--black);
-    margin: 4px 0;
+    background: var(--black);
+    margin: 5px 0;
     transition: all 0.3s ease;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
 }
 
 /* Hero Section */
@@ -219,292 +276,4 @@ a:hover {
 
 .hero .container {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
-
-.hero-content {
-    flex: 1;
-    min-width: 300px;
-    padding-right: 40px;
-}
-
-.hero-content h1 {
-    color: var(--primary-dark);
-    margin-bottom: 20px;
-}
-
-.hero-content p {
-    font-size: 1.2rem;
-    margin-bottom: 30px;
-    color: var(--gray);
-}
-
-.hero-buttons {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-}
-
-.hero-image {
-    flex: 1;
-    min-width: 300px;
-    text-align: center;
-}
-
-.hero-image img {
-    max-width: 100%;
-    border-radius: 8px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-}
-
-/* Services Section */
-.services {
-    background-color: var(--white);
-}
-
-.services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-    margin-top: 40px;
-}
-
-.service-card {
-    background-color: var(--light-gray);
-    padding: 30px;
-    border-radius: 8px;
-    text-align: center;
-    transition: all 0.3s ease;
-}
-
-.service-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-}
-
-.service-icon {
-    font-size: 2.5rem;
-    color: var(--primary);
-    margin-bottom: 20px;
-}
-
-/* Products Section */
-.products {
-    background-color: var(--light-gray);
-}
-
-.products-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 30px;
-    margin-top: 40px;
-}
-
-.product-card {
-    background-color: var(--white);
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-    transition: all 0.3s ease;
-    text-align: center;
-    padding: 20px;
-}
-
-.product-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-}
-
-.product-card img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 4px;
-    margin-bottom: 15px;
-}
-
-/* CTA Section */
-.cta {
-    background-color: var(--primary-dark);
-    color: var(--white);
-    text-align: center;
-}
-
-.cta h2 {
-    color: var(--white);
-}
-
-.cta p {
-    font-size: 1.2rem;
-    max-width: 700px;
-    margin: 0 auto;
-}
-
-/* Footer */
-footer {
-    background-color: var(--black);
-    color: var(--white);
-    padding: 60px 0 0;
-}
-
-.footer-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 40px;
-    margin-bottom: 40px;
-}
-
-.footer-about h3 {
-    color: var(--white);
-    margin-bottom: 20px;
-}
-
-.footer-links h3, .footer-contact h3 {
-    color: var(--white);
-    margin-bottom: 20px;
-}
-
-.footer-links ul, .footer-contact ul {
-    list-style: none;
-}
-
-.footer-links li, .footer-contact li {
-    margin-bottom: 10px;
-}
-
-.footer-links a, .footer-contact a {
-    color: var(--light-gray);
-}
-
-.footer-links a:hover, .footer-contact a:hover {
-    color: var(--white);
-}
-
-.footer-contact i {
-    margin-right: 10px;
-    color: var(--primary);
-}
-
-.footer-bottom {
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 20px 0;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.social-links {
-    margin-top: 15px;
-}
-
-.social-links a {
-    color: var(--white);
-    margin: 0 10px;
-    font-size: 1.2rem;
-}
-
-.social-links a:hover {
-    color: var(--primary);
-}
-
-/* Responsive Styles */
-@media (max-width: 768px) {
-    .nav-links {
-        display: none;
-        position: absolute;
-        top: 80px;
-        left: 0;
-        width: 100%;
-        background-color: var(--white);
-        flex-direction: column;
-        padding: 20px;
-        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-    }
-    
-    .nav-links.active {
-        display: flex;
-    }
-    
-    .nav-links a {
-        margin: 10px 0;
-    }
-    
-    .hamburger {
-        display: block;
-    }
-    
-    .hamburger.active span:nth-child(1) {
-        transform: rotate(45deg) translate(5px, 5px);
-    }
-    
-    .hamburger.active span:nth-child(2) {
-        opacity: 0;
-    }
-    
-    .hamburger.active span:nth-child(3) {
-        transform: rotate(-45deg) translate(7px, -6px);
-    }
-    
-    .hero .container {
-        flex-direction: column;
-    }
-    
-    .hero-content {
-        padding-right: 0;
-        margin-bottom: 40px;
-        text-align: center;
-    }
-    
-    .hero-buttons {
-        justify-content: center;
-    }
-    
-    section {
-        padding: 60px 0;
-    }
-}
-
-@media (max-width: 480px) {
-    .hero {
-        padding: 120px 0 60px;
-    }
-    
-    h1 {
-        font-size: 2rem;
-    }
-    
-    h2 {
-        font-size: 1.8rem;
-    }
-    
-    .hero-buttons {
-        flex-direction: column;
-    }
-    
-    .secondary-button {
-        margin-top: 15px;
-        margin-left: 0;
-    }
-}
-/* Add at the bottom of your style.css */
-.about-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-}
-
-.about-text,
-.about-image {
-  flex: 1 1 100%;
-}
-
-@media (min-width: 768px) {
-  .about-text,
-  .about-image {
-    flex: 1 1 50%;
-  }
-}
+    align
