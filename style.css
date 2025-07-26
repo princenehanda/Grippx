@@ -21,6 +21,7 @@ body {
     line-height: 1.6;
 }
 
+/*
 .container {
     display: flex;
     justify-content: space-between; /* logo left, links right */
@@ -29,6 +30,7 @@ body {
     padding: 0 20px;
     position: relative; /* Needed for positioning of nav-links */
 }
+*/
 
 section {
     padding: 80px 0;
