@@ -22,10 +22,12 @@ body {
 }
 
 .container {
+    display: flex;
+    justify-content: space-between; /* logo left, links right */
+    align-items: center;
     width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
     padding: 0 20px;
+    position: relative; /* Needed for positioning of nav-links */
 }
 
 section {
@@ -166,15 +168,26 @@ a:hover {
     margin-right: 10px;
 }
 
-.nav-links {
-    display: flex;
-    align-items: center;
+/* === Logo Size === */
+.logo {
+  flex: 0 0 auto;
+  height: 240px; /* You can adjust this to 80px, 120px etc. */
+  width: auto;   /* Keeps the aspect ratio correct */
 }
 
-.nav-links a {
-    margin: 0 15px;
-    color: var(--black);
-    font-weight: 500;
+.nav-links {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 30px;
+  list-style: none;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  font-weight: 500;
+  color: black;
 }
 
 .nav-links a:hover {
@@ -494,9 +507,4 @@ footer {
   .about-image {
     flex: 1 1 50%;
   }
-}
-/* === Logo Size === */
-.logo {
-  height: 140px; /* You can adjust this to 80px, 120px etc. */
-  width: auto;   /* Keeps the aspect ratio correct */
 }
