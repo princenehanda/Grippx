@@ -1,0 +1,33 @@
+grippx-website/
+│
+├── index.html
+├── about.html
+├── service-physical.html
+├── service-activation.html
+├── service-strategic.html
+├── service-concierge.html
+│
+├── assets/
+│   ├── images/
+│   │   ├── logo.png
+│   │   ├── t-shirts.jpg
+│   │   ├── mugs.jpg
+│   │   ├── caps.jpg
+│   │   ├── banners.jpg
+│   │   ├── flyers.jpg
+│   │   └── ...other product images
+│   │
+│   └── icons/
+│       ├── facebook.svg
+│       ├── instagram.svg
+│       ├── whatsapp.svg
+│       └── service-icons.svg
+│
+├── css/
+│   └── styles.css
+│
+├── js/
+│   └── main.js
+│
+├── README.md
+└── .gitignore
