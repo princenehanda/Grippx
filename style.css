@@ -10,7 +10,7 @@ body { font-family:sans-serif; color:#333; background:#fff; }
 .container { max-width:1200px; margin:0 auto; padding:0 20px; display:flex; align-items:center; position:relative; }
 
 .navbar { background:#fff; position:fixed; width:100%; top:0; z-index:999; height:80px; }
-.logo img { height:60px; object-fit:contain; transition:height .3s; }
+.logo img { height:30px; object-fit:contain; transition:height .3s; }
 @media(min-width:768px){ .logo img { height:80px; } }
 
 .nav-links { display:flex; gap:30px; justify-content:center; flex:1; }
