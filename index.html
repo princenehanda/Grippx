@@ -1,42 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>GRIPPX – The Brand Builders</title>
-  <meta name="description" content="GRIPPX – brand building company dedicated to helping businesses grow through marketing solutions.">
-  <meta name="keywords" content="brand building, marketing solutions, branded merchandise, experiential marketing">
-  <meta name="author" content="GRIPPX">
-  <!-- Open Graph -->
-  <meta property="og:title" content="GRIPPX – The Brand Builders">
-  <meta property="og:description" content="Helping businesses grow through marketing solutions and branded assets">
-  <meta property="og:type" content="website">
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="GRIPPX - The Brand Builders. We help businesses grow through creative marketing solutions." />
+  <title>GRIPPX | The Brand Builders</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
 </head>
 <body>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container">
+      <div class="logo">GRIPPX</div>
+      <nav class="desktop-nav">
+        <ul class="nav-links">
+          <li><a href="#">Home</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#products">Products</a></li>
+        </ul>
+      </nav>
+      <div class="cta">
+        <a href="https://wa.me/27732746135" class="btn">WhatsApp Us</a>
+      </div>
+    </div>
+  </header>
 
-<nav class="navbar">
-  <div class="container">
-    <div class="logo"><img src="assets/logo.png" alt="GRIPPX logo"></div>
-    <ul class="nav-links">
+  <!-- Mobile Nav -->
+  <div class="mobile-menu">
+    <button id="menuToggle">☰</button>
+    <ul id="mobileNav" class="nav-links hidden">
+      <li><a href="#">Home</a></li>
       <li><a href="#services">Services</a></li>
       <li><a href="#products">Products</a></li>
-      <li><a href="#contact">Contact</a></li>
     </ul>
-    <div class="cta"><a href="https://wa.me/27732746135" class="cta-button"><i class="fab fa-whatsapp"></i> Get Started</a></div>
-    <button class="hamburger"><span></span><span></span><span></span></button>
   </div>
-</nav>
 
-<section id="services" class="services">
-  <div class="container">
-    <h2>Our Service Portfolio</h2>
-    <div class="services-grid">
-      <a href="branded-physical-assets.html" class="service-card">
+  <!-- Hero -->
+  <section class="hero">
+    <h1>The Brand Builders</h1>
+    <p>Helping businesses grow through creative marketing solutions.</p>
+  </section>
+
+  <!-- Service Portfolio -->
+  <section id="services" class="section">
+    <h2 class="section-heading">Service Portfolio</h2>
+    <div class="card-grid">
+      <a href="branded-assets.html" class="service-card">
         <h3>Branded Physical Assets</h3>
         <p>Tangible brand touchpoints</p>
       </a>
-      <a href="marketing-activation-services.html" class="service-card">
+      <a href="marketing-activation.html" class="service-card">
         <h3>Marketing Activation Services</h3>
         <p>Experiential & tactical campaigns</p>
       </a>
@@ -44,55 +58,41 @@
         <h3>Strategic Services</h3>
         <p>Foundational brand work</p>
       </a>
-      <a href="business-concierges.html" class="service-card">
-        <h3>Business Concierges</h3>
+      <a href="business-concierge.html" class="service-card">
+        <h3>Business Concierge</h3>
         <p>Remote task support</p>
       </a>
     </div>
-  </div>
-</section>
+  </section>
 
-<section id="products" class="products">
-  <div class="container">
-    <h2>Popular Products</h2>
-    <div class="products-grid">
-      <a href="https://wa.me/27732746135?text=I'm%20interested%20in%20Branded%20T-shirts" class="product-card">
-        <h3>Branded T-Shirts</h3>
-      </a>
-      <a href="https://wa.me/27732746135?text=I'm%20interested%20in%20Printed%20Mugs" class="product-card">
-        <h3>Printed Mugs</h3>
-      </a>
-      <a href="https://wa.me/27732746135?text=I'm%20interested%20in%20Embroidered%20Caps" class="product-card">
-        <h3>Embroidered Caps</h3>
-      </a>
-      <a href="https://wa.me/27732746135?text=I'm%20interested%20in%20Banners" class="product-card">
-        <h3>Banners</h3>
-      </a>
-      <a href="https://wa.me/27732746135?text=I'm%20interested%20in%20Flyers" class="product-card">
-        <h3>Flyers</h3>
-      </a>
+  <!-- Popular Products -->
+  <section id="products" class="section">
+    <h2 class="section-heading">Popular Products</h2>
+    <div class="product-grid">
+      <a class="product-card" href="https://wa.me/27732746135">Branded T-shirts</a>
+      <a class="product-card" href="https://wa.me/27732746135">Printed Mugs</a>
+      <a class="product-card" href="https://wa.me/27732746135">Embroidered Caps</a>
+      <a class="product-card" href="https://wa.me/27732746135">Banners</a>
+      <a class="product-card" href="https://wa.me/27732746135">Flyers</a>
     </div>
-  </div>
-</section>
+  </section>
 
-<section id="contact" class="cta-section">
-  <div class="container">
-    <h2>Ready to Build Your Brand?</h2>
-    <p>Get in touch with our team to discuss your brand building needs.</p>
-    <a href="https://wa.me/27732746135" class="cta-button-large"><i class="fab fa-whatsapp"></i> Chat on WhatsApp</a>
-    <div class="social">
-      <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-      <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+  <!-- Footer -->
+  <footer class="site-footer">
+    <p>Follow us:</p>
+    <div class="social-icons">
+      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
     </div>
-  </div>
-</section>
+    <p>&copy; 2025 GRIPPX</p>
+  </footer>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/js/all.min.js"></script>
-<script>
-  const hamb = document.querySelector('.hamburger');
-  const nav = document.querySelector('.nav-links');
-  hamb.onclick = () => { nav.classList.toggle('active'); hamb.classList.toggle('active'); }
-</script>
-
+  <script>
+    const menuToggle = document.getElementById('menuToggle');
+    const mobileNav = document.getElementById('mobileNav');
+    menuToggle.addEventListener('click', () => {
+      mobileNav.classList.toggle('hidden');
+    });
+  </script>
 </body>
 </html>
