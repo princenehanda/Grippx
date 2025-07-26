@@ -7,7 +7,19 @@
 
 * { margin:0; padding:0; box-sizing:border-box; }
 body { font-family:sans-serif; color:#333; background:#fff; }
-.container { max-width:1200px; margin:0 auto; padding:0 20px; display:flex; align-items:center; position:relative; }
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+}
+
+/* Only the navbar container should be flex */
+.navbar .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
 .navbar { background:#fff; position:fixed; width:100%; top:0; z-index:999; height:80px; }
 .logo img {max-height: 80px; width: auto; height: auto; object-fit: contain;}
