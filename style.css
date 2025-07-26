@@ -117,23 +117,106 @@ body {
   padding: 0 20px;
 }
 
-.service-card,
-.product-card {
-  background-color: var(--white);
-  padding: 25px;
-  border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  text-align: center;
-  transition: transform 0.2s ease;
-  text-decoration: none;
-  color: var(--text);
+/* Services Section Styling */
+.service-cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
 }
 
-.service-card:hover,
-.product-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-  color: var(--primary-dark);
+.service-card {
+    background: var(--white);
+    border: 2px solid var(--light);
+    border-radius: 12px;
+    padding: 40px 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.service-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: var(--primary);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(45, 174, 79, 0.15);
+    border-color: var(--primary);
+}
+
+.service-card:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.card-content {
+    text-align: center;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card-icon {
+    width: 80px;
+    height: 80px;
+    background: var(--light);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25px;
+    transition: all 0.3s ease;
+}
+
+.card-icon i {
+    font-size: 2rem;
+    color: var(--primary);
+}
+
+.service-card:hover .card-icon {
+    background: var(--primary);
+    transform: rotateY(180deg);
+}
+
+.service-card:hover .card-icon i {
+    color: white;
+}
+
+.service-card h3 {
+    color: var(--primary-dark);
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+.card-subtitle {
+    color: var(--gray);
+    margin-bottom: 20px;
+    font-size: 1rem;
+    max-width: 240px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .service-cards-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .service-card {
+        padding: 30px 20px;
+    }
 }
 
 /* Footer */
