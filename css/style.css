@@ -40,6 +40,7 @@ body { font-family:sans-serif; color:#333; background:#fff; }
 
 .cards { display:grid; gap:20px; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); margin-top:40px; }
 
+.services { margin-top: 80px; }
 .services h2 { text-align: center; }
 .service-card, .product-card {
   background:#fff; border:2px solid var(--primary); border-radius:8px;
