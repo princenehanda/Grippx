@@ -40,7 +40,7 @@ body { font-family:sans-serif; color:#333; background:#fff; }
 
 .cards { display:grid; gap:20px; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); margin-top:40px; }
 
-.services h2{text-align: center;}
+.services h2 { text-align: center; }
 .service-card, .product-card {
   background:#fff; border:2px solid var(--primary); border-radius:8px;
   text-align:center; padding:30px; cursor:pointer; position:relative;
@@ -56,8 +56,8 @@ body { font-family:sans-serif; color:#333; background:#fff; }
 .service-card:hover .accent { width:100%; }
 
 
-.products h2{text-align: center;}
-.product-card { margin-top: 80px;}
+.products h2 { text-align: center; }
+.product-card { margin-top: 80px; }
 .product-card { display:flex; justify-content:center; align-items:center; height:200px; font-weight:500; color:var(--primary-dark); }
 .product-card:hover { background:var(--light-bg); }
 
