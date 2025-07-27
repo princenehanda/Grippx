@@ -21,8 +21,8 @@ body { font-family:sans-serif; color:#333; background:#fff; }
   justify-content: space-between;
 }
 
-.navbar { background:#fff; position:fixed; width:100%; top:0; z-index:999; height:80px; }
-.logo img {max-height: 80px; width: auto; height: auto; object-fit: contain;}
+.navbar { background:#fff; position:fixed; width:100%; top:0; z-index:999; height:100px; }
+.logo img {max-height: 100px; width: auto; height: auto; object-fit: contain;}
 
 @media(min-width:768px){ .logo img { height:80px; } }
 
