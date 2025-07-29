@@ -150,6 +150,10 @@ body {
   font-size: 1rem;
 }
 
+.products {
+  margin-bottom: 60px;
+}
+
 .service-card .icon {
   font-size: 2.5rem;
   color: var(--primary-dark);
@@ -316,6 +320,17 @@ body {
   .hero span {
     font-size: 1rem;
   }
+
+
+@media (min-width: 769px) {
+  .nav-toggle {
+    display: none !important;
+  }
+
+  .overlay-menu {
+    display: none !important;
+  }
+}
 
   .service-card,
   .product-card {
