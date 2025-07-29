@@ -7,3 +7,11 @@ hamb.addEventListener('click', () => {
 function toggleNav(){
   document.querySelector('.nav-links').classList.toggle('active');
 }
+
+document.querySelectorAll('#mobileMenu a').forEach(link => {
+  link.addEventListener('click', () => {
+    hamburger.classList.remove("active");
+    menu.classList.remove("active");
+  });
+});
+
