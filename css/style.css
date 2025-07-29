@@ -331,3 +331,74 @@ body {
     font-size: 0.8rem;
   }
 }
+
+/* Hamburger icon animation */
+.nav-toggle {
+  width: 30px;
+  height: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  z-index: 1001;
+  position: fixed;
+  top: 30px;
+  right: 30px;
+}
+
+.nav-toggle span {
+  height: 3px;
+  width: 100%;
+  background: var(--primary-dark);
+  border-radius: 3px;
+  transition: 0.4s ease;
+}
+
+/* Animation states */
+.nav-toggle.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.nav-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-toggle.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Overlay Menu */
+.overlay-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  backdrop-filter: blur(8px);
+  background: rgba(0, 0, 0, 0.6); /* semi-transparent black */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding-left: 40px;
+  gap: 30px;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-in-out;
+  z-index: 1000;
+}
+
+.overlay-menu.active {
+  transform: translateX(0);
+}
+
+.overlay-menu a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.8rem;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.overlay-menu a:hover {
+  color: var(--primary);
+}
