@@ -41,7 +41,7 @@ body {
 }
 
 .logo img {
-  max-height: 140px;
+  max-height: 100px;
   width: auto;
   height: auto;
   object-fit: contain;
@@ -77,12 +77,6 @@ body {
   border-radius: 4px;
   text-decoration: none;
   font-weight: bold;
-}
-
-.nav-toggle {
-  display: none;
-  cursor: pointer;
-  font-size: 1.8rem;
 }
 
 /* Hero */
@@ -204,10 +198,7 @@ body {
     display: flex;
   }
 
-  .nav-toggle {
-    display: block;
-    margin-left: auto;
-  }
+  
 
   .container {
     justify-content: space-between;
@@ -323,41 +314,6 @@ body {
   .footer-note {
     font-size: 0.8rem;
   }
-}
-
-/* Hamburger icon animation */
-.nav-toggle {
-  width: 30px;
-  height: 25px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  cursor: pointer;
-  z-index: 1001;
-  position: fixed;
-  top: 30px;
-  right: 30px;
-}
-
-.nav-toggle span {
-  height: 3px;
-  width: 100%;
-  background: var(--primary-dark);
-  border-radius: 3px;
-  transition: 0.4s ease;
-}
-
-/* Animation states */
-.nav-toggle.active span:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
-}
-
-.nav-toggle.active span:nth-child(2) {
-  opacity: 0;
-}
-
-.nav-toggle.active span:nth-child(3) {
-  transform: rotate(-45deg) translate(5px, -5px);
 }
 
 /* Overlay Menu */
