@@ -15,3 +15,9 @@ document.querySelectorAll('#mobileMenu a').forEach(link => {
   });
 });
 
+document.querySelectorAll(".overlay-menu a").forEach(link => {
+  link.addEventListener("click", () => {
+    document.getElementById("mobileMenu").classList.remove("active");
+    document.querySelector(".nav-toggle").classList.remove("active");
+  });
+});
