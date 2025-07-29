@@ -107,7 +107,34 @@
   </div>
 </footer>
 
+<nav class="navbar">
+  <div class="container">
+    <div class="logo">
+      <img src="logo.png" alt="Logo">
+    </div>
+    <div class="nav-links">
+      <a href="#">Home</a>
+      <a href="#">Products</a>
+      <a href="#">Services</a>
+    </div>
+    <div class="nav-toggle">&#9776;</div>
+  </div>
+</nav>
+
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
   <script src="js/script.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const toggle = document.querySelector(".nav-toggle");
+    const navLinks = document.querySelector(".nav-links");
+
+    if (toggle && navLinks) {
+      toggle.addEventListener("click", function () {
+        navLinks.classList.toggle("active");
+      });
+    }
+  });
+</script>
+
 </body>
 </html>
