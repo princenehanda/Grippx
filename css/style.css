@@ -199,18 +199,6 @@ body {
 }
 
 /* Responsive Nav */
-@media (max-width: 768px) {
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    background: #fff;
-    position: absolute;
-    top: 80px;
-    left: 0;
-    padding: 20px 0;
-    text-align: center;
-  }
 
   .nav-links.active {
     display: flex;
@@ -321,16 +309,6 @@ body {
     font-size: 1rem;
   }
 
-
-@media (min-width: 769px) {
-  .nav-toggle {
-    display: none !important;
-  }
-
-  .overlay-menu {
-    display: none !important;
-  }
-}
 
   .service-card,
   .product-card {
