@@ -22,6 +22,19 @@
     </div>
   </header>
 
+<div class="nav-toggle" id="hamburger">
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
+
+<div class="overlay-menu" id="mobileMenu">
+  <a href="#">Home</a>
+  <a href="#">Products</a>
+  <a href="#">Services</a>
+  <a href="#">Contact</a>
+</div>
+
   <section class="hero">
     <div class="container">
       <h1>GRIPPX<br><span>The Brand Builders</span></h1>
@@ -135,6 +148,19 @@
     }
   });
 </script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const hamburger = document.getElementById("hamburger");
+    const menu = document.getElementById("mobileMenu");
+
+    hamburger.addEventListener("click", () => {
+      hamburger.classList.toggle("active");
+      menu.classList.toggle("active");
+    });
+  });
+</script>
+
 
 </body>
 </html>
