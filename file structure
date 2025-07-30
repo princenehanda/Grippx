@@ -25,7 +25,11 @@ grippx-website/
 │
 ├── css/
 │   └── styles.css
-│
+│   ├── activation.css
+│   ├── concierge.css
+│   ├── physical
+│   ├── strategic
+│     
 ├── js/
 │   └── main.js
 │
