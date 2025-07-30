@@ -365,6 +365,13 @@ body {
     font-weight: bold;
     color: #333;
   }
+}  /* <--- this is the end of @media (max-width: 768px) */
+
+/* ✅ Add this directly below */
+@media (min-width: 769px) {
+  .mobile-header {
+    display: none;
+  }
 }
 
 
