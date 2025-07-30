@@ -29,6 +29,48 @@ header p {
   margin: 0 auto;
 }
 
+main.service-detail {
+  max-width: 900px;
+  margin: 50px auto;
+  padding: 0 20px;
+}
+
+.service-detail section {
+  margin-bottom: 50px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #ddd;
+}
+
+.service-detail h2 {
+  color: var(--primary, #2DAE4F);
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+}
+
+.service-detail p {
+  font-size: 1rem;
+  color: #333;
+}
+
+/* CTA Button */
+.cta-button-large {
+  display: inline-block;
+  background: var(--primary, #2DAE4F);
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 14px 28px;
+  font-size: 1.1rem;
+  border-radius: 6px;
+  text-align: center;
+  transition: background 0.3s ease;
+  margin: 40px 0;
+}
+
+.cta-button-large:hover {
+  background: var(--primary-dark, #1B5E20);
+}
+
 /* === NAVBAR STYLING === */
 .subpage-header {
   background: var(--light-bg, #E6F4EA);
@@ -117,46 +159,4 @@ header p {
   .logo img {
     height: 45px;
   }
-}
-
-main.service-detail {
-  max-width: 900px;
-  margin: 50px auto;
-  padding: 0 20px;
-}
-
-.service-detail section {
-  margin-bottom: 50px;
-  padding-bottom: 30px;
-  border-bottom: 1px solid #ddd;
-}
-
-.service-detail h2 {
-  color: var(--primary, #2DAE4F);
-  font-size: 1.8rem;
-  margin-bottom: 15px;
-}
-
-.service-detail p {
-  font-size: 1rem;
-  color: #333;
-}
-
-/* CTA Button */
-.cta-button-large {
-  display: inline-block;
-  background: var(--primary, #2DAE4F);
-  color: #fff;
-  text-decoration: none;
-  font-weight: bold;
-  padding: 14px 28px;
-  font-size: 1.1rem;
-  border-radius: 6px;
-  text-align: center;
-  transition: background 0.3s ease;
-  margin: 40px 0;
-}
-
-.cta-button-large:hover {
-  background: var(--primary-dark, #1B5E20);
 }
