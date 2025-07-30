@@ -314,41 +314,15 @@ body {
   }
 }
 
-  .mobile-menu {
-    display: flex;
-    flex-direction: row;
-    align-items: start;
-    gap: 30px;
-  }
-
-  .mobile-logo img {
-    height: 60px;
-  }
-
-  .mobile-links {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
-    align-items: center;
-  }
-
-  .mobile-links li a {
-    text-decoration: none;
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: #333;
-  }
-}
-
 @media (max-width: 768px) {
+  /* Hide desktop-specific elements */
   .nav-links,
-  .cta-button {
+  .cta-button,
+  .hamburger {
     display: none;
   }
-}
-@media (max-width: 768px) {
+
+  /* Overlay menu container */
   .overlay-menu {
     position: relative;
     width: 100%;
@@ -360,6 +334,7 @@ body {
     gap: 30px;
   }
 
+  /* Logo inside overlay menu */
   .overlay-menu .logo {
     display: block;
     text-align: center;
@@ -370,27 +345,29 @@ body {
     max-width: 90%;
   }
 
-  .overlay-menu ul {
+  /* Navigation links inside overlay menu */
+  .overlay-menu ul,
+  .mobile-links {
     list-style: none;
     margin: 0;
     padding: 0;
     display: flex;
     flex-direction: row;
+    align-items: center;
     gap: 20px;
-    align-items: start;
   }
 
-  .overlay-menu ul li a {
+  .overlay-menu ul li a,
+  .mobile-links li a {
     text-decoration: none;
     color: #333;
     font-size: 1.2rem;
     font-weight: bold;
   }
 
-  .nav-links,
-  .cta-button,
-  .hamburger {
-    display: none;
+  /* Optional: If you're using a separate logo class for mobile */
+  .mobile-logo img {
+    height: 60px;
   }
 }
 
