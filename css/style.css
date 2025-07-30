@@ -317,7 +317,7 @@ body {
   .mobile-menu {
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items: start;
     gap: 30px;
   }
 
