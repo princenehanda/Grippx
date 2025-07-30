@@ -315,10 +315,8 @@ body {
 }
 
 @media (max-width: 768px) {
-  .nav-links,
-  .cta-button,
-  .navbar .logo {
-    display: none;
+  .navbar {
+    display: none; /* 💥 Hide the whole fixed navbar */
   }
 
   .mobile-header {
@@ -326,44 +324,25 @@ body {
     top: 0;
     left: 0;
     right: 0;
-    height: 80px;
+    height: auto;
     background: #fff;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 10px 20px;
+    padding: 10px 20px 15px;
     z-index: 1000;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  body {
+    padding-top: 100px; /* ⬅️ Push page down to avoid content hiding under fixed header */
   }
 
   .mobile-logo img {
     height: 50px;
     max-width: 100%;
     margin-bottom: 10px;
-  }
-
-  .mobile-links {
-    flex-direction: row;
-    justify-content: center;
-    gap: 20px;
-  }
-
-
-  .mobile-menu {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background: #fff;
-    padding: 20px 0;
-    gap: 20px;
-  }
-
-  .mobile-logo img {
-    height: 60px;
-    max-width: 90%;
-    display: block;
-    margin: 0 auto;
   }
 
   .mobile-links {
@@ -383,5 +362,6 @@ body {
     color: #333;
   }
 }
+
 
 
