@@ -339,6 +339,10 @@ body {
     padding-top: 100px; /* ⬅️ Push page down to avoid content hiding under fixed header */
   }
 
+  html {
+  scroll-padding-top: 100px; /* Replace with your actual header height */
+  }
+
   .mobile-logo img {
     height: 50px;
     max-width: 100%;
