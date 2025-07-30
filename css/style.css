@@ -340,7 +340,7 @@ body {
   }
 
   html {
-  scroll-padding-top: 100px; /* Replace with your actual header height */
+  scroll-padding-top: 120px; /* Replace with your actual header height */
   }
 
   .mobile-logo img {
