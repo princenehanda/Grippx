@@ -314,3 +314,41 @@ body {
   }
 }
 
+@media (max-width: 768px) {
+  .overlay-menu {
+    display: flex;
+    flex-direction: column; /* stack logo and links vertically */
+    align-items: center;
+    padding: 40px 20px;
+    background-color: #fff;
+    gap: 20px;
+  }
+
+  .overlay-menu .logo {
+    text-align: center;
+  }
+
+  .overlay-menu .logo img {
+    height: 60px;
+    max-width: 90%;
+  }
+
+  .mobile-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column; /* vertical links */
+    align-items: center;
+    gap: 15px;
+  }
+
+  .mobile-links li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+}
+
+
