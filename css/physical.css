@@ -30,7 +30,7 @@ body {
 /* === HEADER STYLING (Page Intro / Hero) === */
 body > header {
   background-color: var(--primary-dark) !important;
-  color: var(--white);
+  color: var(--white); !important;
   text-align: center;
   padding: 4rem 1rem;
 }
