@@ -17,7 +17,7 @@
 body {
   font-family: "Segoe UI", sans-serif;
   background-color: var(--light-bg);
-  color: var(--text-dark);
+  color: var(--text-white);
   line-height: 1.6;
   scroll-behavior: smooth;
 }
@@ -99,7 +99,7 @@ body {
 .hero span {
   font-size: 1.3rem;
   font-weight: 400;
-  color: var(--gray);
+  color: var(--white);
 }
 
 /* Cards Grid Shared */
