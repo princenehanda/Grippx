@@ -1,0 +1,93 @@
+:root {
+  --primary: #2DAE4F;
+  --primary-dark: #1B5E20;
+  --light-bg: #E6F4EA;
+  --white: #FFFFFF;
+  --text-dark: #1E1E1E;
+  --gray: #666666;
+  --max-width: 960px;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--light-bg);
+  color: var(--text-dark);
+  line-height: 1.6;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.header {
+  background-color: var(--primary-dark);
+  color: var(--white);
+  padding: 4rem 1rem;
+  text-align: center;
+}
+
+.header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.header .tagline {
+  font-size: 1.2rem;
+  font-weight: 300;
+}
+
+.service-detail {
+  display: grid;
+  gap: 2rem;
+}
+
+.service-box {
+  background-color: var(--white);
+  padding: 2rem;
+  border-radius: 12px;
+  border: 2px solid var(--primary);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.service-box h2 {
+  color: var(--primary-dark);
+  margin-bottom: 0.75rem;
+}
+
+.cta-container {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.cta-button {
+  display: inline-block;
+  background-color: var(--primary);
+  color: var(--white);
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: var(--primary-dark);
+}
+
+.blur {
+  filter: blur(5px);
+  pointer-events: none;
+  user-select: none;
+  transition: filter 0.3s ease;
+}
+
+.focused-section {
+  filter: none !important;
+  pointer-events: auto;
+  user-select: auto;
+  position: relative;
+  z-index: 10;
+}
