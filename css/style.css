@@ -17,7 +17,7 @@
 body {
   font-family: "Segoe UI", sans-serif;
   background-color: var(--light-bg);
-  color: var(--text-white);
+  color: var(--text-dark);
   line-height: 1.6;
   scroll-behavior: smooth;
 }
@@ -99,6 +99,10 @@ body {
 .hero span {
   font-size: 1.3rem;
   font-weight: 400;
+  color: var(--white);
+}
+
+.hero p {
   color: var(--white);
 }
 
