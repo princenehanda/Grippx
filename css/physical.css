@@ -28,8 +28,8 @@ body {
 }
 
 /* === HEADER STYLING (Page Intro / Hero) === */
-header {
-  background: var(--primary-dark);
+body > header {
+  background-color: var(--primary-dark) !important;
   color: var(--white);
   text-align: center;
   padding: 4rem 1rem;
