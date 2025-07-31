@@ -132,21 +132,5 @@
   });
 </script>
 
-<script>
-  window.addEventListener('DOMContentLoaded', () => {
-    const hash = window.location.hash;
-    if (hash === "#services") {
-      document.body.classList.add("blur-everything");
-
-      // Make #services the clear focus
-      const servicesSection = document.querySelector(hash);
-      if (servicesSection) {
-        servicesSection.classList.add("keep-clear");
-        servicesSection.scrollIntoView({ behavior: "smooth" });
-      }
-    }
-  });
-</script>
-
 </body>
 </html>
