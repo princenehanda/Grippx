@@ -3,6 +3,9 @@
   --primary-dark: #1B5E20;
   --light-bg: #E6F4EA;
   --white: #FFFFFF;
+  --text-dark: #1E1E1E;
+  --gray: #666666;
+  --max-width: 1200px;
 }
 
 * {
@@ -12,13 +15,15 @@
 }
 
 body {
-  font-family: sans-serif;
-  color: #333;
-  background: #FFF;
+  font-family: "Segoe UI", sans-serif;
+  background-color: var(--white);
+  color: var(--text-dark);
+  line-height: 1.6;
+  scroll-behavior: smooth;
 }
 
 .container {
-  max-width: 1200px;
+  max-width: var(--max-width);
   margin: 0 auto;
   padding: 0 20px;
   position: relative;
@@ -26,12 +31,13 @@ body {
 
 /* Navbar */
 .navbar {
-  background: #fff;
+  background: var(--white);
   position: fixed;
   width: 100%;
   top: 0;
   z-index: 999;
   height: 100px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
 }
 
 .navbar .container {
@@ -42,15 +48,7 @@ body {
 
 .logo img {
   max-height: 100px;
-  width: auto;
-  height: auto;
   object-fit: contain;
-}
-
-@media (min-width: 768px) {
-  .logo img {
-    height: 80px;
-  }
 }
 
 .nav-links {
@@ -64,6 +62,7 @@ body {
   color: var(--primary-dark);
   text-decoration: none;
   font-weight: 500;
+  transition: color 0.3s ease;
 }
 
 .nav-links a:hover {
@@ -72,28 +71,35 @@ body {
 
 .cta-button {
   background: var(--primary);
-  color: white;
+  color: var(--white);
   padding: 10px 20px;
-  border-radius: 4px;
+  border-radius: 8px;
   text-decoration: none;
   font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: var(--primary-dark);
 }
 
 /* Hero */
 .hero {
-  background: var(--light-bg);
+  background-color: var(--light-bg);
   padding: 150px 20px 80px;
   text-align: center;
 }
 
 .hero h1 {
-  font-size: 2.2rem;
+  font-size: 2.5rem;
+  color: var(--primary-dark);
+  margin-bottom: 1rem;
 }
 
 .hero span {
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   font-weight: 400;
-  color: var(--primary-dark);
+  color: var(--gray);
 }
 
 /* Cards Grid Shared */
@@ -105,7 +111,6 @@ body {
   margin-top: 40px;
 }
 
-/* Product & Service Cards Shared */
 .service-card,
 .product-card {
   display: flex;
@@ -113,23 +118,14 @@ body {
   align-items: center;
   text-align: center;
   width: 220px;
-  height: auto;
   border: 2px solid var(--primary);
   border-radius: 8px;
   padding: 0;
   text-decoration: none;
   color: var(--primary-dark);
-  background: #fff;
+  background: var(--white);
   transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
   overflow: hidden;
-}
-
-/* Only affects product cards inside the products section */
-.products .cards {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 16px;
-  justify-items: center;
 }
 
 .product-card img {
@@ -142,10 +138,6 @@ body {
   padding: 15px;
   font-weight: 600;
   font-size: 1rem;
-}
-
-.products {
-  margin-bottom: 60px;
 }
 
 .service-card .icon {
@@ -166,7 +158,6 @@ body {
   background: var(--light-bg);
 }
 
-/* Accent line for hover */
 .accent {
   height: 5px;
   background: var(--primary);
@@ -190,29 +181,15 @@ body {
 .services h2,
 .products h2 {
   text-align: center;
+  color: var(--primary-dark);
 }
 
-/* Responsive Nav */
-
-  .nav-links.active {
-    display: flex;
-  }
-
-    .container {
-    justify-content: space-between;
-  }
-}
-
+/* Footer */
 .footer {
-  background-color: #000; /* true black background */
+  background-color: #000;
   color: #fff;
   padding: 3rem 1rem;
   text-align: center;
-}
-
-.footer .container {
-  max-width: 1200px;
-  margin: 0 auto;
 }
 
 .footer-title {
@@ -238,14 +215,15 @@ body {
 
 .footer .social-links a:hover img {
   transform: scale(1.2);
-  filter: invert(80%) sepia(100%) hue-rotate(120deg); /* slightly colored on hover */
+  filter: invert(80%) sepia(100%) hue-rotate(120deg);
 }
 
 .footer-note {
   font-size: 0.9rem;
   opacity: 0.7;
 }
-/* Responsive layout for .product-card and .service-card containers */
+
+/* Responsive Cards & Layout */
 @media (max-width: 1024px) {
   .products .cards {
     grid-template-columns: repeat(3, 1fr);
@@ -253,14 +231,49 @@ body {
 }
 
 @media (max-width: 768px) {
-  .products .cards {
-    grid-template-columns: repeat(2, 1fr);
+  .navbar {
+    display: none;
   }
 
-  .service-card,
-  .product-card {
-    width: 100%;
-    max-width: 100%;
+  .mobile-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 20px 15px;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  body {
+    padding-top: 100px;
+  }
+
+  html {
+    scroll-padding-top: 120px;
+  }
+
+  .mobile-logo img {
+    height: 50px;
+    margin-bottom: 10px;
+  }
+
+  .mobile-links {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+  }
+
+  .mobile-links li a {
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
   }
 
   .hero h1 {
@@ -268,16 +281,13 @@ body {
   }
 
   .hero span {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
   }
 
-  .footer {
-    padding: 2rem 1rem;
-  }
-
-  .footer .social-links {
-    flex-direction: column;
-    gap: 1rem;
+  .service-card,
+  .product-card {
+    width: 100%;
+    max-width: 100%;
   }
 }
 
@@ -298,13 +308,6 @@ body {
     font-size: 1rem;
   }
 
-
-  .service-card,
-  .product-card {
-    width: 100%;
-    max-width: 100%;
-  }
-
   .footer-title {
     font-size: 1rem;
   }
@@ -314,64 +317,8 @@ body {
   }
 }
 
-@media (max-width: 768px) {
-  .navbar {
-    display: none; /* 💥 Hide the whole fixed navbar */
-  }
-
-  .mobile-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: auto;
-    background: #fff;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 10px 20px 15px;
-    z-index: 1000;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  }
-
-  body {
-    padding-top: 100px; /* ⬅️ Push page down to avoid content hiding under fixed header */
-  }
-
-  html {
-  scroll-padding-top: 120px; /* Replace with your actual header height */
-  }
-
-  .mobile-logo img {
-    height: 50px;
-    max-width: 100%;
-    margin-bottom: 10px;
-  }
-
-  .mobile-links {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: row;
-    gap: 15px;
-    align-items: center;
-  }
-
-  .mobile-links li a {
-    text-decoration: none;
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: #333;
-  }
-}  /* <--- this is the end of @media (max-width: 768px) */
-
-/* ✅ Add this directly below */
 @media (min-width: 769px) {
   .mobile-header {
     display: none;
   }
 }
-
-
