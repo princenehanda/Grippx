@@ -76,18 +76,3 @@ body {
 .cta-button:hover {
   background-color: var(--primary-dark);
 }
-
-.blur {
-  filter: blur(5px);
-  pointer-events: none;
-  user-select: none;
-  transition: filter 0.3s ease;
-}
-
-.focused-section {
-  filter: none !important;
-  pointer-events: auto;
-  user-select: auto;
-  position: relative;
-  z-index: 10;
-}
