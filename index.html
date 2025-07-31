@@ -133,17 +133,20 @@
 </script>
 
 <script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const hamburger = document.getElementById("hamburger");
-    const menu = document.getElementById("mobileMenu");
+  window.addEventListener('DOMContentLoaded', () => {
+    const hash = window.location.hash;
+    if (hash === "#services") {
+      document.body.classList.add("blur-everything");
 
-    hamburger.addEventListener("click", () => {
-      hamburger.classList.toggle("active");
-      menu.classList.toggle("active");
-    });
+      // Make #services the clear focus
+      const servicesSection = document.querySelector(hash);
+      if (servicesSection) {
+        servicesSection.classList.add("keep-clear");
+        servicesSection.scrollIntoView({ behavior: "smooth" });
+      }
+    }
   });
 </script>
-
 
 </body>
 </html>
