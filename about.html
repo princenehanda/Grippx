@@ -52,5 +52,27 @@
   <footer class="footer">
     <p>&copy; 2025 GRIPPX. All rights reserved.</p>
   </footer>
+  
+<script>
+  document.querySelector('a[href$="#services"]').addEventListener('click', function (e) {
+    const allSections = document.querySelectorAll('section, header, footer, main > div:not(#services)');
+    const target = document.querySelector('#services');
+
+    allSections.forEach(sec => {
+      if (sec !== target) {
+        sec.classList.add('blur');
+        sec.classList.remove('focused-section');
+      }
+    });
+
+    if (target) {
+      target.classList.add('focused-section');
+      target.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    e.preventDefault(); // prevent default anchor jump behavior
+  });
+</script>
+
 </body>
 </html>
