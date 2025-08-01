@@ -31,7 +31,7 @@ body {
 
 /* Navbar */
 .navbar {
-  position: absolute; /* change from fixed */
+  position: absolute;
   top: -100px;
   left: 0;
   width: 100%;
@@ -42,10 +42,9 @@ body {
 }
 
 .navbar.visible {
-  position: fixed;  /* becomes fixed only when shown */
+  position: fixed;
   top: 0;
 }
-
 
 .navbar .container {
   display: flex;
@@ -66,7 +65,7 @@ body {
 }
 
 .nav-links a {
-  color: var(--primary-dark);
+  color: var(--white);
   text-decoration: none;
   font-weight: 500;
   transition: color 0.3s ease;
@@ -90,27 +89,31 @@ body {
   background-color: var(--primary-dark);
 }
 
-/* Hero */
+/* Hero Section */
 .hero {
   background-color: var(--primary-dark);
   padding: 150px 20px 80px;
   text-align: center;
+  color: var(--white);
 }
 
 .hero h1 {
-  font-size: 2.5rem;
-  color: var(--white);
+  font-size: 2.8rem;
+  line-height: 1.2;
   margin-bottom: 1rem;
 }
 
 .hero span {
-  font-size: 1.3rem;
+  font-size: 1.6rem;
   font-weight: 400;
   color: var(--white);
 }
 
 .hero p {
+  font-size: 1.1rem;
   color: var(--white);
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 /* Cards Grid Shared */
@@ -137,6 +140,7 @@ body {
   background: var(--white);
   transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
   overflow: hidden;
+  position: relative;
 }
 
 .product-card img {
@@ -155,6 +159,17 @@ body {
   font-size: 2.5rem;
   color: var(--primary-dark);
   transition: transform 0.5s, color 0.5s;
+  margin-top: 20px;
+}
+
+.service-card h3 {
+  margin-top: 15px;
+  font-size: 1.2rem;
+}
+
+.service-card p {
+  font-size: 0.95rem;
+  padding: 0 10px 15px;
 }
 
 .service-card:hover .icon {
@@ -167,6 +182,12 @@ body {
   transform: translateY(-10px);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   background: var(--primary);
+  color: var(--white);
+}
+
+.service-card:hover h3,
+.service-card:hover p {
+  color: var(--white);
 }
 
 .accent {
@@ -183,7 +204,7 @@ body {
   width: 100%;
 }
 
-/* Sections */
+/* Section Titles */
 .services,
 .products {
   margin-top: 80px;
@@ -193,6 +214,8 @@ body {
 .products h2 {
   text-align: center;
   color: var(--primary-dark);
+  font-size: 2rem;
+  margin-bottom: 20px;
 }
 
 /* Footer */
@@ -234,7 +257,7 @@ body {
   opacity: 0.7;
 }
 
-/* Responsive Cards & Layout */
+/* Responsive Layout */
 @media (max-width: 1024px) {
   .products .cards {
     grid-template-columns: repeat(3, 1fr);
