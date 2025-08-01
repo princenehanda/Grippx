@@ -119,6 +119,31 @@
 
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
   <script src="js/script.js"></script>
-  <script>
+ 
+ <script>
+  // Show navbar when scrolling up, hide when scrolling down
+  const navbar = document.getElementById('mainNavbar');
+  let lastScrollTop = 0;
+
+  window.addEventListener('scroll', function () {
+    const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (currentScroll > lastScrollTop && currentScroll > 100) {
+      // scrolling down
+      navbar.classList.remove('visible');
+    } else {
+      // scrolling up
+      navbar.classList.add('visible');
+    }
+
+    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+  });
+
+  // Show navbar on page load if already scrolled
+  if (window.scrollY > 100) {
+    navbar.classList.add('visible');
+  }
+</script>
+
 </body>
 </html>
