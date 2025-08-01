@@ -31,14 +31,21 @@ body {
 
 /* Navbar */
 .navbar {
-  background: var(--light-bg);
-  position: fixed;
+  position: absolute; /* change from fixed */
+  top: -100px;
+  left: 0;
   width: 100%;
-  top: 0;
+  background-color: var(--primary-dark);
+  color: var(--white);
   z-index: 999;
-  height: 100px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  transition: top 0.3s ease-in-out;
 }
+
+.navbar.visible {
+  position: fixed;  /* becomes fixed only when shown */
+  top: 0;
+}
+
 
 .navbar .container {
   display: flex;
