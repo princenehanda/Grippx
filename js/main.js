@@ -21,3 +21,28 @@ document.querySelectorAll(".overlay-menu a").forEach(link => {
     document.querySelector(".nav-toggle").classList.remove("active");
   });
 });
+let lastScroll = 0;
+const navbar = document.querySelector('.navbar');
+
+window.addEventListener('scroll', () => {
+  let currentScroll = window.pageYOffset;
+
+  if (currentScroll > lastScroll || currentScroll > 50) {
+    navbar.classList.add('visible');
+  } else {
+    navbar.classList.remove('visible');
+  }
+
+  lastScroll = currentScroll;
+});
+
+let mouseMoved = false;
+window.addEventListener('mousemove', () => {
+  if (!mouseMoved) {
+    navbar.classList.add('visible');
+    mouseMoved = true;
+    setTimeout(() => {
+      navbar.classList.remove('visible');
+    }, 3000);
+  }
+});
