@@ -37,7 +37,7 @@ body {
 }
 
 .logo img {
-  height: 50px;
+  height: 120px;
 }
 
 .main-nav ul {
@@ -68,7 +68,7 @@ body {
 .hero-section {
   background-color: var(--primary-dark);
   color: var(--white);
-  padding: 4rem 1rem 2rem;
+  padding: 12rem 1rem 2rem;
   text-align: center;
 }
 
