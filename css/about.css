@@ -12,7 +12,7 @@ root {
 .hero {
 background-color: var(--primary-dark);
 padding: calc(180px + var(--navbar-height)) 20px 80px; /* Add navbar height to top padding /
-margin-top: var(--navbar-height):root {
+margin-top: alc(-1*var(--navbar-height):root {
   --primary: #2DAE4F;
   --primary-dark: #1B5E20;
   --light-bg: #E6F4EA;
