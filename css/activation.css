@@ -1,3 +1,6 @@
+/* Activation Page: consistent with main styles */
+
+/* Root variables from main stylesheet for consistency */
 :root {
   --primary: #2DAE4F;
   --primary-dark: #1B5E20;
@@ -10,13 +13,7 @@
   --radius: 12px;
 }
 
-/* Reset & Base */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
+/* Base body styles */
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   background-color: var(--light-bg);
@@ -24,14 +21,14 @@ body {
   line-height: 1.6;
 }
 
-/* Container */
+/* Main container */
 .container {
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 2rem 1rem;
 }
 
-/* Navigation */
+/* Consistent navigation styling */
 .nav-container {
   display: flex;
   justify-content: space-between;
@@ -60,7 +57,7 @@ body {
   color: var(--primary);
 }
 
-/* Hero Section */
+/* Standardized hero section */
 .hero-section {
   background-color: var(--primary-dark);
   color: var(--white);
@@ -78,7 +75,7 @@ body {
   opacity: 0.9;
 }
 
-/* Service Blocks */
+/* Uniform service block styling */
 .service-detail {
   padding: 3rem 1rem;
 }
@@ -103,7 +100,7 @@ body {
   font-size: 1rem;
 }
 
-/* CTA */
+/* Consistent CTA styling */
 .cta-container {
   text-align: center;
   margin-top: 3rem;
@@ -124,7 +121,7 @@ body {
   background-color: var(--primary-dark);
 }
 
-/* Responsive */
+/* Responsive adjustments */
 @media (max-width: 600px) {
   .hero-section h1 {
     font-size: 2rem;
@@ -142,9 +139,5 @@ body {
   .nav-container {
     flex-direction: column;
     align-items: flex-start;
-  }
-
-  .logo img {
-    height: 45px;
   }
 }
