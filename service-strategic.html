@@ -2,60 +2,80 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="GRIPPX helps you build a strong foundation with brand strategy, market research, and awareness campaigns." />
   <title>Strategic Services | GRIPPX</title>
+  <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/strategic.css" />
 </head>
 <body>
 
-  <header class="hero-section">
-    <div class="nav-container container">
-      <a href="index.html" class="logo" aria-label="Go to homepage">
-        <img src="assets/logo.png" alt="GRIPPX Logo">
-      </a>
-      <nav class="main-nav">
-        <ul>
-          <li><a href="about.html">About</a></li>
-          <li><a href="index.html#services">Services</a></li>
-        </ul>
-      </nav>
-    </div>
+  <header class="navbar" id="mainNavbar">
     <div class="container">
-      <h1>Strategic Services</h1>
-      <p class="subheading">Foundational brand work that sharpens your positioning and message.</p>
+      <a href="index.html" class="logo"><img src="assets/logo.png" alt="GRIPPX logo"></a>
+      <nav class="nav-links" id="navLinks">
+        <a href="about.html">About</a>
+        <a href="index.html#services">Services</a>
+        <a href="index.html#products">Products</a>
+      </nav>
+      <a href="https://wa.me/27732746135" class="cta-button">WhatsApp</a>
+      <div class="hamburger" id="hamburger">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
     </div>
   </header>
 
-  <main class="service-detail container"
-    <section class="service-block">
-      <h2>📊 Market Research</h2>
-      <p>We delve deep into market trends, customer preferences, and competitor benchmarks to uncover insights that inform data-driven decisions. Our research arms you with clarity to position your brand for growth in saturated or emerging markets.</p>
-      <ul>
-        <li>Consumer behavior analysis</li>
-        <li>Competitor benchmarking</li>
-        <li>Focus groups and survey reports</li>
-        <li>Industry-specific insight dashboards</li>
-      </ul>
+  <main>
+    <section class="hero-section">
+      <div class="container">
+        <h1>Strategic Services</h1>
+        <p class="subheading">Foundational brand work that sharpens your positioning and message.</p>
+      </div>
     </section>
-
-    <section class="service-block">
-      <h2>📣 Brand Awareness Campaigns</h2>
-      <p>We build omnichannel campaigns that spark conversations and keep your brand top-of-mind. From influencer-led activations to traditional outdoor ads, we help you reach the right people at the right time, consistently.</p>
-      <ul>
-        <li>Integrated digital & offline strategy</li>
-        <li>Social media + influencer activations</li>
-        <li>Outdoor and transit advertising</li>
-        <li>Analytics & performance tracking</li>
-      </ul>
-    </section>
-
-    <div class="cta-container">
-      <a class="cta-button-large" href="https://wa.me/27732746135" target="_blank">
-        Start Your Strategy on WhatsApp
-      </a>
+    
+    <div class="container service-detail">
+      <section class="service-block">
+        <h2>📊 Market Research</h2>
+        <p>We delve deep into market trends, customer preferences, and competitor benchmarks to uncover insights that inform data-driven decisions. Our research arms you with clarity to position your brand for growth in saturated or emerging markets.</p>
+        <ul>
+          <li>Consumer behavior analysis</li>
+          <li>Competitor benchmarking</li>
+          <li>Focus groups and survey reports</li>
+          <li>Industry-specific insight dashboards</li>
+        </ul>
+      </section>
+      <section class="service-block">
+        <h2>📣 Brand Awareness Campaigns</h2>
+        <p>We build omnichannel campaigns that spark conversations and keep your brand top-of-mind. From influencer-led activations to traditional outdoor ads, we help you reach the right people at the right time, consistently.</p>
+        <ul>
+          <li>Integrated digital & offline strategy</li>
+          <li>Social media + influencer activations</li>
+          <li>Outdoor and transit advertising</li>
+          <li>Analytics & performance tracking</li>
+        </ul>
+      </section>
+      <div class="cta-container">
+        <a class="cta-button-large" href="https://wa.me/27732746135" target="_blank">
+          Start Your Strategy on WhatsApp
+        </a>
+      </div>
     </div>
   </main>
 
+  <footer class="footer">
+    <div class="container">
+      <p class="footer-title">Follow us:</p>
+      <div class="social-links">
+        <a href="#" aria-label="Facebook"><img src="assets/icons/facebook.svg" alt="Facebook" /></a>
+        <a href="#" aria-label="Instagram"><img src="assets/icons/instagram.svg" alt="Instagram" /></a>
+        <a href="https://wa.me/27732746135" aria-label="WhatsApp"><img src="assets/icons/whatsapp.svg" alt="WhatsApp" /></a>
+      </div>
+      <p class="footer-note">&copy; 2025 GRIPPX. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
 </body>
 </html>
