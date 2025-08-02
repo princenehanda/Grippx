@@ -6,15 +6,30 @@
   <meta name="description" content="Discover more about GRIPPX, our mission, and the values that drive our brand." />
   <title>About Us | GRIPPX</title>
   <link rel="stylesheet" href="css/about.css" />
+  <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-  <header class="header">
+  <header class="navbar" id="mainNavbar">
     <div class="container">
+      <a href="index.html" class="logo"><img src="assets/logo.png" alt="GRIPPX logo"></a>
+      <nav class="nav-links" id="navLinks">
+        <a href="about.html">About</a>
+        <a href="index.html#services">Services</a> <a href="index.html#products">Products</a> </nav>
+      <a href="https://wa.me/27732746135" class="cta-button">WhatsApp</a>
+      <div class="hamburger" id="hamburger">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+    </div>
+  </header>
+  <section class="page-header-content"> <div class="container">
       <h1>About GRIPPX</h1>
       <p class="tagline">Creative Solutions. Tactical Execution. Meaningful Engagement.</p>
     </div>
-  </header>
+  </section>
+
 
   <main class="container">
     <section class="service-detail">
@@ -52,5 +67,7 @@
   <footer class="footer">
     <p>&copy; 2025 GRIPPX. All rights reserved.</p>
   </footer>
+
+  <script src="js/script.js"></script>
 </body>
 </html>
