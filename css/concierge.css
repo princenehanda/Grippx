@@ -1,38 +1,34 @@
+/* Concierge Page: consistent with main styles */
+
+/* Root variables from main stylesheet for consistency */
 :root {
   --primary: #2DAE4F;
   --primary-dark: #1B5E20;
   --light-bg: #F8FCF9;
+  --white: #FFFFFF;
   --dark-text: #1C1C1C;
   --muted-text: #666666;
-  --white: #FFFFFF;
   --max-width: 960px;
   --transition: 0.3s ease-in-out;
   --radius: 12px;
 }
 
-/* Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
+/* Base body styles */
 body {
-  font-family: "Segoe UI", sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   background-color: var(--light-bg);
   color: var(--dark-text);
   line-height: 1.6;
-  padding: 0;
 }
 
-/* Container */
+/* Main container */
 .container {
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 2rem 1rem;
 }
 
-/* Navigation */
+/* Consistent navigation styling */
 .nav-container {
   display: flex;
   justify-content: space-between;
@@ -61,7 +57,7 @@ body {
   color: var(--primary);
 }
 
-/* Hero Section */
+/* Standardized hero section */
 .hero-section {
   background-color: var(--primary-dark);
   color: var(--white);
@@ -79,43 +75,40 @@ body {
   opacity: 0.9;
 }
 
-/* Service Blocks */
+/* Uniform service block styling */
 .service-detail {
   padding: 3rem 1rem;
 }
 
 .service-block {
-  background: var(--white);
-  margin-bottom: 2rem;
+  background-color: var(--white);
   padding: 2rem;
+  margin-bottom: 2rem;
   border-left: 5px solid var(--primary);
   border-radius: var(--radius);
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
 }
 
 .service-block h2 {
   color: var(--primary-dark);
+  margin-bottom: 0.5rem;
   font-size: 1.6rem;
-  margin-bottom: 1rem;
 }
 
 .service-block p {
-  font-size: 1rem;
   color: var(--muted-text);
-  margin-bottom: 1rem;
+  font-size: 1rem;
 }
 
+/* Styling for lists within service blocks */
 .service-block ul {
-  padding-left: 1.2rem;
+  list-style-position: inside;
+  padding-left: 1rem;
+  margin-top: 1rem;
+  color: var(--muted-text);
 }
 
-.service-block li {
-  margin-bottom: 0.5rem;
-  list-style-type: disc;
-  color: var(--dark-text);
-}
-
-/* CTA */
+/* Consistent CTA styling */
 .cta-container {
   text-align: center;
   margin-top: 3rem;
@@ -136,7 +129,7 @@ body {
   background-color: var(--primary-dark);
 }
 
-/* Responsive */
+/* Responsive adjustments */
 @media (max-width: 600px) {
   .hero-section h1 {
     font-size: 2rem;
@@ -154,9 +147,5 @@ body {
   .nav-container {
     flex-direction: column;
     align-items: flex-start;
-  }
-
-  .logo img {
-    height: 45px;
   }
 }
