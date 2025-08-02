@@ -12,24 +12,16 @@
   <header class="navbar" id="mainNavbar">
     <div class="container">
       <a href="index.html" class="logo"><img src="assets/logo.png" alt="GRIPPX logo"></a>
-      <nav class="nav-links">
-        <a href="about.html">About</a>
+      <nav class="nav-links" id="navLinks"> <a href="about.html">About</a>
         <a href="#services">Services</a>
         <a href="#products">Products</a>
       </nav>
       <a href="https://wa.me/27732746135" class="cta-button">WhatsApp</a>
+      <div class="hamburger" id="hamburger"> <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
     </div>
-  </header>
-
-  <header class="mobile-header">
-    <div class="mobile-logo">
-      <img src="assets/logo.png" alt="GRIPPX logo" />
-    </div>
-    <ul class="mobile-links">
-      <li><a href="about.html">About</a></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#products">Products</a></li>
-    </ul>
   </header>
 
   <section class="hero">
@@ -119,31 +111,6 @@
 
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
   <script src="js/script.js"></script>
- 
- <script>
-  // Show navbar when scrolling up, hide when scrolling down
-  const navbar = document.getElementById('mainNavbar');
-  let lastScrollTop = 0;
-
-  window.addEventListener('scroll', function () {
-    const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-
-    if (currentScroll > lastScrollTop && currentScroll > 100) {
-      // scrolling down
-      navbar.classList.remove('visible');
-    } else {
-      // scrolling up
-      navbar.classList.add('visible');
-    }
-
-    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
-  });
-
-  // Show navbar on page load if already scrolled
-  if (window.scrollY > 100) {
-    navbar.classList.add('visible');
-  }
-</script>
 
 </body>
 </html>
