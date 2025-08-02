@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let lastScrollTop = 0;
     let autoHideTimeout; // Variable to hold our timeout ID
 
-    const HIDE_DELAY_MS = 8000; // 2 seconds
+    const HIDE_DELAY_MS = 8000; // 0.7 seconds
 
     // Function to hide the navbar
     function hideNavbar() {
