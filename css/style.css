@@ -32,13 +32,14 @@ body {
 /* Navbar */
 .navbar {
   position: absolute;
-  top: -100px;
+  top: -100px; /* Hidden by default */
   left: 0;
   width: 100%;
-  background-color: var(--primary-dark);
-  color: var(--white);
+  background-color: var(--light-bg);
+  color: var(--text-dark);
   z-index: 999;
   transition: top 0.3s ease-in-out;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .navbar.visible {
@@ -53,7 +54,7 @@ body {
 }
 
 .logo img {
-  max-height: 100px;
+  max-height: 120px;
   object-fit: contain;
 }
 
@@ -65,7 +66,7 @@ body {
 }
 
 .nav-links a {
-  color: var(--white);
+  color: var(--dark);
   text-decoration: none;
   font-weight: 500;
   transition: color 0.3s ease;
@@ -88,6 +89,38 @@ body {
 .cta-button:hover {
   background-color: var(--primary-dark);
 }
+
+/* Hamburger Menu */
+.hamburger {
+  display: none; /* Hidden by default on desktop */
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 25px;
+  z-index: 1001; /* Ensure it's above other content */
+}
+
+.hamburger .bar {
+  width: 100%;
+  height: 3px;
+  background-color: var(--white);
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.hamburger.active .bar:nth-child(1) {
+  transform: translateY(11px) rotate(45deg);
+}
+
+.hamburger.active .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active .bar:nth-child(3) {
+  transform: translateY(-11px) rotate(-45deg);
+}
+
 
 /* Hero Section */
 .hero {
@@ -182,13 +215,18 @@ body {
   transform: translateY(-10px);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   background: var(--primary);
-  color: var(--white);
+  color: var(--white); /* Changes text color to white on hover */
 }
 
 .service-card:hover h3,
-.service-card:hover p {
+.service-card:hover p,
+.service-card:hover .icon { /* Ensure icon also changes color on hover */
   color: var(--white);
 }
+.product-card:hover span { /* Ensure product card text also changes color on hover */
+    color: var(--white);
+}
+
 
 .accent {
   height: 5px;
@@ -258,84 +296,80 @@ body {
 }
 
 /* Responsive Layout */
-@media (max-width: 1024px) {
-  .products .cards {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
 @media (max-width: 768px) {
-  .navbar {
-    display: none;
+  .navbar .container {
+    flex-wrap: wrap; /* Allows items to wrap for mobile */
+    justify-content: space-between;
   }
 
-  .mobile-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    background: #fff;
-    display: flex;
+  .nav-links {
+    display: none; /* Hide by default on mobile */
     flex-direction: column;
-    align-items: center;
-    padding: 10px 20px 15px;
-    z-index: 1000;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    background-color: var(--primary-dark);
+    text-align: center;
+    padding: 20px 0;
+    position: absolute;
+    top: 100px; /* Adjust based on your logo height */
+    left: 0;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+  }
+
+  .nav-links.active {
+    display: flex; /* Show when active */
+  }
+
+  .nav-links a {
+    padding: 10px 0;
+    color: var(--white);
+  }
+
+  .nav-links a:hover {
+      color: var(--primary);
+  }
+
+  .cta-button {
+    margin-top: 15px; /* Adjust spacing for mobile CTA */
+  }
+
+  .hamburger {
+    display: flex; /* Show hamburger on mobile */
   }
 
   body {
-    padding-top: 100px;
+    padding-top: 0; /* No need for padding-top if navbar is fixed */
   }
 
   html {
-    scroll-padding-top: 120px;
+    scroll-padding-top: 0; /* Reset this if navbar is fixed with JS */
   }
 
-  .mobile-logo img {
-    height: 50px;
-    margin-bottom: 10px;
-  }
-
-  .mobile-links {
-    list-style: none;
-    display: flex;
-    flex-direction: row;
-    gap: 15px;
-  }
-
-  .mobile-links li a {
-    text-decoration: none;
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: #333;
+  .hero {
+    padding-top: 100px; /* Adjust hero section padding to account for fixed navbar */
   }
 
   .hero h1 {
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
 
   .hero span {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
   }
 
   .service-card,
   .product-card {
     width: 100%;
-    max-width: 100%;
+    max-width: 300px; /* Limit width for better appearance on small screens */
   }
 }
 
 @media (max-width: 480px) {
-  .products .cards {
-    grid-template-columns: 1fr;
-  }
-
   .hero {
-    padding: 120px 10px 60px;
+    padding: 80px 10px 40px;
   }
 
   .hero h1 {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
   }
 
   .hero span {
@@ -352,7 +386,10 @@ body {
 }
 
 @media (min-width: 769px) {
-  .mobile-header {
+  .hamburger {
     display: none;
+  }
+  .nav-links {
+    display: flex !important; /* Ensure nav-links are always visible on desktop */
   }
 }
