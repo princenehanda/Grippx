@@ -11,15 +11,10 @@ root {
 
 .hero {
 background-color: var(--primary-dark);
-padding: calc(180px + var(--navbar-height)) 20px 80px; /* Add navbar height to top padding /
-margin-top: var(--navbar-height):root {
-  --primary: #2DAE4F;
-  --primary-dark: #1B5E20;
-  --light-bg: #E6F4EA;
-  --white: #FFFFFF;
-  --text-dark: #1E1E1E;
-  --gray: #666666;
-  --max-width: 1200px;
+padding: calc(180px + var(--navbar-height)) 20px 80px; /* Add navbar height to top padding */
+margin-top: var(--navbar-height)
+colour: var(--white);
+text-align: center;
 }
 
 * {
