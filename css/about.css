@@ -1,519 +1,93 @@
-root {
---primary: #2DAE4F;
---primary-dark: #1B5E20;
---light-bg: #E6F4EA;
---white: #FFFFFF;
---text-dark: #1E1E1E;
---gray: #666666;
---max-width: 1200px;
---navbar-height: 100px; /* Define an approximate navbar height */
-}
+/* about.css */
 
-.hero {
-background-color: var(--primary-dark);
-padding: calc(180px + var(--navbar-height)) 20px 80px; /* Add navbar height to top padding */
-margin-top: var(--navbar-height)
-colour: var(--white);
-text-align: center;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+:root {
+  --primary: #2DAE4F;
+  --primary-dark: #1B5E20;
+  --light-bg: #E6F4EA;
+  --white: #FFFFFF;
+  --text-dark: #1E1E1E;
+  --gray: #666666;
+  --max-width: 1200px;
+  --navbar-height: 80px;
 }
 
 body {
-  font-family: "Segoe UI", sans-serif;
-  background-color: var(--light-bg);
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--white);
   color: var(--text-dark);
   line-height: 1.6;
-  scroll-behavior: smooth;
 }
 
-.container {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 0 20px;
-  position: relative;
-}
-
-/* Navbar */
-.navbar {
-  position: absolute;
-  top: -100px; /* Hidden by default */
-  left: 0;
-  width: 100%;
-  background-color: var(--light-bg);
-  color: var(--text-dark);
-  z-index: 999;
-  transition: top 0.3s ease-in-out;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.navbar.visible {
-  position: fixed;
-  top: 0;
-}
-
-.navbar .container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.logo img {
-  max-height: 120px;
-  object-fit: contain;
-}
-
-.nav-links {
-  display: flex;
-  gap: 30px;
-  justify-content: center;
-  flex: 1;
-}
-
-.nav-links a {
-  color: var(--dark);
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.3s ease;
-}
-
-.nav-links a:hover {
-  color: var(--primary);
-}
-
-.cta-button {
-  background: var(--primary);
-  color: var(--white);
-  padding: 10px 20px;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: background 0.3s ease;
-}
-
-.cta-button:hover {
-  background-color: var(--primary-dark);
-}
-
-/* Hamburger Menu */
-.hamburger {
-  display: none; /* Hidden by default on desktop */
-  cursor: pointer;
-  flex-direction: column;
-  justify-content: space-around;
-  width: 30px;
-  height: 25px;
-  z-index: 1001; /* Ensure it's above other content */
-}
-
-.hamburger .bar {
-  width: 100%;
-  height: 3px;
-  background-color: var(--white);
-  border-radius: 5px;
-  transition: all 0.3s ease;
-}
-
-.hamburger.active .bar:nth-child(1) {
-  transform: translateY(11px) rotate(45deg);
-}
-
-.hamburger.active .bar:nth-child(2) {
-  opacity: 0;
-}
-
-.hamburger.active .bar:nth-child(3) {
-  transform: translateY(-11px) rotate(-45deg);
-}
-
-
-/* Hero Section */
 .hero {
   background-color: var(--primary-dark);
-  padding: 150px 20px 80px;
+  padding: calc(180px + var(--navbar-height)) 20px 80px;
   text-align: center;
   color: var(--white);
+  margin-top: var(--navbar-height);
 }
 
 .hero h1 {
-  font-size: 2.8rem;
-  line-height: 1.2;
+  font-size: 3rem;
   margin-bottom: 1rem;
-}
-
-.hero span {
-  font-size: 1.6rem;
-  font-weight: 400;
-  color: var(--white);
 }
 
 .hero p {
   font-size: 1.1rem;
-  color: var(--white);
   max-width: 600px;
   margin: 0 auto;
-}
-
-/* Cards Grid Shared */
-.cards {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-  margin-top: 40px;
-}
-
-.service-card,
-.product-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  width: 220px;
-  border: 2px solid var(--primary);
-  border-radius: 8px;
-  padding: 0;
-  text-decoration: none;
-  color: var(--primary-dark);
-  background: var(--white);
-  transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
-  overflow: hidden;
-  position: relative;
-}
-
-.product-card img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-}
-
-.product-card span {
-  padding: 15px;
-  font-weight: 600;
-  font-size: 1rem;
-}
-
-.service-card .icon {
-  font-size: 2.5rem;
-  color: var(--primary-dark);
-  transition: transform 0.5s, color 0.5s;
-  margin-top: 20px;
-}
-
-.service-card h3 {
-  margin-top: 15px;
-  font-size: 1.2rem;
-}
-
-.service-card p {
-  font-size: 0.95rem;
-  padding: 0 10px 15px;
-}
-
-.service-card:hover .icon {
-  transform: rotateY(180deg);
-  color: var(--primary);
-}
-
-.service-card:hover,
-.product-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  background: var(--primary);
-  color: var(--white); /* Changes text color to white on hover */
-}
-
-.service-card:hover h3,
-.service-card:hover p,
-.service-card:hover .icon { /* Ensure icon also changes color on hover */
-  color: var(--white);
-}
-.product-card:hover span { /* Ensure product card text also changes color on hover */
-    color: var(--white);
-}
-
-
-.accent {
-  height: 5px;
-  background: var(--primary);
-  width: 0%;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  transition: width 0.4s;
-}
-
-.service-card:hover .accent {
-  width: 100%;
-}
-
-/* Section Titles */
-.services,
-.products {
-  margin-top: 80px;
-}
-
-.services h2,
-.products h2 {
-  text-align: center;
-  color: var(--primary-dark);
-  font-size: 2rem;
-  margin-bottom: 20px;
-}
-
-/* Footer */
-.footer {
-  background-color: #000;
-  color: #fff;
-  padding: 3rem 1rem;
-  text-align: center;
-}
-
-.footer-title {
-  font-size: 1.2rem;
-  margin-bottom: 1rem;
-  font-weight: bold;
-  letter-spacing: 1px;
-}
-
-.footer .social-links {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  margin-bottom: 1.5rem;
-}
-
-.footer .social-links a img {
-  width: 32px;
-  height: 32px;
-  filter: invert(100%);
-  transition: transform 0.3s ease, filter 0.3s ease;
-}
-
-.footer .social-links a:hover img {
-  transform: scale(1.2);
-  filter: invert(80%) sepia(100%) hue-rotate(120deg);
-}
-
-.footer-note {
-  font-size: 0.9rem;
-  opacity: 0.7;
-}
-
-/* Responsive Layout */
-@media (max-width: 768px) {
-  .navbar .container {
-    flex-wrap: wrap; /* Allows items to wrap for mobile */
-    justify-content: space-between;
-  }
-
-  .nav-links {
-    display: none; /* Hide by default on mobile */
-    flex-direction: column;
-    width: 100%;
-    background-color: var(--primary-dark);
-    text-align: center;
-    padding: 20px 0;
-    position: absolute;
-    top: 100px; /* Adjust based on your logo height */
-    left: 0;
-    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
-  }
-
-  .nav-links.active {
-    display: flex; /* Show when active */
-  }
-
-  .nav-links a {
-    padding: 10px 0;
-    color: var(--white);
-  }
-
-  .nav-links a:hover {
-      color: var(--primary);
-  }
-
-  .cta-button {
-    margin-top: 15px; /* Adjust spacing for mobile CTA */
-  }
-
-  .hamburger {
-    display: flex; /* Show hamburger on mobile */
-  }
-
-  body {
-    padding-top: 0; /* No need for padding-top if navbar is fixed */
-  }
-
-  html {
-    scroll-padding-top: 0; /* Reset this if navbar is fixed with JS */
-  }
-
-  .hero {
-    padding-top: 100px; /* Adjust hero section padding to account for fixed navbar */
-  }
-
-  .hero h1 {
-    font-size: 2rem;
-  }
-
-  .hero span {
-    font-size: 1.2rem;
-  }
-
-  .service-card,
-  .product-card {
-    width: 100%;
-    max-width: 300px; /* Limit width for better appearance on small screens */
-  }
-}
-
-@media (max-width: 480px) {
-  .hero {
-    padding: 80px 10px 40px;
-  }
-
-  .hero h1 {
-    font-size: 1.8rem;
-  }
-
-  .hero span {
-    font-size: 1rem;
-  }
-
-  .footer-title {
-    font-size: 1rem;
-  }
-
-  .footer-note {
-    font-size: 0.8rem;
-  }
-}
-
-@media (min-width: 769px) {
-  .hamburger {
-    display: none;
-  }
-  .nav-links {
-    display: flex !important; /* Ensure nav-links are always visible on desktop */
-  }
-}; /* Push the whole section down */
-text-align: center;
-color: var(--white);
-}
-
-body {
-  margin: 0;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background-color: var(--light-bg);
-  color: var(--text-dark);
-  line-height: 1.6;
-  padding-top: 0; /* Reset this if you had it, as navbar script handles fixed positioning */
 }
 
 .container {
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 2rem 1rem;
+  padding: 40px 20px;
 }
 
-/* Updated style for the page-specific header content */
-.page-header-content { /* Renamed from .header */
-  background-color: var(--primary-dark);
-  color: var(--white);
-  padding: 4rem 1rem;
-  text-align: center;
-  /* Add padding-top to account for the navbar being on top of it */
-  padding-top: calc(4rem + var(--navbar-height, 100px)); /* Adjust 100px if your navbar is different height */
-  margin-top: -100px; /* Pull it up to sit behind the navbar */
-}
-/* Define a CSS variable for navbar height for use in calc() if needed later */
-/* Add this to your :root or a global style if you haven't already */
-:root {
-    /* ... existing variables ... */
-    --navbar-height: 100px; /* Approximate height, adjust based on your logo/navbar size */
-}
-
-/* Adjustments for the content to start below the fixed navbar */
-main.container {
-    padding-top: 1rem; /* Adjust as needed, the page-header-content now handles the main offset */
-}
-
-
-.page-header-content h1 { /* Changed .header h1 to .page-header-content h1 */
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-}
-
-.page-header-content .tagline { /* Changed .header .tagline to .page-header-content .tagline */
-  font-size: 1.2rem;
-  font-weight: 300;
-}
-
-.service-detail {
-  display: grid;
-  gap: 2rem;
-}
-
-.service-box {
-  background-color: var(--white);
-  padding: 2rem;
-  border-radius: 12px;
-  border: 2px solid var(--primary);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-}
-
-.service-box h2 {
-  color: var(--primary-dark);
-  margin-bottom: 0.75rem;
-}
-
-.cta-container {
-  text-align: center;
-  margin-top: 3rem;
-}
-
-.cta-button {
-  display: inline-block;
-  background-color: var(--primary);
-  color: var(--white);
-  padding: 0.75rem 1.5rem;
-  border-radius: 8px;
-  text-decoration: none;
-  font-size: 1rem;
-  transition: background-color 0.3s ease;
-}
-
-.cta-button:hover {
-  background-color: var(--primary-dark);
-}
-
-.benefits-list {
-  list-style: none;
-  padding: 0;
-}
-
-.benefits-list li {
-  margin-bottom: 0.5rem;
+.about-section {
   display: flex;
-  align-items: center;
-  gap: 0.5rem;
+  flex-direction: column;
+  gap: 40px;
 }
 
-.benefits-list i {
-  color: var(--primary);
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
+.section h2 {
+  color: var(--primary-dark);
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
 
-/* Footer (ensure it's consistent) */
-.footer {
-  background-color: var(--text-dark); /* Changed from #000 for consistency */
+.section p {
+  font-size: 1rem;
+  color: var(--gray);
+}
+
+@media (min-width: 768px) {
+  .about-section {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .section {
+    flex: 1;
+  }
+}
+
+/* Footer styles */
+footer {
+  background-color: var(--primary-dark);
   color: var(--white);
-  padding: 2rem 1rem;
   text-align: center;
-  margin-top: 4rem;
+  padding: 40px 20px;
+  margin-top: 60px;
+}
+
+footer p {
+  margin: 0;
+  font-size: 0.9rem;
 }
