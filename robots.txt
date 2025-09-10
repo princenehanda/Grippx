@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /assets/temp/
+Disallow: /css/temp/
+Disallow: /js/temp/
+Sitemap: https://grippx.co/sitemap.xml
