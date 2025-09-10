@@ -1,20 +1,36 @@
-grippx-website/
+grippx.co -website/
 │
 ├── index.html
 ├── about.html
+├── catalogue.html
 ├── service-physical.html
 ├── service-activation.html
 ├── service-strategic.html
 ├── service-concierge.html
+├── blog.html             
+├── sitemap.xml                 
+├── robots.txt                  
 │
 ├── assets/
-│   ├── images/
-│   │   ├── logo.png
+│   ├── logo.png
+│   ├── hero.png
+│   │
+│   ├── images/  
 │   │   ├── t-shirts.jpg
 │   │   ├── mugs.jpg
 │   │   ├── caps.jpg
 │   │   ├── banners.jpg
 │   │   ├── flyers.jpg
+│   │   └── ...other product images
+│   │
+│   ├── pages/
+│   │   ├── contiheavy.png
+│   │   ├── contimaintanance.png
+│   │   ├── fullbodyharness.jpeg
+│   │   ├── harness.png
+│   │   ├── leathergloves.png
+│   │   ├── pvcgloves.jpeg
+│   │   ├── safefooting.jpeg
 │   │   └── ...other product images
 │   │
 │   └── icons/
@@ -23,15 +39,29 @@ grippx-website/
 │       ├── whatsapp.svg
 │       └── service-icons.svg
 │
+├── blog/
+│   ├── blog-1.html
+│   ├── blog-3.html
+│   ├── post-1.html
+│   ├── post-2.html
+│   ├── post-3.html
+│   ├── post-4.html
+│   ├── post-5.html
+│   ├── post-6.html
+│   └── post-7.html 
+│
+│
 ├── css/
-│   └── styles.css
+│   ├── styles.css
+│   ├── about.css
 │   ├── activation.css
 │   ├── concierge.css
-│   ├── physical
-│   ├── strategic
+│   ├── physical.css
+│   ├── strategic.css
+│   └── blog.css 
 │     
 ├── js/
-│   └── main.js
+│   └── script.js
 │
 ├── README.md
 └── .gitignore
