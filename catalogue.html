@@ -3,42 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Product Catalogue | GrippX</title>
-
-  <!-- Your existing site styles -->
-  <link rel="stylesheet" href="css/style.css">
-
-  <!-- Flipbook styling -->
-  <link rel="stylesheet" href="css/flipbook.css">
-
-  <style>
-    .catalogue-container {
-      width: 90%;
-      height: 80vh;
-      margin: 2rem auto;
-      box-shadow: 0 0 15px rgba(0,0,0,0.2);
-      border-radius: 12px;
-      overflow: hidden;
-    }
-    .flipbook, .swipebook {
-      width: 100%;
-      height: 100%;
-    }
-    .swipebook img {
-      width: 100%;
-      display: block;
-    }
-  </style>
-</head>
-<body>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="GRIPPX - Leading brand activation agency in Johannesburg, South Africa. We specialize in branded merchandise, marketing activations, strategic services, and business concierge support. Transform your brand with creative campaigns that drive results." />
-  <meta name="keywords" content="brand activation Johannesburg, promotional products South Africa, marketing agency Gauteng, branded merchandise, corporate gifts, business concierge, custom printing, marketing campaigns, brand strategy" />
+  <meta name="description" content="GRIPPX Product Catalogue - Browse our extensive range of branded merchandise, promotional products, corporate gifts, and custom printed apparel. Leading brand activation agency in Johannesburg, South Africa." />
+  <meta name="keywords" content="product catalogue, branded merchandise, promotional products South Africa, corporate gifts, custom printing, marketing materials, brand activation Johannesburg" />
   <meta name="author" content="GRIPPX" />
   <meta name="robots" content="index, follow" />
   <meta name="language" content="English" />
@@ -49,18 +15,18 @@
   
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://grippx.co/" />
-  <meta property="og:title" content="GRIPPX | Leading Brand Activation Agency in Johannesburg" />
-  <meta property="og:description" content="Transform your brand with creative campaigns, promotional products, and strategic marketing services. GRIPPX - where brands come alive." />
-  <meta property="og:image" content="https://grippx.co/assets/grippx-social-preview.jpg" />
+  <meta property="og:url" content="https://grippx.co/catalogue.html" />
+  <meta property="og:title" content="Product Catalogue | GRIPPX - Branded Merchandise & Promotional Products" />
+  <meta property="og:description" content="Explore our comprehensive product catalogue featuring branded merchandise, promotional products, and corporate gifts. Transform your brand with GRIPPX." />
+  <meta property="og:image" content="https://grippx.co/assets/grippx-catalogue-preview.jpg" />
   <meta property="og:locale" content="en_ZA" />
   
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image" />
-  <meta property="twitter:url" content="https://grippx.co/" />
-  <meta property="twitter:title" content="GRIPPX | Leading Brand Activation Agency in Johannesburg" />
-  <meta property="twitter:description" content="Transform your brand with creative campaigns, promotional products, and strategic marketing services." />
-  <meta property="twitter:image" content="https://grippx.co/assets/grippx-social-preview.jpg" />
+  <meta property="twitter:url" content="https://grippx.co/catalogue.html" />
+  <meta property="twitter:title" content="Product Catalogue | GRIPPX - Branded Merchandise & Promotional Products" />
+  <meta property="twitter:description" content="Browse our extensive range of promotional products and branded merchandise." />
+  <meta property="twitter:image" content="https://grippx.co/assets/grippx-catalogue-preview.jpg" />
   
   <!-- Local Business Schema -->
   <script type="application/ld+json">
@@ -113,38 +79,30 @@
     ],
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
-      "name": "GRIPPX Services",
+      "name": "GRIPPX Product Catalogue",
       "itemListElement": [
         {
           "@type": "Offer",
           "itemOffered": {
-            "@type": "Service",
-            "name": "Brand Activation",
-            "description": "Marketing activations and experiential campaigns"
+            "@type": "Product",
+            "name": "Branded Apparel",
+            "description": "Custom printed t-shirts, hoodies, caps, and corporate clothing"
           }
         },
         {
           "@type": "Offer", 
           "itemOffered": {
             "@type": "Product",
-            "name": "Branded Merchandise",
-            "description": "Custom printed apparel, promotional products, and corporate gifts"
+            "name": "Promotional Products",
+            "description": "Pens, mugs, bags, tech accessories, and marketing materials"
           }
         },
         {
           "@type": "Offer",
           "itemOffered": {
-            "@type": "Service",
-            "name": "Strategic Marketing Services",
-            "description": "Brand strategy, market research, and awareness campaigns"
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Business Concierge",
-            "description": "Administrative support, errands, and logistics services"
+            "@type": "Product",
+            "name": "Corporate Gifts",
+            "description": "Premium gift sets, awards, and executive accessories"
           }
         }
       ]
@@ -152,13 +110,155 @@
   }
   </script>
   
-  <title>GRIPPX | Leading Brand Activation Agency in Johannesburg, South Africa</title>
-  <link rel="canonical" href="https://grippx.co/" />
-  <link rel="stylesheet" href="css/style.css" />
+  <title>Product Catalogue | GRIPPX - Branded Merchandise & Promotional Products</title>
+  <link rel="canonical" href="https://grippx.co/catalogue.html" />
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/flipbook.css">
+  <link rel="stylesheet" href="css/swipebook.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  
+  <!-- Custom styles for catalogue -->
+  <style>
+    .page-title {
+      text-align: center;
+      font-size: 2.5rem;
+      margin: 2rem 0 1rem 0;
+      color: #333;
+      font-weight: 700;
+    }
+    
+    .page-subtitle {
+      text-align: center;
+      font-size: 1.1rem;
+      color: #666;
+      margin-bottom: 2rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .catalogue-container {
+      width: 90%;
+      height: 80vh;
+      margin: 2rem auto;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+      border-radius: 12px;
+      overflow: hidden;
+      background: #fff;
+      position: relative;
+    }
+    
+    .swipebook {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .swipebook-pages {
+      display: flex;
+      transition: transform 0.3s ease;
+      height: 100%;
+    }
+    
+    .swipebook-pages img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      flex-shrink: 0;
+    }
+    
+    .swipebook-indicators {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 8px;
+      z-index: 10;
+    }
+    
+    .swipebook-indicators .indicator {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.5);
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    
+    .swipebook-indicators .indicator.active {
+      background: #667eea;
+    }
+    
+    .swipe-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255, 255, 255, 0.9);
+      border: none;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      color: #333;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+      transition: all 0.3s ease;
+      z-index: 10;
+    }
+    
+    .swipe-nav:hover {
+      background: #667eea;
+      color: white;
+    }
+    
+    .swipe-nav.prev {
+      left: 20px;
+    }
+    
+    .swipe-nav.next {
+      right: 20px;
+    }
+    
+    @media (max-width: 768px) {
+      .catalogue-container {
+        width: 95%;
+        height: 70vh;
+        margin: 1rem auto;
+      }
+      
+      .page-title {
+        font-size: 2rem;
+      }
+      
+      .page-subtitle {
+        font-size: 1rem;
+      }
+      
+      .swipe-nav {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+      }
+      
+      .swipe-nav.prev {
+        left: 10px;
+      }
+      
+      .swipe-nav.next {
+        right: 10px;
+      }
+    }
+  </style>
 </head>
 <body>
-
+  <!-- Navigation Header -->
   <header class="navbar">
     <div class="container">
       <a href="index.html" class="logo">
@@ -167,10 +267,12 @@
       <nav class="nav-links" id="navLinks">
         <a href="about.html">About</a>
         <a href="index.html#services">Services</a>
-        <a href="catalogue.html">Products</a>
+        <a href="catalogue.html" class="active">Products</a>
         <a href="blog.html">Blog</a>
       </nav>
-      <a href="https://wa.me/27732746135" class="cta-button" target="_blank">WhatsApp</a>
+      <a href="https://wa.me/27732746135" class="cta-button" target="_blank">
+        <i class="fab fa-whatsapp"></i> WhatsApp
+      </a>
       <div class="hamburger" id="hamburger">
         <div class="bar"></div>
         <div class="bar"></div>
@@ -179,59 +281,47 @@
     </div>
   </header>
 
-  <?php include("../partials/header.php"); ?> 
-
+  <!-- Main Catalogue Content -->
   <main>
     <h1 class="page-title">Interactive Product Catalogue</h1>
-    <p>you can flp or click on the edge of the pages to browse though the pages of our catatlogue.</p>
+    <p class="page-subtitle">Flip through pages on desktop, swipe on mobile</p>
     <div class="catalogue-container">
-      <!-- Default = swipe version -->
-      <div class="swipebook">
-        <img src="assets/images/caps.jpeg" alt="Catalogue Page 0">
-        <img src="assets/pages/contimaintanance.png" alt="Catalogue Page 1">
-        <img src="assets/pages/contiheavy.png" alt="Catalogue Page 2">
-        <img src="assets/pages/fullbodyharness.jpeg" alt="Catalogue Page 3">
-        <img src="assets/pages/leathergloves.jpeg" alt="Catalogue Page 4">
-        <img src="assets/pages/pvcgloves.jpeg" alt="Catalogue Page 5">
-        <img src="assets/pages/safefooting.jpeg" alt="Catalogue Page 6">
+      <div class="swipebook" id="catalogue">
+        <div class="swipebook-pages">
+          <img src="assets/images/caps.jpeg" alt="Catalogue Page 0 - Safety Caps">
+          <img src="assets/pages/contimaintanance.png" alt="Catalogue Page 1 - Maintenance Equipment">
+          <img src="assets/pages/contiheavy.png" alt="Catalogue Page 2 - Heavy Duty Equipment">
+          <img src="assets/pages/fullbodyharness.jpeg" alt="Catalogue Page 3 - Full Body Harness">
+          <img src="assets/pages/leathergloves.jpeg" alt="Catalogue Page 4 - Leather Safety Gloves">
+          <img src="assets/pages/pvcgloves.jpeg" alt="Catalogue Page 5 - PVC Safety Gloves">
+          <img src="assets/pages/safefooting.jpeg" alt="Catalogue Page 6 - Safe Footing Equipment">
+        </div>
+        <div class="swipebook-indicators"></div>
+        <button class="swipe-nav prev"><i class="fas fa-chevron-left"></i></button>
+        <button class="swipe-nav next"><i class="fas fa-chevron-right"></i></button>
       </div>
     </div>
   </main>
 
-  <?php include("../partials/footer.php"); ?>
+  <!-- Contact Section -->
+  <section class="contact-cta" style="background: #f8f9fa; padding: 3rem 0; text-align: center;">
+    <div class="container">
+      <h2 style="margin-bottom: 1rem; color: #333;">Need a Custom Quote?</h2>
+      <p style="margin-bottom: 2rem; color: #666; max-width: 600px; margin-left: auto; margin-right: auto;">
+        Can't find what you're looking for? Contact us for custom branding solutions and personalized quotes for safety equipment and promotional products.
+      </p>
+      <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+        <a href="https://wa.me/27732746135" class="cta-button" target="_blank" style="display: inline-flex; align-items: center; gap: 0.5rem;">
+          <i class="fab fa-whatsapp"></i> WhatsApp Us
+        </a>
+        <a href="tel:+27732746135" class="cta-button" style="display: inline-flex; align-items: center; gap: 0.5rem; background: #28a745;">
+          <i class="fas fa-phone"></i> Call Now
+        </a>
+      </div>
+    </div>
+  </section>
 
-  <!-- Your existing site scripts -->
-  <script src="js/script.js"></script>
-  <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
-  <!-- Optional Flipbook library (Turn.js) -->
-  <script src="https://cdn.jsdelivr.net/gh/blasten/turn.js/turn.min.js"></script>
-
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      // Detect desktop + decent connection
-      const fastConnection = !navigator.connection || navigator.connection.downlink > 2;
-      const isDesktop = window.innerWidth > 1024;
-
-      if (isDesktop && fastConnection) {
-        const container = document.querySelector(".catalogue-container");
-        const swipebook = document.querySelector(".swipebook");
-
-        // Replace swipebook with flipbook
-        const flipbook = document.createElement("div");
-        flipbook.className = "flipbook";
-        flipbook.innerHTML = swipebook.innerHTML; // copy pages
-        container.replaceChild(flipbook, swipebook);
-
-        // Init Turn.js
-        $(flipbook).turn({
-          autoCenter: true,
-          elevation: 50,
-          gradients: true
-        });
-      }
-    });
-  </script>
-
+  <!-- Footer -->
   <footer class="footer">
     <div class="container">
       <div class="footer-content">
@@ -254,7 +344,7 @@
             <li><a href="about.html">About Us</a></li>
             <li><a href="blog.html">Blog</a></li>
             <li><a href="index.html#services">Services</a></li>
-            <li><a href="index.html#products">Products</a></li>
+            <li><a href="catalogue.html">Products</a></li>
           </ul>
         </div>
         <div class="footer-section">
@@ -276,6 +366,123 @@
     </div>
   </footer>
 
+  <!-- Scripts -->
+  <!-- jQuery (required for Turn.js) -->
+  <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+  
+  <!-- Optional Flipbook library (Turn.js) -->
+  <script src="https://cdn.jsdelivr.net/gh/blasten/turn.js/turn.min.js"></script>
+  
+  <!-- Your existing site scripts -->
+  <script src="js/script.js"></script>
+
+  <script>
+    // Mobile navigation toggle
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+    
+    if (hamburger && navLinks) {
+      hamburger.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        hamburger.classList.toggle('active');
+      });
+    }
+
+    // Swipebook functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const swipebook = document.getElementById('catalogue');
+      const pages = swipebook.querySelector('.swipebook-pages');
+      const indicators = swipebook.querySelector('.swipebook-indicators');
+      const prevBtn = swipebook.querySelector('.prev');
+      const nextBtn = swipebook.querySelector('.next');
+      const totalPages = pages.children.length;
+      
+      let currentPage = 0;
+      
+      // Create indicators
+      for (let i = 0; i < totalPages; i++) {
+        const indicator = document.createElement('div');
+        indicator.className = 'indicator';
+        if (i === 0) indicator.classList.add('active');
+        indicator.addEventListener('click', () => goToPage(i));
+        indicators.appendChild(indicator);
+      }
+      
+      function updatePage() {
+        pages.style.transform = `translateX(-${currentPage * 100}%)`;
+        
+        // Update indicators
+        indicators.querySelectorAll('.indicator').forEach((ind, index) => {
+          ind.classList.toggle('active', index === currentPage);
+        });
+        
+        // Update navigation buttons
+        prevBtn.style.display = currentPage === 0 ? 'none' : 'flex';
+        nextBtn.style.display = currentPage === totalPages - 1 ? 'none' : 'flex';
+      }
+      
+      function goToPage(page) {
+        currentPage = Math.max(0, Math.min(page, totalPages - 1));
+        updatePage();
+      }
+      
+      function nextPage() {
+        if (currentPage < totalPages - 1) {
+          currentPage++;
+          updatePage();
+        }
+      }
+      
+      function prevPage() {
+        if (currentPage > 0) {
+          currentPage--;
+          updatePage();
+        }
+      }
+      
+      // Event listeners
+      nextBtn.addEventListener('click', nextPage);
+      prevBtn.addEventListener('click', prevPage);
+      
+      // Touch/swipe support
+      let startX = 0;
+      let currentX = 0;
+      let isDragging = false;
+      
+      swipebook.addEventListener('touchstart', (e) => {
+        startX = e.touches[0].clientX;
+        isDragging = true;
+      });
+      
+      swipebook.addEventListener('touchmove', (e) => {
+        if (!isDragging) return;
+        currentX = e.touches[0].clientX;
+      });
+      
+      swipebook.addEventListener('touchend', () => {
+        if (!isDragging) return;
+        const diff = startX - currentX;
+        
+        if (Math.abs(diff) > 50) {
+          if (diff > 0) {
+            nextPage();
+          } else {
+            prevPage();
+          }
+        }
+        
+        isDragging = false;
+      });
+      
+      // Keyboard navigation
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') prevPage();
+        if (e.key === 'ArrowRight') nextPage();
+      });
+      
+      // Initial update
+      updatePage();
+    });
+  </script>
 </body>
 </html>
-
