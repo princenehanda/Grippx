@@ -23,16 +23,76 @@ grippx.co -website/
 │   │   ├── flyers.jpg
 │   │   └── ...other product images
 │   │
-│   ├── pages/
-│   │   ├── contiheavy.png
-│   │   ├── contimaintanance.png
-│   │   ├── fullbodyharness.jpeg
-│   │   ├── harness.png
-│   │   ├── leathergloves.png
-│   │   ├── pvcgloves.jpeg
-│   │   ├── safefooting.jpeg
+│   ├── Apparel/
+│   │   ├── catalogue-page-00.webp
+│   │   ├── catalogue-page-01.webp
+│   │   ├── catalogue-page-02.webp
+│   │   ├── catalogue-page-03.webp
+│   │   ├── catalogue-page-04.webp
+│   │   ├── catalogue-page-05.webp
+│   │   ├── catalogue-page-06.webp
+│   │   └── ...other product images
+|   |
+|   ├── Diaries/
+│   │   ├── catalogue-page-00.webp
+│   │   ├── catalogue-page-01.webp
+│   │   ├── catalogue-page-02.webp
+│   │   ├── catalogue-page-03.webp
+│   │   ├── catalogue-page-04.webp
+│   │   ├── catalogue-page-05.webp
+│   │   ├── catalogue-page-06.webp
 │   │   └── ...other product images
 │   │
+|   ├── Display/
+│   │   ├── catalogue-page-00.webp
+│   │   ├── catalogue-page-01.webp
+│   │   ├── catalogue-page-02.webp
+│   │   ├── catalogue-page-03.webp
+│   │   ├── catalogue-page-04.webp
+│   │   ├── catalogue-page-05.webp
+│   │   ├── catalogue-page-06.webp
+│   │   └── ...other product images
+|   |
+|   ├── Headwear/
+│   │   ├── catalogue-page-00.webp
+│   │   ├── catalogue-page-01.webp
+│   │   ├── catalogue-page-02.webp
+│   │   ├── catalogue-page-03.webp
+│   │   ├── catalogue-page-04.webp
+│   │   ├── catalogue-page-05.webp
+│   │   ├── catalogue-page-06.webp
+│   │   └── ...other product images
+|   |
+|   │   ├── Tech/
+│   │   ├── catalogue-page-00.webp
+│   │   ├── catalogue-page-01.webp
+│   │   ├── catalogue-page-02.webp
+│   │   ├── catalogue-page-03.webp
+│   │   ├── catalogue-page-04.webp
+│   │   ├── catalogue-page-05.webp
+│   │   ├── catalogue-page-06.webp
+│   │   └── ...other product images
+|   |
+|   ├── Umbrella/
+│   │   ├── catalogue-page-00.webp
+│   │   ├── catalogue-page-01.webp
+│   │   ├── catalogue-page-02.webp
+│   │   ├── catalogue-page-03.webp
+│   │   ├── catalogue-page-04.webp
+│   │   ├── catalogue-page-05.webp
+│   │   ├── catalogue-page-06.webp
+│   │   └── ...other product images
+|   |
+│   ├── Workwear/
+│   │   ├── catalogue-page-00.webp
+│   │   ├── catalogue-page-01.webp
+│   │   ├── catalogue-page-02.webp
+│   │   ├── catalogue-page-03.webp
+│   │   ├── catalogue-page-04.webp
+│   │   ├── catalogue-page-05.webp
+│   │   ├── catalogue-page-06.webp
+│   │   └── ...other product images
+|   |
 │   └── icons/
 │       ├── facebook.svg
 │       ├── instagram.svg
@@ -50,6 +110,15 @@ grippx.co -website/
 │   ├── post-6.html
 │   └── post-7.html 
 │
+├── catalogue/
+│   ├── catalogue-apparel.html
+│   ├── catalogue-display.html
+│   ├── catalogue-headwear.html
+│   ├── catalogue-notebooks.html
+│   ├── catalogue-promotional.html
+│   ├── catalogue-tech.html
+│   ├── catalogue-workwear.html
+│   └── catalogue-umbrella.html
 │
 ├── css/
 │   ├── styles.css
