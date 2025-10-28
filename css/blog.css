@@ -1,4 +1,9 @@
 /* GRIPPX Blog Stylesheet - Extends base style.css */
+:root {
+  --primary: #2dae4f;        /* Your green color */
+  --primary-dark: #1b5e20;   /* Darker green (already in your code) */
+  --white: #ffffff;
+}
 
 /* Hero Section for Blog */
 .hero-section {
