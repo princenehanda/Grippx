@@ -131,6 +131,88 @@ a {
     padding: 5px;
 }
 
+.hamburger {
+    display: none;
+    cursor: pointer;
+    padding: 5px;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.hamburger .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #1b5e20;
+    transition: all 0.3s ease;
+    border-radius: 3px;
+}
+
+.hamburger.active .bar:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active .bar:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+}
+
+.desktop-only {
+    display: inline-flex;
+}
+
+/* Mobile Navigation */
+@media (max-width: 768px) {
+    .nav-container {
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 0 10px;
+        position: relative;
+    }
+    
+    .main-nav {
+        display: none; /* Hidden by default */
+        width: 100%;
+        text-align: center;
+        margin-top: 0.5rem;
+        flex-direction: column;
+        background: #fff;
+        padding: 10px 0;
+        order: 4; /* Ensures nav appears below logo and hamburger */
+    }
+    
+    .main-nav.active {
+        display: flex !important; /* Important to override display:none */
+    }
+    
+    .main-nav a {
+        display: block;
+        margin: 0.8rem 0;
+        padding: 0.5rem;
+        color: #1b5e20;
+    }
+    
+    .logo {
+        order: 1;
+    }
+    
+    .logo img {
+        height: 50px;
+    }
+
+    .hamburger {
+        display: flex !important; /* Important to override default */
+        order: 3;
+        z-index: 1001;
+    }
+    
+    .desktop-only {
+        display: none !important;
+    }
+}
+
 /*
 |--------------------------------------------------------------------------
 | HERO SECTION
