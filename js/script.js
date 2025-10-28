@@ -18,23 +18,56 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // --- Mobile Menu Toggle (Hamburger Function) ---
-    const hamburger = document.getElementById('hamburger');
-    const navLinks = document.getElementById('navLinks');
-    if (hamburger && navLinks) {
-        hamburger.addEventListener('click', function () {
-            navLinks.classList.toggle('active');
-            hamburger.classList.toggle('active');
-        });
-        // Close menu when a link is clicked
-        navLinks.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                if (navLinks.classList.contains('active')) {
-                    navLinks.classList.remove('active');
-                    hamburger.classList.remove('active');
-                }
-            });
-        });
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('navLinks');
+if (hamburger && navLinks) {
+    // Add WhatsApp link to mobile menu
+    const isMobile = window.innerWidth <= 768;
+    if (isMobile && !navLinks.querySelector('.mobile-whatsapp')) {
+        const mobileWhatsApp = document.createElement('a');
+        mobileWhatsApp.href = 'https://wa.me/27732746135';
+        mobileWhatsApp.target = '_blank';
+        mobileWhatsApp.className = 'mobile-whatsapp';
+        mobileWhatsApp.innerHTML = '<i class="fab fa-whatsapp"></i> WhatsApp Us';
+        mobileWhatsApp.style.cssText = 'color: #25D366; font-weight: 600;';
+        navLinks.appendChild(mobileWhatsApp);
     }
+    
+    hamburger.addEventListener('click', function () {
+        navLinks.classList.toggle('active');
+        hamburger.classList.toggle('active');
+        
+        // Prevent body scroll when menu is open
+        if (navLinks.classList.contains('active')) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = '';
+        }
+    });
+    
+    // Close menu when a link is clicked
+    navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            if (navLinks.classList.contains('active')) {
+                navLinks.classList.remove('active');
+                hamburger.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+    });
+    
+    // Close menu when clicking outside
+    document.addEventListener('click', function(event) {
+        const isClickInsideNav = navLinks.contains(event.target);
+        const isClickOnHamburger = hamburger.contains(event.target);
+        
+        if (!isClickInsideNav && !isClickOnHamburger && navLinks.classList.contains('active')) {
+            navLinks.classList.remove('active');
+            hamburger.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    });
+}
 
     // --- Newsletter Form Handler ---
     const newsletterForm = document.getElementById('newsletterForm');
