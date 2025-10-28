@@ -157,7 +157,10 @@ if (hamburger && navLinks) {
 */
 
 /**
+ 
+/**
  * Determines the appropriate catalogue view (Flipbook or Swipebook) and initializes it.
+ * FLIPBOOK IS PRIMARY - Swipebook is fallback only
  */
 function initializeCatalogue() {
     const container = document.querySelector('.catalogue-container');
@@ -182,15 +185,13 @@ function initializeCatalogue() {
                                            .join('');
 
     // Use site-root-relative path pattern, but with the dynamic folder name
-    // This will now correctly generate paths like: /assets/Headwear/catalogue-page-00.png
     const pathPrefix = `../assets/${ASSET_FOLDER_NAME}/catalogue-page-`; 
     const altTextPrefix = `${ASSET_FOLDER_NAME} Catalogue Page`;
     // --- END DYNAMIC PATH CORRECTION ---
 
-
     // --- Dynamically generate pages if they don't exist ---
     const pagesContainer = swipebook.querySelector('.swipebook-pages');
-    const numPages = 160; 
+    const numPages = 160; 
 
     if (pagesContainer && pagesContainer.children.length === 0) {
         // Loop runs 160 times (i = 0 to 159)
@@ -202,7 +203,7 @@ function initializeCatalogue() {
             const img = document.createElement('img');
             img.src = `${pathPrefix}${paddedNumber}.webp`;
             img.alt = `${altTextPrefix} ${i + 1}`; // Display page numbers starting at 1
-            img.loading = 'lazy'; 
+            img.loading = 'lazy'; 
             pagesContainer.appendChild(img);
         }
         // Update total pages counter
@@ -214,28 +215,38 @@ function initializeCatalogue() {
 
     if (images.length === 0) return;
 
-    // Better device detection for the true flip effect
-    const DESKTOP_BREAKPOINT = 992; 
-    const isDesktop = window.innerWidth >= DESKTOP_BREAKPOINT;
-    const hasTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+    // Check if jQuery and Turn.js are available
     const jQueryAvailable = typeof $ !== 'undefined' && typeof $.fn.turn === 'function';
+    
+    // Check if mobile device (touch-only device)
+    const isMobileDevice = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    const hasTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+    const isTouchOnly = isMobileDevice && hasTouch;
 
-    console.log('Catalogue Init:', { isDesktop, hasTouch, jQueryAvailable });
+    console.log('Catalogue Init:', { 
+        jQueryAvailable, 
+        isMobileDevice, 
+        hasTouch, 
+        isTouchOnly,
+        userAgent: navigator.userAgent 
+    });
 
-    // Use Turn.js Flipbook for desktop-like experience where Turn.js is available
-    if (isDesktop && jQueryAvailable) {
+    // PRIMARY: Use Flipbook if Turn.js is available and NOT a touch-only mobile device
+    if (jQueryAvailable && !isTouchOnly) {
+        console.log('Initializing FLIPBOOK (Primary method)');
         initializeFlipbook(container, swipebook, images);
     } else {
-        // Use custom swipe logic for mobile and when Turn.js is unavailable
+        // FALLBACK: Use Swipebook for mobile devices or when Turn.js unavailable
+        console.log('Initializing SWIPEBOOK (Fallback method)');
         initializeSwipebook(swipebook, images);
     }
 }
 
 /**
- * Initializes the Turn.js Flipbook (Desktop only).
+ * Initializes the Turn.js Flipbook (PRIMARY METHOD - Desktop).
  */
 function initializeFlipbook(container, swipebook, images) {
-    console.log('Initializing flipbook (Turn.js).');
+    console.log('Initializing flipbook (Turn.js) - Desktop Mode');
     
     // 1. Create flipbook structure
     const flipbook = document.createElement('div');
@@ -256,44 +267,114 @@ function initializeFlipbook(container, swipebook, images) {
     if (swipebookWrapper) {
         swipebookWrapper.replaceChild(flipbook, swipebook);
 
-        // Hide non-functional indicators/nav buttons meant for swipe
-        const counter = document.querySelector('.page-counter');
+        // Hide swipebook-specific controls
         const indicators = document.querySelector('.swipebook-indicators');
-        const navBtns = document.querySelectorAll('.swipe-nav');
-        if(counter) counter.style.display = 'none';
+        const oldNavBtns = document.querySelectorAll('.swipe-nav');
         if(indicators) indicators.style.display = 'none';
-        navBtns.forEach(btn => btn.style.display = 'none');
+        oldNavBtns.forEach(btn => btn.style.display = 'none');
     }
 
-    // 4. Initialize Turn.js
+    // 4. Initialize Turn.js with optimized settings
     setTimeout(() => {
         try {
-            $(flipbook).turn({
+            const $flipbook = $(flipbook);
+            
+            // Get wrapper dimensions
+            const wrapperWidth = swipebookWrapper.offsetWidth;
+            const wrapperHeight = swipebookWrapper.offsetHeight;
+            
+            $flipbook.turn({
+                width: wrapperWidth,
+                height: wrapperHeight,
                 autoCenter: true,
                 elevation: 50,
                 gradients: true,
                 acceleration: true,
                 pages: images.length,
-                display: 'double', // Crucial for flipbook effect
+                display: 'double',
+                duration: 600,
                 when: {
                     turning: function(e, page, view) {
                         const currentPageSpan = document.getElementById('currentPage');
                         if (currentPageSpan) currentPageSpan.textContent = page;
                     },
-                    start: function(e, page, corner) {
-                        // Prevent swipe/touch events from interfering with flip
-                        e.preventDefault(); 
+                    turned: function(e, page, view) {
+                        console.log('Turned to page:', page);
                     }
                 }
             });
-            // Re-show counter after Turn.js is initialized
-            if(counter) counter.style.display = 'block';
+            
+            // Add custom navigation buttons
+            const prevBtn = document.createElement('button');
+            prevBtn.className = 'flipbook-nav prev';
+            prevBtn.innerHTML = '<i class="fas fa-chevron-left"></i>';
+            prevBtn.onclick = function() {
+                $flipbook.turn('previous');
+            };
+            
+            const nextBtn = document.createElement('button');
+            nextBtn.className = 'flipbook-nav next';
+            nextBtn.innerHTML = '<i class="fas fa-chevron-right"></i>';
+            nextBtn.onclick = function() {
+                $flipbook.turn('next');
+            };
+            
+            swipebookWrapper.appendChild(prevBtn);
+            swipebookWrapper.appendChild(nextBtn);
+            
+            // Click on left side = previous, right side = next
+            $flipbook.bind('click', function(e) {
+                const offset = $flipbook.offset();
+                const clickX = e.pageX - offset.left;
+                const bookWidth = $flipbook.width();
+                
+                if (clickX < bookWidth / 2) {
+                    $flipbook.turn('previous');
+                } else {
+                    $flipbook.turn('next');
+                }
+            });
+            
+            // Keyboard navigation
+            $(document).keydown(function(e) {
+                if ($flipbook.turn('is')) { // Check if flipbook is active
+                    if (e.keyCode === 37) { // Left arrow
+                        $flipbook.turn('previous');
+                        e.preventDefault();
+                    } else if (e.keyCode === 39) { // Right arrow
+                        $flipbook.turn('next');
+                        e.preventDefault();
+                    }
+                }
+            });
+            
+            // Mouse wheel navigation
+            $flipbook.bind('mousewheel', function(e) {
+                if (e.originalEvent.wheelDelta > 0) {
+                    $flipbook.turn('previous');
+                } else {
+                    $flipbook.turn('next');
+                }
+                e.preventDefault();
+            });
+            
+            // Responsive resize
+            $(window).resize(function() {
+                const newWidth = swipebookWrapper.offsetWidth;
+                const newHeight = swipebookWrapper.offsetHeight;
+                $flipbook.turn('size', newWidth, newHeight);
+            });
+            
+            console.log('Flipbook initialized successfully with', images.length, 'pages');
+            console.log('Navigation: Click left/right side, use arrow keys, or use navigation buttons');
 
         } catch (e) {
-            console.error('Turn.js failed to initialize. Falling back to simple swipebook.', e);
-            // Fallback in case Turn.js fails to load
-            if (swipebookWrapper) swipebookWrapper.replaceChild(swipebook, flipbook);
-            initializeSwipebook(swipebook, images);
+            console.error('Turn.js failed to initialize. Falling back to swipebook.', e);
+            // Fallback
+            if (swipebookWrapper) {
+                swipebookWrapper.replaceChild(swipebook, flipbook);
+                initializeSwipebook(swipebook, images);
+            }
         }
     }, 100);
 }
@@ -573,3 +654,54 @@ function addScrollToTop() {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 }
+
+// ==========================
+// PAGE COUNTER + NAV HINTS
+// ==========================
+
+$(document).ready(function () {
+  const $flipbook = $("#apparel-catalogue .flipbook, #apparel-catalogue"); // covers both flipbook/swipebook
+  const $currentPage = $("#currentPage");
+  const $totalPages = $("#totalPages");
+
+  // Wait until flipbook is ready
+  if ($flipbook.turn) {
+    $flipbook.bind("turned", function (event, page) {
+      $currentPage.text(page);
+    });
+
+    // Update total pages dynamically
+    const total = $flipbook.turn("pages") || $(".flipbook-page, .swipebook-pages img").length || 1;
+    $totalPages.text(total);
+  } else {
+    // fallback for swipe view
+    const total = $(".swipebook-pages img").length;
+    $totalPages.text(total);
+  }
+
+  // Keep counter visible and above all content
+  $(".page-counter").css({
+    "z-index": "2000",
+    "opacity": "0",
+    "transition": "opacity 0.6s ease",
+    "display": "block"
+  });
+
+  // Fade in after a moment (helps on load)
+  setTimeout(() => $(".page-counter").css("opacity", "1"), 400);
+
+  // --------------------------
+  // Subtle navigation arrows / hint
+  // --------------------------
+  if (!$(".nav-hint").length) {
+    const hint = $(`
+      <div class="nav-hint">
+        <span class="hint-left"><i class="fas fa-chevron-left"></i></span>
+        <span class="hint-right"><i class="fas fa-chevron-right"></i></span>
+        <p class="hint-text">Swipe or tap arrows to flip pages</p>
+      </div>
+    `);
+    $("body").append(hint);
+    setTimeout(() => $(".nav-hint").fadeOut(2500, () => $(this).remove()), 5000);
+  }
+});
