@@ -12,7 +12,7 @@
   --white: #FFFFFF;
   --dark-text: #1C1C1C;
   --muted-text: #666666;
-  --max-width-internal: 960px; /* Using a different variable name to avoid conflict if main style.css is linked */
+  --max-width-internal: 1200px; /* Using a different variable name to avoid conflict if main style.css is linked */
   --transition: 0.3s ease-in-out;
   --radius: 12px;
 }
@@ -27,7 +27,7 @@ body {
 
 /* Main container override to use the internal page max-width */
 .container {
-  max-width: 90;
+  max-width: var(max-with);
   margin: 0 auto;
   padding: 2rem 1rem; /* Adjust padding as needed */
 }
