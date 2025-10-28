@@ -27,7 +27,7 @@ body {
 
 /* Main container override to use the internal page max-width */
 .container {
-  max-width: var(--max-width-internal);
+  max-width: 90;
   margin: 0 auto;
   padding: 2rem 1rem; /* Adjust padding as needed */
 }
