@@ -394,7 +394,7 @@ a.btn-primary.center {
 .catalogue-card img {
     height: 200px; /* Reduced from 240px to make space for the title below */
     width: 100%;
-    object-fit: cover;
+    object-fit: scale-down;
     transition: transform 0.3s ease;
     /* Rounded only the top corners */
     border-radius: 10px 10px 0 0;
