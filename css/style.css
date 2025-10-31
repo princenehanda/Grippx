@@ -23,6 +23,31 @@ img {
     display: block;
 }
 
+a {/*
+ | * -------------------*-------------------------------------------------------
+ | GLOBAL RESET & BASE STYLES
+ |--------------------------------------------------------------------------
+ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    color: #333;
+    background-color: #fff;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+    padding-top: 70px; /* offset fixed header */
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
 a {
     text-decoration: none;
     color: inherit;
@@ -411,6 +436,1057 @@ a.btn-primary.center {
     height: 200px; /* Reduced from 240px to make space for the title below */
     width: 100%;
     object-fit: cover;
+    transition: transform 0.3s ease;
+    /* Rounded only the top corners */
+    border-radius: 10px 10px 0 0;
+}
+
+.catalogue-card:hover img {
+    transform: scale(1.05);
+}
+
+.card-overlay {
+    /* REMOVED: position: absolute; and bottom: 0; */
+    width: 100%;
+    /* Changed background and color to make it a content block below the image */
+    background: #fff;
+    text-align: center;
+    padding: 1rem;
+    color: #333; /* Dark text color */
+    font-weight: 600;
+    padding-top: 0.5rem; /* Space between image and text */
+}
+
+/* Style the h3 explicitly since it no longer inherits white from the overlay */
+.card-overlay h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    color: #1b5e20; /* Primary dark green for title */
+}
+
+
+/*
+ | * -------------------*-------------------------------------------------------
+ | SERVICES PREVIEW & FEATURES
+ |--------------------------------------------------------------------------
+ */
+.services-preview {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+    margin-top: 3rem;
+}
+
+.service-box {
+    background: #fff;
+    border-radius: 10px;
+    padding: 2rem 1.5rem;
+    box-shadow: 0 2px 8px rgba(45, 174, 79, 0.25);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.service-box:hover {
+    transform: translateY(-5px);
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    margin-top: 3rem;
+}
+
+.feature {
+    background: #fff;
+    border-radius: 8px;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(45, 174, 79, 0.25);
+    transition: transform 0.3s ease;
+}
+
+.feature:hover {
+    transform: translateY(-5px);
+}
+
+.feature h4 {
+    color: #2dae4f;
+    margin-bottom: 0.5rem;
+}
+
+
+/*
+ | * -------------------*-------------------------------------------------------
+ | CTA BANNER
+ |--------------------------------------------------------------------------
+ */
+.cta-banner {
+    text-align: center;
+    padding: 4rem 1rem;
+    background: linear-gradient(135deg, #2dae4f, #1b5e20);
+    color: #fff;
+}
+
+.cta-banner h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.cta-banner p {
+    margin-bottom: 2rem;
+}
+
+
+/*
+ | * -------------------*-------------------------------------------------------
+ | SERVICE DETAIL SECTIONS
+ |--------------------------------------------------------------------------
+ */
+.service-section {
+    background: #fff;
+    margin-bottom: 2rem;
+    padding: 2.5rem 2rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(45, 174, 79, 0.25);
+    transition: 0.3s ease, transform 0.3s ease;
+    transform: translateY(-5px);
+}
+
+.service-section:hover {
+    box-shadow: 0 4px 20px rgba(45, 174, 79, 0.35); /* Stronger green glow */
+    transform: translateY(-5px); /* Move up on hover */
+}
+
+.service-section h2 {
+    color: #1b5e20;
+    margin-bottom: 1rem;
+}
+
+
+/*
+ | * -------------------*-------------------------------------------------------
+ | CATALOGUE VIEWER (SWIPEBOOK) STYLES
+ |--------------------------------------------------------------------------
+ */
+.catalogue-container {
+    width: 90%;
+    max-width: 1400px;
+    margin: 2rem auto;
+    padding: 0 20px;
+}
+
+.catalogue-header {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding: 2rem 0;
+}
+
+.catalogue-header h1 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.catalogue-header p {
+    font-size: 1.1rem;
+    color: #666;
+}
+
+.back-link {
+    display: inline-block;
+    margin: 20px 0;
+    text-decoration: none;
+    color: #2dae4f; /* Using primary green */
+    font-weight: bold;
+    transition: color 0.3s ease;
+    font-size: 1rem;
+}
+
+.back-link:hover {
+    color: #1b5e20;
+}
+
+.swipebook-wrapper {
+    width: 100%;
+    height: 80vh;
+    margin: 2rem auto;
+    box-shadow: 0 0 20px rgba(0,0,0,0.15);
+    border-radius: 12px;
+    overflow: hidden;
+    background: #fff;
+    position: relative;
+}
+
+.swipebook {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.page-counter {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255, 255, 255, 0.95);
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-weight: 600;
+    z-index: 10;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    font-size: 0.95rem;
+}
+
+.swipebook-pages {
+    display: flex;
+    /* Mobile Transition is set in JS */
+    height: 100%;
+    width: 100%;
+}
+
+.swipebook-pages img {
+    min-width: 100%;
+    height: 100%;
+    object-fit: contain;
+    flex-shrink: 0;
+    background: #fff;
+}
+
+.swipebook-indicators {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    z-index: 10;
+    max-width: 90%;
+    overflow-x: auto;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+}
+
+.swipebook-indicators::-webkit-scrollbar {
+    height: 4px;
+}
+
+.swipebook-indicators::-webkit-scrollbar-thumb {
+    background: #2dae4f; /* Using primary green */
+    border-radius: 2px;
+}
+
+.swipebook-indicators .indicator {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+.swipebook-indicators .indicator.active {
+    background: #2dae4f; /* Using primary green */
+    transform: scale(1.2);
+}
+
+.swipe-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.95);
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    color: #333;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.swipe-nav:hover {
+    background: #2dae4f; /* Using primary green */
+    color: white;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.swipe-nav.prev {
+    left: 20px;
+}
+
+.swipe-nav.next {
+    right: 20px;
+}
+
+
+/*
+ | * -------------------*-------------------------------------------------------
+ | FOOTER & UTILITIES
+ |--------------------------------------------------------------------------
+
+ */
+.footer {
+    background: #111;
+    color: #ccc;
+    padding: 3rem 0 1rem;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer h4 {
+    color: #fff;
+    margin-bottom: 1rem;
+}
+
+.footer a {
+    color: #2dae4f;
+    transition: color 0.3s;
+}
+
+.footer a:hover {
+    color: #1b5e20;
+}
+
+/* FIX: Align 'Follow us:' and .social-links on the same horizontal line,
+ w*hile keeping the* copyright note separate and centered. */
+.footer-bottom {
+    text-align: center; /* Keeps the whole group centered */
+    padding-top: 2rem;
+    border-top: 1px solid #333;
+    font-size: 0.9rem;
+}
+
+/* New style to group the title and social links */
+.footer-bottom .footer-title {
+    /* Forces the text to sit next to the social links */
+    display: inline-block;
+    margin-right: 10px; /* Space between title and icons */
+    vertical-align: middle; /* Centers text vertically with icons */
+}
+
+/* Container for social icons */
+.social-links {
+    /* FIX: Use inline-flex so the container itself sits inline with .footer-title */
+    display: inline-flex;
+    /* Adds space between the icons */
+    gap: 15px;
+    align-items: center;
+    vertical-align: middle; /* Centers icons vertically with title */
+    margin-top: 0; /* Remove the extra margin since we're aligning now */
+}
+
+/* TARGET AND RESIZE THE ICONS */
+.social-links img {
+    /* Set a standard, smaller size for the SVG icons */
+    width: 30px;
+    height: 30px;
+    /* Optional: Add a transition for a smooth hover effect */
+    transition: transform 0.3s ease;
+}
+
+/* Optional: Add a subtle hover effect */
+.social-links a:hover img {
+    transform: scale(1.1);
+}
+/*
+ | * -------------------*-------------------------------------------------------
+ | RESPONSIVE MEDIA QUERIES
+ |--------------------------------------------------------------------------
+ */
+
+/* Mobile Navigation */
+@media (max-width: 768px) {
+    .nav-container {
+        flex-wrap: wrap;
+        justify-content: space-between; /* Adjusted to keep logo left */
+        padding: 0 10px;
+    }
+
+    .main-nav {
+        display: none; /* Hidden by default for hamburger toggle */
+        width: 100%;
+        text-align: center;
+        margin-top: 0.5rem;
+        flex-direction: column;
+        background: #fff;
+        padding-bottom: 10px;
+    }
+
+    .main-nav.active {
+        display: flex;
+    }
+
+    .main-nav a {
+        display: block;
+        margin: 0.4rem 0;
+    }
+
+    .logo img {
+        height: 38px;
+    }
+
+    /* Hamburger icon visibility */
+    .hamburger {
+        display: block;
+    }
+}
+
+/* Smaller Mobile Screens */
+@media (max-width: 600px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+    .hero p {
+        font-size: 1rem;
+    }
+    .catalogue-card img {
+        height: 200px;
+    }
+    .service-section {
+        padding: 1.5rem;
+    }
+    .swipe-nav {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+    .swipe-nav.prev {
+        left: 10px;
+    }
+    .swipe-nav.next {
+        right: 10px;
+    }
+    .page-counter {
+        font-size: 0.85rem;
+        padding: 8px 16px;
+    }
+}
+
+/* Desktop Flipbook Styles (for screens >= 992px) */
+@media (min-width: 992px) {
+    /* Main wrapper size adjustment for better desktop viewing */
+    .swipebook-wrapper {
+        height: 85vh; /* Taller viewport on desktop */
+        aspect-ratio: 16 / 10; /* Set a fixed aspect ratio for a book look */
+        max-width: 1000px;
+        border-radius: 8px; /* Slightly smaller border radius for a book look */
+    }
+
+    /* Change the container to display TWO pages side-by-side */
+    .swipebook-pages {
+        /* Transition is handled by JS for the flip effect */
+        transition: none !important;
+    }
+
+    /* Each page should now take 50% width of the container on desktop */
+    .swipebook-pages img {
+        min-width: 50%;
+        object-fit: contain;
+    }
+
+    /* Center the page indicators at the bottom */
+    .swipebook-indicators {
+        bottom: 10px;
+    }
+}
+
+.page-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin: 2rem 0 1rem 0;
+    color: #333;
+    font-weight: 700;
+}
+
+.page-subtitle {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Styling for the card grid index */
+.catalogue-index-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+    padding: 0 20px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.service-card {
+    background: #fff;
+    padding: 2rem;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-decoration: none;
+    color: inherit;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.service-card i {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #2dae4f; /* Primary color */
+}
+
+.service-card h3 {
+    margin-top: 0.5rem;
+    font-size: 1.4rem;
+    color: #333;
+}
+
+.service-card p {
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+.card-cta {
+    display: block;
+    margin-top: 1rem;
+    font-weight: bold;
+    color: #667eea;
+    font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+    .page-title {
+        font-size: 2rem;
+    }
+    .page-subtitle {
+        font-size: 1rem;
+    }
+}
+
+
+/*
+ | * -------------------*-------------------------------------------------------
+ | flipbook
+ |--------------------------------------------------------------------------
+ *
+
+ /* Desktop Flipbook Styles - PRIORITY VIEW */
+ @media (min-width: 768px) {
+     /* Main wrapper optimized for flipbook */
+     .swipebook-wrapper {
+         height: 90vh;
+         max-width: 1400px;
+         margin: 2rem auto;
+     }
+
+     /* Hide swipe controls on desktop - flipbook has its own */
+     .swipebook-indicators {
+         display: none;
+     }
+
+     .swipe-nav {
+         display: none;
+     }
+ }
+
+ /* Flipbook-specific styles */
+ .flipbook {
+     width: 100%;
+     height: 100%;
+     margin: 0 auto;
+ }
+
+ .flipbook-page {
+     background-color: white;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+ }
+
+ .flipbook-page img {
+     max-width: 100%;
+     max-height: 100%;
+     object-fit: contain;
+ }
+
+ /* Turn.js shadow effects */
+ .turn-page {
+     background-color: white;
+     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+ }
+
+ /* Page counter remains visible for flipbook */
+ .page-counter {
+     display: block !important;
+ }
+
+ /* Mobile Swipebook - Fallback Only */
+ @media (max-width: 767px) {
+     .swipebook-wrapper {
+         height: 70vh;
+     }
+
+     .swipebook-indicators {
+         display: flex;
+     }
+
+     .swipe-nav {
+         display: flex;
+     }
+
+     /* Turn.js Flipbook Specific Styles */
+     .flipbook {
+         width: 100% !important;
+         height: 100% !important;
+         margin: 0 auto;
+         position: relative;
+     }
+
+     .flipbook .turn-page {
+         background-color: white;
+         cursor: pointer;
+     }
+
+     .flipbook-page {
+         width: 100%;
+         height: 100%;
+         background-color: white;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         overflow: hidden;
+     }
+
+     .flipbook-page img {
+         max-width: 100%;
+         max-height: 100%;
+         width: auto;
+         height: auto;
+         object-fit: contain;
+         pointer-events: none; /* Prevent image from blocking clicks */
+     }
+
+     /* Turn.js hard page styling */
+     .turn-page {
+         box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+     }
+
+     /* Make sure wrapper doesn't block interaction */
+     .swipebook-wrapper {
+         /* Content continues but was cut off in original */
+     }
+ }
+
+    text-decoration: none;
+    color: inherit;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+/*
+ | * -------------------*-------------------------------------------------------
+ | BUTTON STYLES
+ |--------------------------------------------------------------------------
+ */
+.btn-primary {
+    background: #2dae4f;
+    color: #fff;
+    padding: 0.7rem 1.5rem;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: background 0.3s ease;
+    display: inline-flex; /* Added for consistency with CTA */
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.btn-primary:hover {
+    background: #1b5e20;
+}
+
+.btn-outline {
+    border: 2px solid #fff;
+    color: #fff;
+    padding: 0.7rem 1.5rem;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: inline-flex; /* Added for consistency with CTA */
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.btn-outline:hover {
+    background: #fff;
+    color: #1b5e20;
+}
+
+.hero-cta {
+    margin-top: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-cta a {
+    margin: 0; /* Remove the old margin */
+}
+
+.btn-primary.center,
+a.btn-primary.center {
+    display: block;
+    width: fit-content;
+    margin: 2rem auto 0;
+    text-align: center;
+}
+
+/* Mobile adjustments */
+@media (max-width: 600px) {
+    .hero-cta {
+        flex-direction: column;
+        gap: 1rem;
+        margin-bottom: 4rem; /* Increased space at bottom to prevent overlap */
+    }
+
+    .hero-cta a {
+        width: 100%;
+        max-width: 280px;
+        justify-content: center;
+        text-align: center;
+    }
+}
+
+/* Tablet adjustments */
+@media (max-width: 768px) {
+    .hero-cta {
+        margin-bottom: 4rem; /* Increased space at bottom for tablets too */
+    }
+}
+
+/*
+ | * -------------------*-------------------------------------------------------
+ | HEADER NAVIGATION
+ |--------------------------------------------------------------------------
+ */
+.main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.main-header.scrolled {
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+    max-width: 1200px;
+}
+
+.logo img {
+    height: 145px;
+    width: auto;
+}
+
+.main-nav a {
+    margin: 0 1rem;
+    font-weight: 500;
+    color: #1b5e20;
+    transition: color 0.3s;
+}
+
+.main-nav a.active,
+.main-nav a:hover {
+    color: #2dae4f;
+}
+
+/* Enhanced Hamburger Menu */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    padding: 10px;
+    flex-direction: column;
+    gap: 5px;
+    z-index: 1001;
+    background: transparent;
+    border: none;
+    position: relative;
+    width: 40px;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+}
+
+.hamburger .bar {
+    width: 28px;
+    height: 3px;
+    background-color: #1b5e20;
+    transition: all 0.3s ease-in-out;
+    border-radius: 3px;
+    position: relative;
+}
+
+/* Animated X when active */
+.hamburger.active .bar:nth-child(1) {
+    transform: rotate(45deg) translate(8px, 8px);
+    background-color: #2dae4f;
+}
+
+.hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+    transform: translateX(-20px);
+}
+
+.hamburger.active .bar:nth-child(3) {
+    transform: rotate(-45deg) translate(8px, -8px);
+    background-color: #2dae4f;
+}
+
+/* When header is scrolled, change hamburger color */
+.main-header.scrolled .hamburger .bar {
+    background-color: #1b5e20;
+}
+
+/* FIXED: More specific desktop-only class */
+.nav-container .btn-primary.desktop-only {
+    display: inline-flex;
+}
+
+@media (max-width: 768px) {
+    /* FIXED: Only hide header WhatsApp button */
+    .nav-container .btn-primary.desktop-only {
+        display: none !important;
+    }
+
+    .hamburger {
+        display: flex !important;
+    }
+
+    /* Enhanced mobile menu */
+    .main-nav {
+        position: fixed;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: #fff;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease-in-out;
+        z-index: 999;
+        padding: 1.5rem 0;
+    }
+
+    .main-nav.active {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+        display: flex !important;
+    }
+
+    .main-nav a {
+        display: block;
+        margin: 0;
+        padding: 1rem 2rem;
+        color: #1b5e20;
+        font-size: 1.1rem;
+        border-bottom: 1px solid #f0f0f0;
+        transition: all 0.3s ease;
+    }
+
+    .main-nav a:last-child {
+        border-bottom: none;
+    }
+
+    .main-nav a:hover,
+    .main-nav a.active {
+        background: #f8f8f8;
+        color: #2dae4f;
+        padding-left: 2.5rem;
+    }
+
+    /* Add WhatsApp to mobile menu */
+    .main-nav::after {
+        content: '';
+        display: block;
+        width: 90%;
+        margin: 1rem auto 0;
+        padding-top: 1rem;
+        border-top: 2px solid #f0f0f0;
+    }
+
+    /* FIXED: Ensure hero CTA buttons are always visible on mobile */
+    .hero-cta .btn-primary,
+    .hero-cta .btn-outline {
+        display: inline-flex !important;
+    }
+}
+
+/*
+ | * -------------------*-------------------------------------------------------
+ | HERO SECTION
+ |--------------------------------------------------------------------------
+ */
+.hero {
+    position: relative;
+    height: 90vh;
+    background: url('../assets/hero-bg.png') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+}
+
+.hero.small {
+    height: 55vh;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    padding: 0 1rem;
+}
+
+.hero h1 {
+    font-size: 2.6rem;
+    font-weight: 700;
+}
+
+.hero p {
+    margin-top: 1rem;
+    font-size: 1.1rem;
+}
+
+.hero-cta {
+    margin-top: 2rem;
+}
+
+.hero-cta a {
+    margin: 0 0.5rem;
+}
+
+
+/*
+ | * -------------------*-------------------------------------------------------
+ | GENERAL SECTIONS & UTILITIES
+ |--------------------------------------------------------------------------
+ */
+.section {
+    padding: 5rem 0;
+}
+
+.section h2 {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: #1b5e20;
+}
+
+.section-intro {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 3rem;
+    color: #555;
+}
+
+.light-bg {
+    background: #f8f8f8;
+}
+
+.cta-center {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+
+/*
+ | * -------------------*-------------------------------------------------------
+ | CATALOGUE SPECIFIC STYLES (INDEX & CARD)
+ |--------------------------------------------------------------------------
+ */
+.catalogue-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+    justify-items: center;
+}
+
+.catalogue-card {
+    /* REMOVED: position: relative; (was causing overlay) */
+    overflow: hidden;
+    border-radius: 10px;
+    background: #E6F4EA;
+    max-width: 340px;
+    width: 100%;
+    transition: transform 0.3s ease;
+    /* Added subtle shadow for the card boundary */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.catalogue-card:hover {
+    transform: translateY(-5px);
+}
+
+.catalogue-card img {
+    height: 200px; /* Reduced from 240px to make space for the title below */
+    width: 100%;
+    object-fit: scale-down;
     transition: transform 0.3s ease;
     /* Rounded only the top corners */
     border-radius: 10px 10px 0 0;
