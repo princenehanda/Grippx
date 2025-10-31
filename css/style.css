@@ -206,12 +206,12 @@ a.btn-primary.center {
     background-color: #1b5e20;
 }
 
-.desktop-only {
+.nav-container .btn-primary.desktop-only {
     display: inline-flex;
 }
 
 @media (max-width: 768px) {
-    .desktop-only {
+    .nav-container .btn-primary.desktop-only {
         display: none !important;
     }
 
