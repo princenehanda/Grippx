@@ -1,8 +1,8 @@
 /*
-|--------------------------------------------------------------------------
-| GLOBAL RESET & BASE STYLES
-|--------------------------------------------------------------------------
-*/
+ | -------------------*-------------------------------------------------------
+ | GLOBAL RESET & BASE STYLES
+ |--------------------------------------------------------------------------
+ */
 * {
     margin: 0;
     padding: 0;
@@ -36,10 +36,10 @@ a {
 
 
 /*
-|--------------------------------------------------------------------------
-| BUTTON STYLES
-|--------------------------------------------------------------------------
-*/
+ | -------------------*-------------------------------------------------------
+ | BUTTON STYLES
+ |--------------------------------------------------------------------------
+ */
 .btn-primary {
     background: #2dae4f;
     color: #fff;
@@ -100,7 +100,7 @@ a.btn-primary.center {
         flex-direction: column;
         gap: 1rem;
     }
-    
+
     .hero-cta a {
         width: 100%;
         max-width: 280px;
@@ -110,10 +110,10 @@ a.btn-primary.center {
 }
 
 /*
-|--------------------------------------------------------------------------
-| HEADER NAVIGATION
-|--------------------------------------------------------------------------
-*/
+ | -------------------*-------------------------------------------------------
+ | HEADER NAVIGATION
+ |--------------------------------------------------------------------------
+ */
 .main-header {
     position: fixed;
     top: 0;
@@ -214,11 +214,11 @@ a.btn-primary.center {
     .desktop-only {
         display: none !important;
     }
-    
+
     .hamburger {
         display: flex !important;
     }
-    
+
     /* Enhanced mobile menu */
     .main-nav {
         position: fixed;
@@ -234,14 +234,14 @@ a.btn-primary.center {
         z-index: 999;
         padding: 1.5rem 0;
     }
-    
+
     .main-nav.active {
         transform: translateY(0);
         opacity: 1;
         visibility: visible;
         display: flex !important;
     }
-    
+
     .main-nav a {
         display: block;
         margin: 0;
@@ -251,18 +251,18 @@ a.btn-primary.center {
         border-bottom: 1px solid #f0f0f0;
         transition: all 0.3s ease;
     }
-    
+
     .main-nav a:last-child {
         border-bottom: none;
     }
-    
+
     .main-nav a:hover,
     .main-nav a.active {
         background: #f8f8f8;
         color: #2dae4f;
         padding-left: 2.5rem;
     }
-    
+
     /* Add WhatsApp to mobile menu */
     .main-nav::after {
         content: '';
@@ -275,10 +275,10 @@ a.btn-primary.center {
 }
 
 /*
-|--------------------------------------------------------------------------
-| HERO SECTION
-|--------------------------------------------------------------------------
-*/
+ | -------------------*-------------------------------------------------------
+ | HERO SECTION
+ |--------------------------------------------------------------------------
+ */
 .hero {
     position: relative;
     height: 90vh;
@@ -330,10 +330,10 @@ a.btn-primary.center {
 
 
 /*
-|--------------------------------------------------------------------------
-| GENERAL SECTIONS & UTILITIES
-|--------------------------------------------------------------------------
-*/
+ | -------------------*-------------------------------------------------------
+ | GENERAL SECTIONS & UTILITIES
+ |--------------------------------------------------------------------------
+ */
 .section {
     padding: 5rem 0;
 }
@@ -364,10 +364,10 @@ a.btn-primary.center {
 
 
 /*
-|--------------------------------------------------------------------------
-| CATALOGUE SPECIFIC STYLES (INDEX & CARD)
-|--------------------------------------------------------------------------
-*/
+ | -------------------*-------------------------------------------------------
+ | CATALOGUE SPECIFIC STYLES (INDEX & CARD)
+ |--------------------------------------------------------------------------
+ */
 .catalogue-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -376,13 +376,15 @@ a.btn-primary.center {
 }
 
 .catalogue-card {
-    position: relative;
+    /* REMOVED: position: relative; (was causing overlay) */
     overflow: hidden;
     border-radius: 10px;
     background: #fff;
     max-width: 340px;
     width: 100%;
     transition: transform 0.3s ease;
+    /* Added subtle shadow for the card boundary */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .catalogue-card:hover {
@@ -390,10 +392,12 @@ a.btn-primary.center {
 }
 
 .catalogue-card img {
-    height: 240px;
+    height: 200px; /* Reduced from 240px to make space for the title below */
     width: 100%;
     object-fit: cover;
     transition: transform 0.3s ease;
+    /* Rounded only the top corners */
+    border-radius: 10px 10px 0 0;
 }
 
 .catalogue-card:hover img {
@@ -401,22 +405,30 @@ a.btn-primary.center {
 }
 
 .card-overlay {
-    position: absolute;
-    bottom: 0;
+    /* REMOVED: position: absolute; and bottom: 0; */
     width: 100%;
-    background: rgba(0, 0, 0, 0.6);
+    /* Changed background and color to make it a content block below the image */
+    background: #fff;
     text-align: center;
     padding: 1rem;
-    color: #fff;
+    color: #333; /* Dark text color */
     font-weight: 600;
+    padding-top: 0.5rem; /* Space between image and text */
+}
+
+/* Style the h3 explicitly since it no longer inherits white from the overlay */
+.card-overlay h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    color: #1b5e20; /* Primary dark green for title */
 }
 
 
 /*
-|--------------------------------------------------------------------------
-| SERVICES PREVIEW & FEATURES
-|--------------------------------------------------------------------------
-*/
+ | -------------------*-------------------------------------------------------
+ | SERVICES PREVIEW & FEATURES
+ |--------------------------------------------------------------------------
+ */
 .services-preview {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -464,10 +476,10 @@ a.btn-primary.center {
 
 
 /*
-|--------------------------------------------------------------------------
-| CTA BANNER
-|--------------------------------------------------------------------------
-*/
+ | -------------------*-------------------------------------------------------
+ | CTA BANNER
+ |--------------------------------------------------------------------------
+ */
 .cta-banner {
     text-align: center;
     padding: 4rem 1rem;
@@ -486,10 +498,10 @@ a.btn-primary.center {
 
 
 /*
-|--------------------------------------------------------------------------
-| SERVICE DETAIL SECTIONS
-|--------------------------------------------------------------------------
-*/
+ | -------------------*-------------------------------------------------------
+ | SERVICE DETAIL SECTIONS
+ |--------------------------------------------------------------------------
+ */
 .service-section {
     background: #fff;
     margin-bottom: 2rem;
@@ -501,8 +513,8 @@ a.btn-primary.center {
 }
 
 .service-section:hover {
-  box-shadow: 0 4px 20px rgba(45, 174, 79, 0.35); /* Stronger green glow */
-  transform: translateY(-5px); /* Move up on hover */
+    box-shadow: 0 4px 20px rgba(45, 174, 79, 0.35); /* Stronger green glow */
+    transform: translateY(-5px); /* Move up on hover */
 }
 
 .service-section h2 {
@@ -512,10 +524,10 @@ a.btn-primary.center {
 
 
 /*
-|--------------------------------------------------------------------------
-| CATALOGUE VIEWER (SWIPEBOOK) STYLES
-|--------------------------------------------------------------------------
-*/
+ | -------------------*-------------------------------------------------------
+ | CATALOGUE VIEWER (SWIPEBOOK) STYLES
+ |--------------------------------------------------------------------------
+ */
 .catalogue-container {
     width: 90%;
     max-width: 1400px;
@@ -676,11 +688,11 @@ a.btn-primary.center {
 
 
 /*
-|--------------------------------------------------------------------------
-| FOOTER & UTILITIES
-|--------------------------------------------------------------------------
+ | -------------------*-------------------------------------------------------
+ | FOOTER & UTILITIES
+ |--------------------------------------------------------------------------
 
-*/
+ */
 .footer {
     background: #111;
     color: #ccc;
@@ -711,7 +723,7 @@ a.btn-primary.center {
 }
 
 /* FIX: Align 'Follow us:' and .social-links on the same horizontal line,
-   while keeping the copyright note separate and centered. */
+ while keeping the* copyright note separate and centered. */
 .footer-bottom {
     text-align: center; /* Keeps the whole group centered */
     padding-top: 2rem;
@@ -732,7 +744,7 @@ a.btn-primary.center {
     /* FIX: Use inline-flex so the container itself sits inline with .footer-title */
     display: inline-flex;
     /* Adds space between the icons */
-    gap: 15px; 
+    gap: 15px;
     align-items: center;
     vertical-align: middle; /* Centers icons vertically with title */
     margin-top: 0; /* Remove the extra margin since we're aligning now */
@@ -741,8 +753,8 @@ a.btn-primary.center {
 /* TARGET AND RESIZE THE ICONS */
 .social-links img {
     /* Set a standard, smaller size for the SVG icons */
-    width: 30px; 
-    height: 30px; 
+    width: 30px;
+    height: 30px;
     /* Optional: Add a transition for a smooth hover effect */
     transition: transform 0.3s ease;
 }
@@ -751,10 +763,11 @@ a.btn-primary.center {
 .social-links a:hover img {
     transform: scale(1.1);
 }
-|--------------------------------------------------------------------------
-| RESPONSIVE MEDIA QUERIES
-|--------------------------------------------------------------------------
-*/
+/*
+ | -------------------*-------------------------------------------------------
+ | RESPONSIVE MEDIA QUERIES
+ |--------------------------------------------------------------------------
+ */
 
 /* Mobile Navigation */
 @media (max-width: 768px) {
@@ -763,7 +776,7 @@ a.btn-primary.center {
         justify-content: space-between; /* Adjusted to keep logo left */
         padding: 0 10px;
     }
-    
+
     .main-nav {
         display: none; /* Hidden by default for hamburger toggle */
         width: 100%;
@@ -773,25 +786,25 @@ a.btn-primary.center {
         background: #fff;
         padding-bottom: 10px;
     }
-    
+
     .main-nav.active {
         display: flex;
     }
-    
+
     .main-nav a {
         display: block;
         margin: 0.4rem 0;
     }
-    
+
     .logo img {
         height: 38px;
     }
 
     /* Hamburger icon visibility */
     .hamburger {
-        display: block; 
+        display: block;
     }
-    
+
     /* Hide desktop buttons if they were separate elements */
     .btn-primary:not(.floating-whatsapp) {
         display: none;
@@ -842,7 +855,7 @@ a.btn-primary.center {
     /* Change the container to display TWO pages side-by-side */
     .swipebook-pages {
         /* Transition is handled by JS for the flip effect */
-        transition: none !important; 
+        transition: none !important;
     }
 
     /* Each page should now take 50% width of the container on desktop */
@@ -850,288 +863,200 @@ a.btn-primary.center {
         min-width: 50%;
         object-fit: contain;
     }
-    
+
     /* Center the page indicators at the bottom */
     .swipebook-indicators {
         bottom: 10px;
     }
 }
 
-        .page-title {
-            text-align: center;
-            font-size: 2.5rem;
-            margin: 2rem 0 1rem 0;
-            color: #333;
-            font-weight: 700;
-        }
-        
-        .page-subtitle {
-            text-align: center;
-            font-size: 1.1rem;
-            color: #666;
-            margin-bottom: 2rem;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        /* Styling for the card grid index */
-        .catalogue-index-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-            padding: 0 20px;
-            max-width: 1200px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .service-card {
-            background: #fff;
-            padding: 2rem;
-            text-align: center;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
-            text-decoration: none;
-            color: inherit;
-        }
-
-        .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-        }
-
-        .service-card i {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            color: #2dae4f; /* Primary color */
-        }
-
-        .service-card h3 {
-            margin-top: 0.5rem;
-            font-size: 1.4rem;
-            color: #333;
-        }
-
-        .service-card p {
-            color: #666;
-            margin-bottom: 1rem;
-        }
-
-        .card-cta {
-            display: block;
-            margin-top: 1rem;
-            font-weight: bold;
-            color: #667eea;
-            font-size: 0.95rem;
-        }
-        
-        @media (max-width: 768px) {
-            .page-title {
-                font-size: 2rem;
-            }
-            .page-subtitle {
-                font-size: 1rem;
-            }
-        }
-
-
-        /*
-|--------------------------------------------------------------------------
-| flipbook
-|--------------------------------------------------------------------------
-*
-
-/* Desktop Flipbook Styles - PRIORITY VIEW */
-@media (min-width: 768px) {
-    /* Main wrapper optimized for flipbook */
-    .swipebook-wrapper {
-        height: 90vh;
-        max-width: 1400px;
-        margin: 2rem auto;
-    }
-    
-    /* Hide swipe controls on desktop - flipbook has its own */
-    .swipebook-indicators {
-        display: none;
-    }
-    
-    .swipe-nav {
-        display: none;
-    }
-}
-
-/* Flipbook-specific styles */
-.flipbook {
-    width: 100%;
-    height: 100%;
-    margin: 0 auto;
-}
-
-.flipbook-page {
-    background-color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.flipbook-page img {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
-}
-
-/* Turn.js shadow effects */
-.turn-page {
-    background-color: white;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-}
-
-/* Page counter remains visible for flipbook */
-.page-counter {
-    display: block !important;
-}
-
-/* Mobile Swipebook - Fallback Only */
-@media (max-width: 767px) {
-    .swipebook-wrapper {
-        height: 70vh;
-    }
-    
-    .swipebook-indicators {
-        display: flex;
-    }
-    
-    .swipe-nav {
-        display: flex;
-    }
-
-/* Turn.js Flipbook Specific Styles */
-.flipbook {
-    width: 100% !important;
-    height: 100% !important;
-    margin: 0 auto;
-    position: relative;
-}
-
-.flipbook .turn-page {
-    background-color: white;
-    cursor: pointer;
-}
-
-.flipbook-page {
-    width: 100%;
-    height: 100%;
-    background-color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-}
-
-.flipbook-page img {
-    max-width: 100%;
-    max-height: 100%;
-    width: auto;
-    height: auto;
-    object-fit: contain;
-    pointer-events: none; /* Prevent image from blocking clicks */
-}
-
-/* Turn.js hard page styling */
-.turn-page {
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-}
-
-/* Make sure wrapper doesn't block interaction */
-.swipebook-wrapper {
-    position: relative;
-    overflow: visible !important;
-}
-
-/* Navigation arrows for flipbook */
-.flipbook-nav {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(255, 255, 255, 0.95);
-    border: none;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.2rem;
+.page-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin: 2rem 0 1rem 0;
     color: #333;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    transition: all 0.3s ease;
-    z-index: 100;
+    font-weight: 700;
 }
 
-.flipbook-nav:hover {
-    background: #2dae4f;
-    color: white;
-    transform: translateY(-50%) scale(1.1);
+.page-subtitle {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.flipbook-nav.prev {
-    left: 20px;
+/* Styling for the card grid index */
+.catalogue-index-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+    padding: 0 20px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.flipbook-nav.next {
-    right: 20px;
+.service-card {
+    background: #fff;
+    padding: 2rem;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-decoration: none;
+    color: inherit;
 }
 
-/* Subtle flipbook navigation hint */
-.nav-hint {
-  position: fixed;
-  bottom: 40px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  background: rgba(255,255,255,0.85);
-  border-radius: 30px;
-  padding: 8px 18px;
-  font-size: 0.9rem;
-  color: #333;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.15);
-  z-index: 3000;
-  animation: fadeIn 0.6s ease forwards;
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
-.nav-hint .hint-left, .nav-hint .hint-right {
-  color: #2dae4f;
-  font-size: 1rem;
+.service-card i {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #2dae4f; /* Primary color */
 }
 
-.nav-hint .hint-text {
-  margin: 0;
-  font-weight: 500;
-  font-size: 0.85rem;
+.service-card h3 {
+    margin-top: 0.5rem;
+    font-size: 1.4rem;
+    color: #333;
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: translate(-50%, 10px); }
-  to { opacity: 1; transform: translate(-50%, 0); }
+.service-card p {
+    color: #666;
+    margin-bottom: 1rem;
 }
 
-.page-counter {
-    position: absolute;
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: rgba(255, 255, 255, 0.95);
-    padding: 10px 20px;
-    border-radius: 25px;
-    font-weight: 600;
-    z-index: 1000 !important;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+.card-cta {
+    display: block;
+    margin-top: 1rem;
+    font-weight: bold;
+    color: #667eea;
     font-size: 0.95rem;
-    pointer-events: none; /* Don't block clicks */
 }
+
+@media (max-width: 768px) {
+    .page-title {
+        font-size: 2rem;
+    }
+    .page-subtitle {
+        font-size: 1rem;
+    }
+}
+
+
+/*
+ | -------------------*-------------------------------------------------------
+ | flipbook
+ |--------------------------------------------------------------------------
+ *
+
+ /* Desktop Flipbook Styles - PRIORITY VIEW */
+ @media (min-width: 768px) {
+     /* Main wrapper optimized for flipbook */
+     .swipebook-wrapper {
+         height: 90vh;
+         max-width: 1400px;
+         margin: 2rem auto;
+     }
+
+     /* Hide swipe controls on desktop - flipbook has its own */
+     .swipebook-indicators {
+         display: none;
+     }
+
+     .swipe-nav {
+         display: none;
+     }
+ }
+
+ /* Flipbook-specific styles */
+ .flipbook {
+     width: 100%;
+     height: 100%;
+     margin: 0 auto;
+ }
+
+ .flipbook-page {
+     background-color: white;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+ }
+
+ .flipbook-page img {
+     max-width: 100%;
+     max-height: 100%;
+     object-fit: contain;
+ }
+
+ /* Turn.js shadow effects */
+ .turn-page {
+     background-color: white;
+     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+ }
+
+ /* Page counter remains visible for flipbook */
+ .page-counter {
+     display: block !important;
+ }
+
+ /* Mobile Swipebook - Fallback Only */
+ @media (max-width: 767px) {
+     .swipebook-wrapper {
+         height: 70vh;
+     }
+
+     .swipebook-indicators {
+         display: flex;
+     }
+
+     .swipe-nav {
+         display: flex;
+     }
+
+     /* Turn.js Flipbook Specific Styles */
+     .flipbook {
+         width: 100% !important;
+         height: 100% !important;
+         margin: 0 auto;
+         position: relative;
+     }
+
+     .flipbook .turn-page {
+         background-color: white;
+         cursor: pointer;
+     }
+
+     .flipbook-page {
+         width: 100%;
+         height: 100%;
+         background-color: white;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         overflow: hidden;
+     }
+
+     .flipbook-page img {
+         max-width: 100%;
+         max-height: 100%;
+         width: auto;
+         height: auto;
+         object-fit: contain;
+         pointer-events: none; /* Prevent image from blocking clicks */
+     }
+
+     /* Turn.js hard page styling */
+     .turn-page {
+         box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+     }
+
+     /* Make sure wrapper doesn't block interaction */
+     .swipebook-wrapper {
