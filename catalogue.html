@@ -150,7 +150,10 @@
         </div>
     </footer>
 
-    <script src="js/script.js"></script>
+    <!-- jQuery loaded BEFORE script.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="js/script.js"></script>
+    
     <script>
         // Count actual pages in each catalogue and update display
         document.addEventListener('DOMContentLoaded', function() {
