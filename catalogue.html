@@ -32,7 +32,7 @@
         <p class="page-subtitle">Select a category below to view the dedicated, interactive catalogue.</p>
 
         <section class="catalogue-grid container">
-            
+
             <a href="catalogue/catalogue-apparel.html" class="catalogue-card">
                 <img src="assets/Apparel/catalogue-page-00.webp" alt="Branded Apparel" />
                 <div class="card-overlay">
@@ -85,6 +85,14 @@
                 <img src="assets/Workwear/catalogue-page-00.webp" alt="Workwear" />
                 <div class="card-overlay">
                     <h3>Safety Workwear</h3>
+                    <p class="page-count">Loading pages...</p>
+                </div>
+            </a>
+
+            <a href="catalogue/catalogue-sublimation.html" class="catalogue-card">
+                <img src="assets/Sublimation/catalogue-page-00.webp" alt="Sublimation" />
+                <div class="card-overlay">
+                    <h3>Sublimation</h3>
                     <p class="page-count">Loading pages...</p>
                 </div>
             </a>
@@ -151,9 +159,8 @@
     </footer>
 
     <!-- jQuery loaded BEFORE script.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-<script src="js/script.js"></script>
-    
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="js/script.js"></script>
     <script>
         // Count actual pages in each catalogue and update display
         document.addEventListener('DOMContentLoaded', function() {
@@ -170,7 +177,7 @@
             catalogueLinks.forEach(cat => {
                 const card = document.querySelector(cat.selector);
                 if (!card) return;
-                
+
                 const pageCountEl = card.querySelector('.page-count');
                 if (!pageCountEl) return;
 
@@ -183,7 +190,7 @@
                     const img = new Image();
                     const paddedNum = index.toString().padStart(2, '0');
                     img.src = `assets/${cat.folder}/catalogue-page-${paddedNum}.webp`;
-                    
+
                     img.onload = function() {
                         pageCount++;
                         checksComplete++;
@@ -191,7 +198,7 @@
                             pageCountEl.textContent = `${pageCount} Pages`;
                         }
                     };
-                    
+
                     img.onerror = function() {
                         checksComplete++;
                         if (checksComplete === maxPages) {
