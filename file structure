@@ -1,0 +1,136 @@
+grippx.co -website/
+│
+├── index.html
+├── about.html
+├── catalogue.html
+├── service-physical.html
+├── service-activation.html
+├── service-strategic.html
+├── service-concierge.html
+├── blog.html             
+├── sitemap.xml                 
+├── robots.txt                  
+│
+├── assets/
+│   ├── logo.png
+│   ├── hero.png
+│   │
+│   ├── images/  
+│   │   ├── t-shirts.jpg
+│   │   ├── mugs.jpg
+│   │   ├── caps.jpg
+│   │   ├── banners.jpg
+│   │   ├── flyers.jpg
+│   │   └── ...other product images
+│   │
+│   ├── Apparel/
+│   │   ├── catalogue-page-00.webp
+│   │   ├── catalogue-page-01.webp
+│   │   ├── catalogue-page-02.webp
+│   │   ├── catalogue-page-03.webp
+│   │   ├── catalogue-page-04.webp
+│   │   ├── catalogue-page-05.webp
+│   │   ├── catalogue-page-06.webp
+│   │   └── ...other product images
+|   |
+|   ├── Diaries/
+│   │   ├── catalogue-page-00.webp
+│   │   ├── catalogue-page-01.webp
+│   │   ├── catalogue-page-02.webp
+│   │   ├── catalogue-page-03.webp
+│   │   ├── catalogue-page-04.webp
+│   │   ├── catalogue-page-05.webp
+│   │   ├── catalogue-page-06.webp
+│   │   └── ...other product images
+│   │
+|   ├── Display/
+│   │   ├── catalogue-page-00.webp
+│   │   ├── catalogue-page-01.webp
+│   │   ├── catalogue-page-02.webp
+│   │   ├── catalogue-page-03.webp
+│   │   ├── catalogue-page-04.webp
+│   │   ├── catalogue-page-05.webp
+│   │   ├── catalogue-page-06.webp
+│   │   └── ...other product images
+|   |
+|   ├── Headwear/
+│   │   ├── catalogue-page-00.webp
+│   │   ├── catalogue-page-01.webp
+│   │   ├── catalogue-page-02.webp
+│   │   ├── catalogue-page-03.webp
+│   │   ├── catalogue-page-04.webp
+│   │   ├── catalogue-page-05.webp
+│   │   ├── catalogue-page-06.webp
+│   │   └── ...other product images
+|   |
+|   │   ├── Tech/
+│   │   ├── catalogue-page-00.webp
+│   │   ├── catalogue-page-01.webp
+│   │   ├── catalogue-page-02.webp
+│   │   ├── catalogue-page-03.webp
+│   │   ├── catalogue-page-04.webp
+│   │   ├── catalogue-page-05.webp
+│   │   ├── catalogue-page-06.webp
+│   │   └── ...other product images
+|   |
+|   ├── Umbrella/
+│   │   ├── catalogue-page-00.webp
+│   │   ├── catalogue-page-01.webp
+│   │   ├── catalogue-page-02.webp
+│   │   ├── catalogue-page-03.webp
+│   │   ├── catalogue-page-04.webp
+│   │   ├── catalogue-page-05.webp
+│   │   ├── catalogue-page-06.webp
+│   │   └── ...other product images
+|   |
+│   ├── Workwear/
+│   │   ├── catalogue-page-00.webp
+│   │   ├── catalogue-page-01.webp
+│   │   ├── catalogue-page-02.webp
+│   │   ├── catalogue-page-03.webp
+│   │   ├── catalogue-page-04.webp
+│   │   ├── catalogue-page-05.webp
+│   │   ├── catalogue-page-06.webp
+│   │   └── ...other product images
+|   |
+│   └── icons/
+│       ├── facebook.svg
+│       ├── instagram.svg
+│       ├── whatsapp.svg
+│       └── service-icons.svg
+│
+├── blog/
+│   ├── blog-1.html
+│   ├── blog-3.html
+│   ├── post-1.html
+│   ├── post-2.html
+│   ├── post-3.html
+│   ├── post-4.html
+│   ├── post-5.html
+│   ├── post-6.html
+│   └── post-7.html 
+│
+├── catalogue/
+│   ├── catalogue-apparel.html
+│   ├── catalogue-display.html
+│   ├── catalogue-headwear.html
+│   ├── catalogue-notebooks.html
+│   ├── catalogue-promotional.html
+│   ├── catalogue-tech.html
+│   ├── catalogue-workwear.html
+│   └── catalogue-umbrella.html
+│
+├── css/
+│   ├── styles.css
+│   ├── about.css
+│   ├── activation.css
+│   ├── concierge.css
+│   ├── physical.css
+│   ├── strategic.css
+│   └── blog.css 
+│     
+├── js/
+│   └── script.js
+│
+├── README.md
+└── .gitignore
