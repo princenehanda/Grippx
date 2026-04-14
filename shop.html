@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Shop | GRIPPX - Branded Merchandise & Corporate Gifts</title>
+    
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/shop.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="main-header scrolled">
+        <div class="container nav-container">
+            <a href="index.html" class="logo"><img src="assets/logo.png" alt="Grippx logo"></a>
+            <nav class="main-nav" id="navLinks">
+                <a href="index.html">Home</a>
+                <a href="shop.html" class="active">Shop</a>
+                <a href="catalogue.html">Catalogues</a>
+                <a href="services.html">Services</a>
+                <a href="about.html">About</a>
+            </nav>
+            
+            <div style="display: flex; align-items: center; gap: 20px;">
+                <div class="cart-trigger" onclick="toggleCart(true)">
+                    <i class="fas fa-shopping-cart" style="font-size: 1.2rem; color: #1b5e20;"></i>
+                    <span class="cart-count">0</span>
+                </div>
+                <a href="https://wa.me/27732746135" target="_blank" class="btn-primary desktop-only">WhatsApp</a>
+                <div class="hamburger" id="hamburger">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="shop-container container">
+        <header class="shop-header">
+            <h1>Premium Brand Shop</h1>
+            <p>High-quality promotional products, branded apparel, and corporate gifts.</p>
+        </header>
+
+        <section class="shop-filters">
+            <button class="filter-btn active" data-category="all">All Products</button>
+            <button class="filter-btn" data-category="Apparel">Apparel</button>
+            <button class="filter-btn" data-category="Tech">Tech</button>
+            <button class="filter-btn" data-category="Notebooks">Notebooks</button>
+            <button class="filter-btn" data-category="Headwear">Headwear</button>
+            <button class="filter-btn" data-category="Display">Display</button>
+        </section>
+
+        <div class="product-grid">
+            <!-- Products will be rendered here by JS -->
+            <div style="grid-column: 1/-1; text-align: center; padding: 50px;">
+                <i class="fas fa-spinner fa-spin" style="font-size: 2rem; color: #ccc;"></i>
+                <p>Loading products...</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- MODAL OVERLAY (Product Details) -->
+    <div class="modal-overlay">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <div class="modal-content-inner" style="display: contents;">
+                <!-- Content injected by JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- CART SIDEBAR -->
+    <div class="cart-sidebar">
+        <div class="cart-header">
+            <h3>Your Shopping Cart</h3>
+            <span onclick="toggleCart(false)" style="cursor: pointer; font-size: 1.5rem;">&times;</span>
+        </div>
+        <div class="cart-items">
+            <!-- Cart items injected by JS -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span>R <span id="cart-total-amount">0</span></span>
+            </div>
+            
+            <div class="checkout-form">
+                <h4>Delivery Details</h4>
+                <div class="form-group">
+                    <input type="text" id="customer-name" placeholder="Full Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="customer-email" placeholder="Email Address" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" id="customer-phone" placeholder="Phone Number" required>
+                </div>
+                <div class="form-group">
+                    <textarea id="customer-address" placeholder="Delivery Address" rows="3" required></textarea>
+                </div>
+            </div>
+
+            <button class="btn-checkout" onclick="checkout()">Checkout with Paystack</button>
+            <p style="font-size: 0.75rem; color: #888; text-align: center; margin-top: 10px;">
+                Secure payment via Paystack (Visa, Mastercard, EFT)
+            </p>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>GRIPPX</h4>
+                    <p>Leading brand activation agency in Johannesburg, specializing in promotional products, marketing campaigns, and business concierge services across South Africa.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Shop</h4>
+                    <ul>
+                        <li><a href="shop.html">Browse All</a></li>
+                        <li><a href="shop.html?cat=Apparel">Apparel</a></li>
+                        <li><a href="shop.html?cat=Tech">Tech Gear</a></li>
+                        <li><a href="shop.html?cat=Display">Signage</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="https://wa.me/27732746135">Contact Sales</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>Johannesburg, Gauteng<br>South Africa</p>
+                    <p>WhatsApp: <a href="https://wa.me/27732746135" target="_blank">Message Us</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-note">&copy; 2025 GRIPPX. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Paystack Library -->
+    <script src="https://js.paystack.co/v1/inline.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/shop.js"></script>
+
+</body>
+</html>

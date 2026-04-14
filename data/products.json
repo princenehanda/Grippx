@@ -1,0 +1,86 @@
+[
+  {
+    "id": "apparel-001",
+    "category": "Apparel",
+    "name": "Premium Cotton Brand Hoodie",
+    "price": 650,
+    "image": "assets/Apparel/catalogue-page-01.webp",
+    "specs": {
+      "Material": "100% Brushed Cotton",
+      "Weight": "300gsm",
+      "Features": "Double-lined hood, kangaroo pocket, ribbed cuffs",
+      "Branding Options": "Screen Print, Embroidery, Heat Press"
+    },
+    "description": "A high-quality, durable hoodie perfect for corporate branding and team wear."
+  },
+  {
+    "id": "tech-001",
+    "category": "Tech",
+    "name": "Sync-Pro 10,000mAh Power Bank",
+    "price": 450,
+    "image": "assets/Tech/catalogue-page-01.webp",
+    "specs": {
+      "Capacity": "10,000mAh",
+      "Ports": "2x USB-A, 1x USB-C (PD 20W)",
+      "Safety": "Overcharge & short circuit protection",
+      "Branding": "Full color UV print or Laser Engraving"
+    },
+    "description": "High-capacity power bank with fast charging capabilities and large branding area."
+  },
+  {
+    "id": "notebook-001",
+    "category": "Notebooks",
+    "name": "Grippx Executive A5 Notebook",
+    "price": 180,
+    "image": "assets/Notebooks/catalogue-page-01.webp",
+    "specs": {
+      "Size": "A5 (148 x 210 mm)",
+      "Pages": "100 sheets (80gsm cream paper)",
+      "Cover": "Soft-touch PU leather",
+      "Extra": "Elastic closure, ribbon marker, expandable pocket"
+    },
+    "description": "Elegant and functional notebook for professionals, available in multiple corporate colors."
+  },
+  {
+    "id": "umbrella-001",
+    "category": "Outdoor",
+    "name": "Storm-Guard 30-inch Golf Umbrella",
+    "price": 320,
+    "image": "assets/Umbrella/catalogue-page-01.webp",
+    "specs": {
+      "Frames": "Fiberglass wind-proof frame",
+      "Handle": "Ergonomic EVA foam grip",
+      "Fabric": "190T Waterproof Pongee",
+      "Branding": "Large panel screen printing"
+    },
+    "description": "Massive 30-inch coverage with wind-vented canopy, ideal for golf and outdoor events."
+  },
+  {
+    "id": "headwear-001",
+    "category": "Headwear",
+    "name": "Urban-Snap 6-Panel Flat Peak Cap",
+    "price": 120,
+    "image": "assets/Headwear/catalogue-page-01.webp",
+    "specs": {
+      "Style": "Modern 6-panel structure",
+      "Fastener": "Adjustable plastic snapback",
+      "Material": "Heavy acrylic twill",
+      "Branding": "3D Embroidery, Patch application"
+    },
+    "description": "A modern, stylish cap that offers a great fit and excellent branding visibility."
+  },
+  {
+    "id": "display-001",
+    "category": "Display",
+    "name": "Econo-Roll 2.0 Pull-up Banner",
+    "price": 850,
+    "image": "assets/Display/catalogue-page-01.webp",
+    "specs": {
+      "Size": "850mm x 2000mm",
+      "Base": "Lightweight aluminum with carry bag",
+      "Print": "High-res non-curl PVC",
+      "Type": "Retractable"
+    },
+    "description": "The industry standard for portable displays, easy to set up and transport."
+  }
+]
