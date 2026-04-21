@@ -43,21 +43,30 @@
 
     <main class="shop-container container">
         <header class="shop-header">
-            <h1>Premium Brand Shop</h1>
-            <p>High-quality promotional products, branded apparel, and corporate gifts.</p>
+            <h1>Our Brand Collections</h1>
+            <p>Premium branded merchandise from leading suppliers</p>
         </header>
 
-        <section class="shop-filters">
-            <button class="filter-btn active" data-category="all">All Products</button>
-            <button class="filter-btn" data-category="Apparel">Apparel</button>
-            <button class="filter-btn" data-category="Tech">Tech</button>
-            <button class="filter-btn" data-category="Notebooks">Notebooks</button>
-            <button class="filter-btn" data-category="Headwear">Headwear</button>
-            <button class="filter-btn" data-category="Display">Display</button>
+        <!-- Breadcrumb / Back Navigation -->
+        <div id="shop-breadcrumb" class="shop-breadcrumb" style="display:none;">
+            <button id="back-to-collections" class="btn-back">
+                <i class="fas fa-arrow-left"></i> Back to Collections
+            </button>
+            <span id="current-collection-name">Collection Name</span>
+        </div>
+
+        <section class="shop-filters" id="category-filters-container">
+            <!-- Dynamic Category Buttons will appear here -->
         </section>
 
-        <div class="product-grid">
-            <!-- Products will be rendered here by JS -->
+        <!-- Collections Grid (Initial View) -->
+        <div class="collections-grid" id="collections-grid">
+            <!-- Dynamic Collection Cards -->
+        </div>
+
+        <!-- Product Grid (Drill-down View) -->
+        <div class="product-grid" id="product-grid" style="display:none;">
+            <!-- Dynamic Product Cards -->
             <div style="grid-column: 1/-1; text-align: center; padding: 50px;">
                 <i class="fas fa-spinner fa-spin" style="font-size: 2rem; color: #ccc;"></i>
                 <p>Loading products...</p>

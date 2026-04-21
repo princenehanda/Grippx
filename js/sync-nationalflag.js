@@ -13,7 +13,7 @@ const API_CONFIG = {
 
 async function sync() {
     try {
-        console.log('--- Product Sync Started ---');
+        console.log('--- Product Sync Execution ---');
 
         // 1. Authenticate using curl.exe
         console.log('Authenticating...');
@@ -43,35 +43,41 @@ async function sync() {
         const products = Array.isArray(feedData) ? feedData : (feedData.data || []);
         console.log(`Received ${products.length} products.`);
 
-        if (products.length === 0) {
-            console.warn('WARNING: Received 0 products.');
-            console.log('Sample:', feedRaw.substring(0, 100));
-        }
-
         // 3. Transform and Apply Markup
         console.log('Transforming data...');
         const transformed = products.map(p => {
-            const originalPrice = parseFloat(p.price) || 0;
-            const finalPrice = Math.round(originalPrice * API_CONFIG.markup * 100) / 100;
+            // Price Extraction logic: deep dive into stock -> pricings -> price
+            let rawPrice = 0;
+            if (p.stock && Array.isArray(p.stock) && p.stock.length > 0) {
+                const stockItem = p.stock[0];
+                if (stockItem.pricings && Array.isArray(stockItem.pricings) && stockItem.pricings.length > 0) {
+                    rawPrice = parseFloat(stockItem.pricings[0].price) || 0;
+                }
+            }
+
+            const finalPrice = Math.round(rawPrice * API_CONFIG.markup * 100) / 100;
             
-            // Handle images array
+            // Image URL logic: look for imageUrl in images array
             let image = 'assets/images/placeholder.jpg';
             if (p.images && Array.isArray(p.images) && p.images.length > 0) {
-                // If it's an array of strings
-                if (typeof p.images[0] === 'string') image = p.images[0];
-                // If it's an array of objects with a 'url' property (common)
-                else if (p.images[0].url) image = p.images[0].url;
-                // If it's an array of objects with a 'link' property
-                else if (p.images[0].link) image = p.images[0].link;
+                image = p.images[0].imageUrl || p.images[0].url || p.images[0].link || image;
+            }
+
+            // Supplier logic: extract from stock or default, and clean numbers
+            let supplier = 'National Flag';
+            if (p.stock && Array.isArray(p.stock) && p.stock.length > 0) {
+                supplier = p.stock[0].supplier || supplier;
+                supplier = supplier.replace(/^\d+\.\s*/, '');
             }
 
             return {
-                id: `nf-${p.id}`,
-                name: p.name,
+                id: `nf-${p.code || p.id}`,
+                name: p.description || p.name || 'Unnamed Product',
                 category: p.category || 'General',
                 price: finalPrice,
                 image: image,
-                description: p.description || p.fullDescription || '',
+                supplier: supplier,
+                description: p.fullDescription || p.description || '',
                 specs: {
                     "Supplier Code": p.code || 'N/A',
                     "Stock Status": "Available"
