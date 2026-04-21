@@ -14,27 +14,40 @@ document.addEventListener('DOMContentLoaded', function() {
     // Paystack Reference: https://paystack.com/docs/payments/accept-payments/#checkout
     const PAYSTACK_PUBLIC_KEY = 'pk_live_b5943e71520c82b1e376a897c081d6e0280b519c';
 
+    const PRODUCTS_PER_PAGE = 24;
+    let displayedCount = PRODUCTS_PER_PAGE;
+    let currentFilteredProducts = [];
+
     // 1. Fetch Products
     fetch('data/products.json')
         .then(response => response.json())
         .then(data => {
             products = data;
-            renderProducts(products);
+            currentFilteredProducts = products;
+            
+            generateCategoryFilters();
+            renderProducts();
             updateCartUI();
         })
         .catch(err => console.error('Error loading products:', err));
 
     // 2. Render Products
-    function renderProducts(items) {
+    function renderProducts(reset = true) {
         if (!productGrid) return;
-        productGrid.innerHTML = '';
         
-        items.forEach(product => {
+        if (reset) {
+            productGrid.innerHTML = '';
+            displayedCount = PRODUCTS_PER_PAGE;
+        }
+        
+        const itemsToRender = currentFilteredProducts.slice(productGrid.children.length, displayedCount);
+        
+        itemsToRender.forEach(product => {
             const card = document.createElement('div');
             card.className = 'product-card';
             card.innerHTML = `
                 <div class="product-image">
-                    <img src="${product.image}" alt="${product.name}">
+                    <img src="${product.image}" alt="${product.name}" loading="lazy">
                 </div>
                 <div class="product-info">
                     <div class="product-category">${product.category}</div>
@@ -45,23 +58,61 @@ document.addEventListener('DOMContentLoaded', function() {
             card.onclick = () => openModal(product);
             productGrid.appendChild(card);
         });
+
+        // Pagination
+        updateLoadMoreButton();
     }
 
-    // 3. Filter Logic
-    filterBtns.forEach(btn => {
-        btn.onclick = () => {
-            filterBtns.forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-            const category = btn.dataset.category;
-            
-            if (category === 'all') {
-                renderProducts(products);
-            } else {
-                const filtered = products.filter(p => p.category === category);
-                renderProducts(filtered);
+    function updateLoadMoreButton() {
+        let loadMoreBtn = document.getElementById('load-more-btn');
+        
+        if (displayedCount < currentFilteredProducts.length) {
+            if (!loadMoreBtn) {
+                loadMoreBtn = document.createElement('button');
+                loadMoreBtn.id = 'load-more-btn';
+                loadMoreBtn.className = 'btn-secondary';
+                loadMoreBtn.style.cssText = 'grid-column: 1/-1; margin: 40px auto; display: block; padding: 1rem 3rem;';
+                loadMoreBtn.textContent = 'Load More Products';
+                loadMoreBtn.onclick = () => {
+                    displayedCount += PRODUCTS_PER_PAGE;
+                    renderProducts(false);
+                };
+                productGrid.after(loadMoreBtn);
             }
-        };
-    });
+        } else {
+            if (loadMoreBtn) loadMoreBtn.remove();
+        }
+    }
+
+    // 3. Dynamic Filter Generation
+    function generateCategoryFilters() {
+        const filtersContainer = document.querySelector('.shop-filters');
+        if (!filtersContainer) return;
+
+        const categories = ['all', ...new Set(products.map(p => p.category))];
+        filtersContainer.innerHTML = '';
+
+        categories.forEach(cat => {
+            const btn = document.createElement('button');
+            btn.className = cat === 'all' ? 'filter-btn active' : 'filter-btn';
+            btn.dataset.category = cat;
+            btn.textContent = cat === 'all' ? 'All Products' : cat;
+            
+            btn.onclick = () => {
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                
+                if (cat === 'all') {
+                    currentFilteredProducts = products;
+                } else {
+                    currentFilteredProducts = products.filter(p => p.category === cat);
+                }
+                renderProducts(true);
+            };
+            
+            filtersContainer.appendChild(btn);
+        });
+    }
 
     // 4. Modal Logic
     function openModal(product) {
