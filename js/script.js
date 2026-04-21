@@ -17,11 +17,11 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // --- Mobile Menu Toggle (Hamburger Function) ---
+    
 const hamburger = document.getElementById('hamburger');
 const navLinks = document.getElementById('navLinks');
 if (hamburger && navLinks) {
-    // Add WhatsApp link to mobile menu
+    
     const isMobile = window.innerWidth <= 768;
     if (isMobile && !navLinks.querySelector('.mobile-whatsapp')) {
         const mobileWhatsApp = document.createElement('a');
@@ -69,7 +69,7 @@ if (hamburger && navLinks) {
     });
 }
 
-    // --- Newsletter Form Handler ---
+   
     const newsletterForm = document.getElementById('newsletterForm');
     if (newsletterForm) {
         newsletterForm.addEventListener('submit', function(e) {
@@ -86,7 +86,7 @@ if (hamburger && navLinks) {
             button.textContent = 'Subscribing...';
             button.disabled = true;
             
-            // Simulate API call delay
+            
             setTimeout(() => {
                 button.textContent = originalButtonText;
                 button.disabled = false;
