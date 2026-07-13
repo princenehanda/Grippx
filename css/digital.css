@@ -1,0 +1,87 @@
+/*
+ | DIGITAL MARKETING SERVICE PAGE
+ | Mirrors the visual language already used by style.css and the other
+ | service sub-pages (activation.css, concierge.css, strategic.css,
+ | physical.css): green brand palette, Inter typeface, soft green-tinted
+ | shadows, rounded 10px cards.
+ */
+
+.hero-section {
+    background: linear-gradient(135deg, #2dae4f, #1b5e20);
+    color: #fff;
+    text-align: center;
+    padding: 5rem 1rem;
+}
+
+.hero-section h1 {
+    font-size: 2.6rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+}
+
+.hero-section .subheading {
+    font-size: 1.1rem;
+    color: #eafaef;
+    max-width: 640px;
+    margin: 0 auto;
+}
+
+.service-detail {
+    padding: 4rem 0;
+}
+
+.service-block {
+    background: #fff;
+    border-radius: 10px;
+    padding: 2rem 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 10px rgba(45, 174, 79, 0.25);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.service-block:hover {
+    box-shadow: 0 4px 20px rgba(45, 174, 79, 0.35);
+    transform: translateY(-5px);
+}
+
+.service-block h2 {
+    color: #1b5e20;
+    margin-bottom: 0.75rem;
+    font-size: 1.4rem;
+}
+
+.service-block p {
+    color: #555;
+}
+
+.cta-container {
+    text-align: center;
+    margin-top: 2.5rem;
+}
+
+.cta-button-large {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: #2dae4f;
+    color: #fff;
+    font-weight: 600;
+    font-size: 1.05rem;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.cta-button-large:hover {
+    background: #1b5e20;
+    transform: translateY(-2px);
+}
+
+@media (max-width: 600px) {
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+    .service-block {
+        padding: 1.5rem;
+    }
+}
