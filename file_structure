@@ -1,0 +1,84 @@
+grippx.co-website/
+│
+├── index.html
+├── about.html
+├── services.html
+├── catalogue.html
+├── service-physical.html
+├── service-activation.html
+├── service-strategic.html
+├── service-concierge.html
+├── service-digital.html
+├── blog.html
+├── sitemap.xml
+├── robots.txt
+├── CNAME
+├── README.md
+├── .gitignore
+│
+├── .github/
+│   └── workflows/
+│       └── sync-products.yml       # 6-hour scheduled sync — must stay at repo root
+│
+├── data/
+│   └── products.json               # public, markup-applied, supplier data stripped
+│
+├── scripts/
+│   ├── sync-nationalflag.js        # Node — fetches raw feed via NF_EMAIL/NF_PASSWORD env vars
+│   └── build_products.py           # Python — applies 30% markup, writes data/products.json
+│
+├── assets/
+│   ├── logo.png
+│   ├── hero-bg.png
+│   │
+│   ├── Apparel/
+│   │   └── catalogue-page-00.webp ...
+│   ├── Headwear/
+│   │   └── catalogue-page-00.webp ...
+│   ├── Tech/
+│   │   └── catalogue-page-00.webp ...
+│   ├── Notebooks/
+│   │   └── catalogue-page-00.webp ...
+│   ├── Display/
+│   │   └── catalogue-page-00.webp ...
+│   ├── Workwear/
+│   │   └── catalogue-page-00.webp ...
+│   ├── Umbrella/
+│   │   └── catalogue-page-00.webp ...
+│   ├── Sublimation/
+│   │   └── catalogue-page-00.webp ...
+│   │
+│   └── icons/
+│       ├── facebook.svg
+│       ├── instagram.svg
+│       └── whatsapp.svg
+│
+├── blog/
+│   ├── blog-1.html
+│   ├── blog-3.html
+│   ├── post-1.html
+│   ├── post-2.html
+│   ├── post-3.html
+│   ├── post-4.html
+│   ├── post-5.html
+│   ├── post-6.html
+│   └── post-7.html
+│
+├── css/
+│   ├── style.css
+│   ├── about.css
+│   ├── activation.css
+│   ├── concierge.css
+│   ├── physical.css
+│   ├── strategic.css
+│   ├── digital.css
+│   └── blog.css
+│
+└── js/
+    └── script.js
+
+Flagged for removal (do not treat as current structure):
+- shop.html, js/shop.js               — legacy checkout, superseded by catalogue.html
+- catalogue/                          — legacy per-category static pages, superseded by catalogue.html
+- js/sync-nationalflag.js             — had hardcoded supplier credentials; rotate password if still present, then delete
+- scratch/sync-nationalflag.js        — duplicate scratch copy, delete

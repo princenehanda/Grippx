@@ -1,0 +1,15 @@
+# National Flag raw feed — contains internal supplier/tier names, never commit
+scripts/.cache/
+
+# Local secrets — credentials belong in GitHub Actions Secrets (NF_EMAIL, NF_PASSWORD), never in a local file
+.env
+.env.local
+
+# Legacy/incomplete work-in-progress, not for production
+/scratch/
+
+# OS junk
+.DS_Store
+
+# Node
+node_modules/

@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /catalogue/
+Disallow: /scratch/
+Disallow: /scripts/
+Sitemap: https://grippx.co/sitemap.xml
