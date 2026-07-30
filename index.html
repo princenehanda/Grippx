@@ -323,7 +323,7 @@
                     <a href="https://www.instagram.com/grippx.co/" aria-label="Instagram" target="_blank"><img src="assets/icons/instagram.svg" alt="Instagram" /></a>
                     <a href="https://wa.me/27732746135" aria-label="WhatsApp" target="_blank"><img src="assets/icons/whatsapp.svg" alt="WhatsApp" /></a>
                 </div>
-                <p class="footer-note">&copy; 2025 GRIPPX. All rights reserved. Brand activation agency serving Johannesburg and South Africa.</p>
+                <p class="footer-note">&copy; <span id="copyrightYear">2025</span> GRIPPX. All rights reserved. Brand activation agency serving Johannesburg and South Africa.</p>
             </div>
         </div>
     </footer>
@@ -333,6 +333,12 @@
 <!-- jQuery loaded BEFORE script.js -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script src="js/script.js"></script>
+<script>
+  (function () {
+    var el = document.getElementById("copyrightYear");
+    if (el) el.textContent = new Date().getFullYear();
+  })();
+</script>
 <script>
   (function () {
     var words = ["Seen.", "Remembered.", "Loved."];
